@@ -54,15 +54,16 @@ class SessionForm extends React.Component {
 
   render() {
     let emailInput = (<br/>)
-    if (this.props.formType === 'signup') {
+    if (this.props.formType === 'sign up') {
       emailInput = (
         <>
           <br/>
-          <label>Email:
+          <label>
             <input type="email"
               value={this.state.email}
               onChange={this.update('email')}
               className="login-input"
+              placeholder="Email"
             />
           </label>
           <br/>
@@ -71,26 +72,27 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-div">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Clone-ify!
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
+        <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br/>
-            <label>Username:
+            {this.props.formType === 'sign up' ? 'Sign up with your email address' : 'To continue, log in to Spotify.'}
+            {this.renderErrors()}
+            <br/>
+            <label>
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="Username"
               />
             </label>
             {emailInput}
-            <label>Password:
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
             </label>
             <br/>
