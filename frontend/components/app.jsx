@@ -7,13 +7,12 @@ import SignupFormContainer from './session/sign_up_container'
 
 const App = () => (
   <div>
-    <header>
-      <h1>Clone-ify!</h1>
-      <Splash />
-    </header>
-
+    <Route exact path="/" component={Splash} />
     <Route path="/login" component={LoginFormContainer} />
     <Route path="/signup" component={SignupFormContainer} />
+    <footer>
+      <Splash />
+    </footer>
   </div>
 );
 

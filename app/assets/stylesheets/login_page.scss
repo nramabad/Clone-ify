@@ -1,18 +1,37 @@
 .login-form-div {
   display: inline-block;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   // font-weight: 100;
   margin: 0 auto;
   width: 100%;
+}
 
+.login-form-div img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8%;
+  padding: 20px;
+}
+
+.login-form-div:after {
+  border-bottom: 1px solid #f00;
+  margin-left: auto;
+  margin-right: auto;
+  content: '';
+  display: block;
+  width: 50%;
 }
 
 .login-form {
-  outline: 1px solid black;
+  // outline: 1px solid black;
   padding: 20px;
+  border-top: 1px solid lightgrey;
   font-weight: bold;
 }
 
@@ -36,10 +55,10 @@
   letter-spacing: 2px;
   background-color: #1DB954;
   border: #1DB954;
-  padding: 12px;
-  padding-left: 70px;
-  padding-right: 70px;
-  border-radius: 25px;
+  padding: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 40px;
   color: white;
   transition: .5s;
   outline: none;

@@ -5,7 +5,8 @@ module.exports = {
   entry: './frontend/cloneify.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: './app/assets/'
   },
   module: {
     rules: [
