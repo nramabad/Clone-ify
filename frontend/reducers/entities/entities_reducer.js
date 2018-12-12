@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 
-import sessionReducer from './session_reducer';
+import usersReducer from './users/users_reducer';
 
 const entitiesReducer = combineReducers({
-  session: sessionReducer
+
+  users: usersReducer
 });
 
 export default entitiesReducer;

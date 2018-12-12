@@ -2,10 +2,10 @@ import { combineReducers } from 'redux';
 
 // change below to paused or not and stuff
 
-import filters from './filters_reducer';
+import currentSongReducer from './current_song_reducer';
 
 export default combineReducers({
-  filters
+  currentSong: currentSongReducer
 });
 
 // is this right? dun think so
