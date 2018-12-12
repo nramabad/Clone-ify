@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import { connect } from 'react-redux';
-
+import { Link, Route, withRouter } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/auth_route_util.js'
+import LoginFormContainer from './session/login_form_container'
+import SignupFormContainer from './session/signup_form_container'
 import { logout } from '../../actions/session_actions';
 
-const Splash = ({ currentUser, logout }) => {
+const SplashOld = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link to="/login">Login</Link>
@@ -23,6 +24,27 @@ const Splash = ({ currentUser, logout }) => {
   return currentUser ? personalSplash() : sessionLinks();
 }
 
+class Splash extends React.Component {
+
+  constructor(props) {
+    super(props);
+    // this.demoLogin = this.demoLogin.bind(this);
+    this.helper = this.helper.bind(this);
+  }
+
+  componentDidMount() {
+    document.title = "Spookify"
+  }
+
+  // demoLogin() {
+  //   this.props.demoLogin()
+  //     .then(() => this.helper())
+  // }
+
+}
+
+
+
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
     currentUser: users[session.id]
@@ -36,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Splash);
+)(SplashOld);

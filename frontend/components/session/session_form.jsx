@@ -54,7 +54,12 @@ class SessionForm extends React.Component {
   // }
 
   render() {
-    let emailInput = (<br/>)
+    let emailInput = (<br/>);
+    let afterForm = (
+      <>
+        <div className="bold-text">Don't have an account?</div>
+      </>
+    );
     if (this.props.formType === 'sign up') {
       emailInput = (
         <>
@@ -70,6 +75,7 @@ class SessionForm extends React.Component {
           <br/>
         </>
       );
+      afterForm = (<>Already have an account? <Link to="/login"><span className="green-link">Log in</span></Link></>);
     }
     return (
       <div className="login-form-div">
@@ -101,6 +107,8 @@ class SessionForm extends React.Component {
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
+
+        {afterForm}
       </div>
     );
   }

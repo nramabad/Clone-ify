@@ -19,20 +19,27 @@
   padding: 20px;
 }
 
-.login-form-div:after {
-  border-bottom: 1px solid #f00;
-  margin-left: auto;
-  margin-right: auto;
-  content: '';
-  display: block;
-  width: 50%;
+.green-link {
+  color: #1DB954;
 }
 
 .login-form {
   // outline: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   border-top: 1px solid lightgrey;
   font-weight: bold;
+}
+
+.login-form:after {
+  border-bottom: 1px solid lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 80px;
+  content: '';
+  display: block;
+  width: 50%;
 }
 
 .login-input {
