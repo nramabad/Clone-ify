@@ -35,26 +35,42 @@ class SessionForm extends React.Component {
     );
   }
 
-  getEmail() {
-    if (this.props.formType === 'login') return (<br/>);
-    return (
-      <>
-        <br/>
-        <label>Email:
-          <input type="email"
-            value={this.state.email}
-            onChange={this.update('email')}
-            className="login-input"
-          />
-        </label>
-        <br/>
-      </>
-    );
-  }
+  // getEmail() {
+  //   if (this.props.formType === 'login') return (<br/>);
+  //   return (
+  //     <>
+  //       <br/>
+  //       <label>Email:
+  //         <input type="email"
+  //           value={this.state.email}
+  //           onChange={this.update('email')}
+  //           className="login-input"
+  //         />
+  //       </label>
+  //       <br/>
+  //     </>
+  //   );
+  // }
 
   render() {
+    let emailInput = (<br/>)
+    if (this.props.formType === 'signup') {
+      emailInput = (
+        <>
+          <br/>
+          <label>Email:
+            <input type="email"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+            />
+          </label>
+          <br/>
+        </>
+      );
+    }
     return (
-      <div className="login-form-container">
+      <div className="login-form-div">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Clone-ify!
           <br/>
@@ -69,7 +85,7 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-            {this.getEmail()}
+            {emailInput}
             <label>Password:
               <input type="password"
                 value={this.state.password}

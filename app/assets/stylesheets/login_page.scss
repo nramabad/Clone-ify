@@ -1,0 +1,30 @@
+.login-form-div {
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  // font-weight: 100;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.login-form-box {
+  outline: 1px solid black;
+  padding: 20px;
+}
+
+.login-form {
+  outline: 1px solid black;
+    padding: 20px;
+}
+
+.login-input {
+  margin-left: 20px;
+}
+
+.session-submit {
+  text-transform: uppercase;
+  text-align: center;
+}
