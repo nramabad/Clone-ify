@@ -13,11 +13,12 @@ const App = () => (
   <div>
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
+    <Route path="/browse/*" component={Browse} />
     <Switch>
       <Route path="/browse/account" component={Account} />
       <Route path="/browse/featured" component={Featured} />
+      <Redirect path="/browse" to="/browse/featured" />
     </Switch>
-    <Route path="/browse" component={Browse} />
     <Route exact path="/" component={Splash} />
   </div>
 );

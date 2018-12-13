@@ -35,9 +35,9 @@
 .auth {
   position: fixed;
   bottom: 120px;
-  display: inline-grid;
-  left: 0;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
   padding: 0px 24px 0px 24px;
 }
@@ -68,4 +68,30 @@
   margin-right: auto;
   width: 30px;
   padding: 30px 2px 2px 2px;
+}
+
+.black-button {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  border: 2px solid #D3D3D3;
+  padding: 15px;
+  padding-left: 8.25%;
+  padding-right: 8.25%;
+  border-radius: 40px;
+  transition: .5s;
+  color: #D3D3D3;
+}
+
+.white-button {
+
+}
+
+#username {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }

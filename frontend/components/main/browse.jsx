@@ -24,7 +24,6 @@ class Browse extends React.Component {
     const isSignedIn = () => (
       <>
         <Link to="/browse/account">{currentUser.username}</Link>
-        <button className="black-button" onClick={logout}>LOG OUT</button>
       </>
     );
 
