@@ -6,7 +6,6 @@
   text-align: center;
   font-family: proxima-nova, sans-serif;
   font-style: normal;
-  // font-weight: 100;
   margin: 0 auto;
   width: 100%;
 }
@@ -24,7 +23,6 @@
 }
 
 .login-form {
-  // outline: 1px solid black;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -69,4 +67,17 @@
   color: white;
   transition: .5s;
   outline: none;
+}
+
+.error {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 30%;
+  color: white;
+  background-color: orange;
+  font-size: 11px;
+  font-weight: normal;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

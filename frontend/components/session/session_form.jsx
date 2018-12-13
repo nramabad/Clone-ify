@@ -27,8 +27,9 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul>
+        <br></br>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="error">
             {error}
           </li>
         ))}
@@ -36,24 +37,12 @@ class SessionForm extends React.Component {
     );
   }
 
-  // getEmail() {
-  //   if (this.props.formType === 'login') return (<br/>);
-  //   return (
-  //     <>
-  //       <br/>
-  //       <label>Email:
-  //         <input type="email"
-  //           value={this.state.email}
-  //           onChange={this.update('email')}
-  //           className="login-input"
-  //         />
-  //       </label>
-  //       <br/>
-  //     </>
-  //   );
-  // }
+  demoLogin() {
+
+  }
 
   render() {
+
     let emailInput = (<br/>);
     let afterForm = (
       <>
@@ -79,7 +68,7 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-div">
-        <Link to="/"><img src={window.brentURL} /></Link>
+        <Link to="/"><img src={window.logoURL} /></Link>
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br/>
@@ -109,6 +98,7 @@ class SessionForm extends React.Component {
         </form>
 
         {afterForm}
+
       </div>
     );
   }

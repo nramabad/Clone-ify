@@ -1,7 +1,44 @@
-.header-group {
+.splash {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  background-color: pink;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.splash-nav {
+  display: inline-block;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  background-color: lightgrey;
+}
+
+.splash-logo {
 
 }
 
-.header-name {
+.splash-img {
+}
 
+.splash-button {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  background-color: #1DB954;
+  border: #1DB954;
+  padding: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 40px;
+  color: white;
+  transition: .5s;
+  outline: none;
 }
