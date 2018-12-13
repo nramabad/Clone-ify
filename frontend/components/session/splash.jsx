@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util'
-import LoginFormContainer from './login_form_container'
-import SignupFormContainer from './sign_up_container'
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import LoginFormContainer from './login_form_container';
+import SignupFormContainer from './sign_up_container';
 import { logout } from '../../actions/session_actions';
+import { loginDemo } from '../../actions/session_actions';
 
-const SplashOld = ({ currentUser, logout }) => {
+const UserSignInHelper = (currentUser, logout ) => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link to="/login">Login</Link>
@@ -28,17 +29,16 @@ class Splash extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.demoLogin = this.demoLogin.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidMount() {
     document.title = "Clone-ify"
   }
 
-  // demoLogin() {
-  //   this.props.demoLogin()
-  //     .then(() => this.helper())
-  // }
+  demoLogin() {
+    this.props.demoLogin()
+  }
 
   render() {
     return (
@@ -60,6 +60,8 @@ class Splash extends React.Component {
             <Link className='splash-button' to="/signup"> GET CLONE-IFY FREE </Link>
 
           </div>
+          <br></br><br></br>
+          {UserSignInHelper(this.props.currentUser, this.props.logout)}
 
       </div>
     )
@@ -76,8 +78,11 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  loginDemo: () => dispatch(loginDemo())
 });
+
+
 
 export default connect(
   mapStateToProps,

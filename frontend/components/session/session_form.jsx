@@ -46,11 +46,9 @@ class SessionForm extends React.Component {
                     <br></br><br></br>
                     <button onClick={this.demoLogin} className="guest-button">LOG IN AS GUEST</button>
                     <br></br><br></br>
-                    <div>
-                      <fieldset className="hr-line">
-                        <legend align="center" className="or-separator" >OR</legend>
-                      </fieldset>
-                    </div>
+                    <fieldset className="hr-line">
+                      <legend align="center" className="or-separator" >OR</legend>
+                    </fieldset>
                   </>);
     let emailInput = (<br/>);
     let afterForm = (<>{this.props.navLink}</>);
