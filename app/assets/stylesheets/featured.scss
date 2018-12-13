@@ -1,0 +1,23 @@
+.browse-body {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  color: lightgrey;
+  text-align: center;
+  right: 0;
+  background-image: linear-gradient(to bottom right, darkblue, pink);
+  width: 85%;
+  height: 90%;
+  position: fixed;
+  z-index: 0;
+}
+
+.browse-body header {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 30px;
+}
+
+.browse-body span {
+  padding: 20px;
+}

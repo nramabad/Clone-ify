@@ -51,27 +51,6 @@
   position: absolute;
 }
 
-.browse-body {
-  text-align: center;
-  color: white;
-  right: 0;
-  background-image: linear-gradient(to bottom right, darkblue, pink);
-  width: 85%;
-  height: 90%;
-  position: fixed;
-  z-index: 0;
-}
-
-.browse-body header {
-  font-size: 12px;
-  letter-spacing: 2px;
-  padding: 30px;
-}
-
-.browse-body span {
-  padding: 20px;
-}
-
 .player {
   width: 100%;
   height: 90px;

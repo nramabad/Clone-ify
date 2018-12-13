@@ -1,0 +1,27 @@
+.account-body {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  color: lightgrey;
+  text-align: center;
+  justify-content: center;
+  right: 0;
+  background-image: linear-gradient(#202020, #080808);
+  width: 85%;
+  height: 90%;
+  position: fixed;
+  z-index: 0;
+}
+
+.account-body span {
+  font-weight: bold;
+  font-size: 35px;
+  padding: 20px;
+}
+
+.account-body section {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  align-items: center;
+  top: 200px;
+}

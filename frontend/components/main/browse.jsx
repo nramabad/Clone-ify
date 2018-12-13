@@ -23,7 +23,7 @@ class Browse extends React.Component {
     );
     const isSignedIn = () => (
       <>
-        {currentUser.username}
+        <Link to="/browse/account">{currentUser.username}</Link>
         <button className="black-button" onClick={logout}>LOG OUT</button>
       </>
     );
@@ -38,24 +38,16 @@ class Browse extends React.Component {
       <div className='browse'>
 
           <nav className='browse-nav'>
-            <Link to="/browse" className='logo'><img src={window.whiteLogoURL} /></Link>
+            <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
-              <Link to="/browse">Search</Link>
-              <Link to="/browse">Home</Link>
-              <Link to="/browse">Your Library</Link>
+              <Link to="/browse/featured">Search</Link>
+              <Link to="/browse/featured">Home</Link>
+              <Link to="/browse/featured">Your Library</Link>
             </div>
             <div className='auth'>{this.userLoginHelper(this.props.currentUser, this.props.logout)}</div>
           </nav>
 
-          <div className='browse-body'>
-            <header>
-              <Link to="/browse" className="head"><span className="head"> FEATURED </span></Link>
-              <Link to="/browse" className="head"><span className="head"> PODCASTS </span></Link>
-              <Link to="/browse" className="head"><span className="head"> GENRE & MOODS </span></Link>
-              <Link to="/browse" className="head"><span className="head"> NEW RELEASES </span></Link>
-              <Link to="/browse"><span className="head"> DISCOVER </span></Link>
-            </header>
-          </div>
+
 
           <nav className='player'>
             <img src={window.playButton} />
