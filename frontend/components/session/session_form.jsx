@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    this.props.loginDemo();
+    this.props.loginDemo().then(()=>this.props.history.push('/browse'));
   }
 
   render() {

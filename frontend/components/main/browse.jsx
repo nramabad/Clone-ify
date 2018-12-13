@@ -20,7 +20,7 @@ class Browse extends React.Component {
   }
 
   demoLogin() {
-    this.props.demoLogin()
+    this.props.demoLogin().then(()=>this.props.history.push('/browse'));
   }
 
   userLoginHelper(currentUser, logout) {
@@ -46,9 +46,11 @@ class Browse extends React.Component {
 
           <nav className='browse-nav'>
             <Link to="/browse" className='logo'><img src={window.whiteLogoURL} /></Link>
-            <Link to="/browse">Search</Link>
-            <Link to="/browse">Your Library</Link>
-            {this.userLoginHelper(this.props.currentUser, this.props.logout)}
+            <div className="general-pages">
+              <Link to="/browse">Search</Link>
+              <Link to="/browse">Your Library</Link>
+            </div>
+            <div className='auth'>{this.userLoginHelper(this.props.currentUser, this.props.logout)}</div>
           </nav>
 
           <div className='browse-body'>
