@@ -33,7 +33,7 @@ class Browse extends React.Component {
     const isSignedIn = () => (
       <>
         Hi, {currentUser.username}!
-        <button className="splash-btn" onClick={logout}>Log Out</button>
+        <button className="splash-btn" onClick={logout}>LOG OUT</button>
       </>
     );
 
