@@ -71,11 +71,11 @@ class SessionForm extends React.Component {
     }
     return (
       <div className="login-form-div">
-        <Link to="/"><img src={window.logoURL} /></Link>
+        <Link to="/"><img src={window.blackLogoURL} /></Link>
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br/>
-            {this.props.formType === 'sign up' ? 'Sign up with your email address' : <>To continue, log in to Spotify. {demo}</> }
+            {this.props.formType === 'sign up' ? 'Sign up with your email address' : <>To continue, log in to Clone-ify. {demo}</> }
             {this.renderErrors()}
             <br/>
             <label>
