@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../../util/route_utiL'
+import { AuthRoute, ProtectedRoute } from '../../util/route_util'
 import LoginFormContainer from './login_form_container'
 import SignupFormContainer from './sign_up_container'
 import { logout } from '../../actions/session_actions';
