@@ -4,6 +4,8 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './session/splash';
 import Browse from './main/browse';
+import Featured from './main/featured';
+import Account from './main/account_menu.jsx';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/sign_up_container'
 
@@ -12,6 +14,8 @@ const App = () => (
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Route path="/browse" component={Browse} />
+    <Route path="/browse/featured" component={Featured} />
+    <ProtectedRoute path="/browse/account" component{Account}
     <Route exact path="/" component={Splash} />
   </div>
 );

@@ -1,39 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util';
-import LoginFormContainer from '../session/login_form_container';
-import SignupFormContainer from '../session/sign_up_container';
 import { logout } from '../../actions/session_actions';
-import { loginDemo } from '../../actions/session_actions';
 
 
 class Browse extends React.Component {
 
   constructor(props) {
     super(props);
-    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidMount() {
     document.title = "Clone-ify"
   }
 
-  demoLogin() {
-    this.props.demoLogin().then(()=>this.props.history.push('/browse'));
-  }
-
   userLoginHelper(currentUser, logout) {
     const isSignedOut = () => (
       <>
-        <Link to="/signup">SIGN UP</Link>
-        <Link to="/login">LOG IN</Link>
+        <Link to="/signup" className="white-button">SIGN UP</Link>
+        <Link to="/login" className="black-button">LOG IN</Link>
       </>
     );
     const isSignedIn = () => (
       <>
-        Hi, {currentUser.username}!
-        <button className="splash-btn" onClick={logout}>LOG OUT</button>
+        {currentUser.username}
+        <button className="black-button" onClick={logout}>LOG OUT</button>
       </>
     );
 
@@ -41,6 +32,8 @@ class Browse extends React.Component {
   }
 
   render() {
+
+
     return (
       <div className='browse'>
 
@@ -48,6 +41,7 @@ class Browse extends React.Component {
             <Link to="/browse" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
               <Link to="/browse">Search</Link>
+              <Link to="/browse">Home</Link>
               <Link to="/browse">Your Library</Link>
             </div>
             <div className='auth'>{this.userLoginHelper(this.props.currentUser, this.props.logout)}</div>
@@ -73,7 +67,7 @@ class Browse extends React.Component {
     )
   }
 
-  }
+}
 
 
 

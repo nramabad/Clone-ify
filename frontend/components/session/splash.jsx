@@ -37,7 +37,7 @@ class Splash extends React.Component {
   }
 
   demoLogin() {
-    this.props.demoLogin().then(()=>this.props.history.push('/browse'));
+    this.props.demoLogin();
   }
 
   render() {

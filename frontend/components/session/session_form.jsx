@@ -51,7 +51,6 @@ class SessionForm extends React.Component {
                     </fieldset>
                   </>);
     let emailInput = (<br/>);
-    let afterForm = (<>{this.props.navLink}</>);
     if (this.props.formType === 'sign up') {
       emailInput = (
         <>
@@ -67,7 +66,6 @@ class SessionForm extends React.Component {
           <br/>
         </>
       );
-      afterForm = (<>{this.props.navLink}</>);
     }
     return (
       <div className="login-form-div">
@@ -100,7 +98,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
 
-        {afterForm}
+        {this.props.navLink}
 
       </div>
     );
