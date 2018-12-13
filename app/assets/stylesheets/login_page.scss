@@ -18,6 +18,11 @@
   padding: 20px;
 }
 
+.bold-text {
+  font-size: 18px;
+  font-weight: 900;
+}
+
 .green-link {
   color: #1DB954;
 }
@@ -37,7 +42,8 @@
   padding-top: 80px;
   content: '';
   display: block;
-  width: 50%;
+  padding: 10px;
+  width: 30%;
 }
 
 .login-input {
@@ -69,6 +75,38 @@
   outline: none;
 }
 
+.not-green-button {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  border: 2px solid black;
+  padding: 15px;
+  padding-left: 8.75%;
+  padding-right: 8.75%;
+  border-radius: 40px;
+  transition: .5s;
+  color: grey;
+}
+
+.guest-button {
+  text-transform: uppercase;
+  text-align: center;
+
+  margin-top: 20px;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  padding: 15px;
+  width: 30%;
+  border-radius: 40px;
+  transition: .5s;
+  background-color: #3b5998;
+  color: white;
+}
+
 .error {
   margin-left: auto;
   margin-right: auto;
@@ -80,4 +118,21 @@
   font-weight: normal;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.hr-line {
+  letter-spacing: 1px;
+  width: 30%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #ccc;
+
+}
+
+.or-separator{
+  margin-bottom: 10px;
+  color: black;
+  font-size: 11px;
+  padding: 10px;
 }

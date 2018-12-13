@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -27,7 +28,6 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        <br></br>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`} className="error">
             {error}
@@ -38,17 +38,22 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-
+    this.props.loginDemo();
   }
 
   render() {
-
+    const demo = (<>
+                    <br></br><br></br>
+                    <button onClick={this.demoLogin} className="guest-button">LOG IN AS GUEST</button>
+                    <br></br><br></br>
+                    <div>
+                      <fieldset className="hr-line">
+                        <legend align="center" className="or-separator" >OR</legend>
+                      </fieldset>
+                    </div>
+                  </>);
     let emailInput = (<br/>);
-    let afterForm = (
-      <>
-        <div className="bold-text">Don't have an account?</div>
-      </>
-    );
+    let afterForm = (<>{this.props.navLink}</>);
     if (this.props.formType === 'sign up') {
       emailInput = (
         <>
@@ -64,7 +69,7 @@ class SessionForm extends React.Component {
           <br/>
         </>
       );
-      afterForm = (<>Already have an account? <Link to="/login"><span className="green-link">Log in</span></Link></>);
+      afterForm = (<>{this.props.navLink}</>);
     }
     return (
       <div className="login-form-div">
@@ -72,7 +77,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
             <br/>
-            {this.props.formType === 'sign up' ? 'Sign up with your email address' : 'To continue, log in to Spotify.'}
+            {this.props.formType === 'sign up' ? 'Sign up with your email address' : <>To continue, log in to Spotify. {demo}</> }
             {this.renderErrors()}
             <br/>
             <label>

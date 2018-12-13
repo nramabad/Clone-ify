@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 
 import configureStore from './store/store.js'
-import {login, signup, logout} from './util/session_api_util'
+import {login, signup, logout, loginDemo} from './util/session_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   window.login = login;
+  window.loginDemo = loginDemo;
   window.signup = signup;
   window.logout = logout;
   window.getState = store.getState;
