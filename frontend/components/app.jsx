@@ -11,15 +11,21 @@ import SignupFormContainer from './session/sign_up_container'
 
 const App = () => (
   <div>
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
-    <Route path="/browse/*" component={Browse} />
+
     <Switch>
       <ProtectedRoute path="/browse/account" component={Account} />
       <Route path="/browse/featured" component={Featured} />
-      <Redirect path="/browse" to="/browse/featured" />
+      <Redirect from="/browse" to="/browse/featured" />
+      <Route exact from="/" component={Splash} />
     </Switch>
-    <Route exact path="/" component={Splash} />
+
+    <Switch>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route path="/browse/*" component={Browse} />
+      <Redirect from="/*" to="/" />
+    </Switch>
+
   </div>
 );
 
