@@ -39,9 +39,9 @@ class Browse extends React.Component {
           <nav className='browse-nav'>
             <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
-              <Link to="/browse/featured">Search</Link>
-              <Link to="/browse/featured">Home</Link>
-              <Link to="/browse/featured">Your Library</Link>
+              <Link to="/browse/featured"><div>Search</div></Link>
+              <Link to="/browse/featured"><div>Home</div></Link>
+              <Link to="/browse/featured"><div>Your Library</div></Link>
             </div>
             <div className='auth'>{this.userLoginHelper(this.props.currentUser, this.props.logout)}</div>
           </nav>

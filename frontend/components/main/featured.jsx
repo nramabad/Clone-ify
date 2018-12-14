@@ -8,11 +8,11 @@ class Featured extends React.Component {
     return(
       <div className='browse-body'>
         <header>
-          <Link to="/browse/featured" className="head"><span> FEATURED </span></Link>
-          <Link to="/browse/featured" className="head"><span> PODCASTS </span></Link>
-          <Link to="/browse/featured" className="head"><span> GENRE & MOODS </span></Link>
-          <Link to="/browse/featured" className="head"><span> NEW RELEASES </span></Link>
-          <Link to="/browse/featured" className="head"><span> DISCOVER </span></Link>
+          <Link to="/browse/featured"><span> FEATURED </span></Link>
+          <Link to="/browse/featured"><span> PODCASTS </span></Link>
+          <Link to="/browse/featured"><span> GENRE & MOODS </span></Link>
+          <Link to="/browse/featured"><span> NEW RELEASES </span></Link>
+          <Link to="/browse/featured"><span> DISCOVER </span></Link>
         </header>
       </div>
     );

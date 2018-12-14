@@ -14,9 +14,11 @@ const App = () => (
 
     <Switch>
       <Route exact from="/" component={Splash} />
+
       <ProtectedRoute path="/browse/account" component={Account} />
       <Route path="/browse/featured" component={Featured} />
       <Redirect from="/browse" to="/browse/featured" />
+      
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
 

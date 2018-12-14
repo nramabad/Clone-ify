@@ -2,8 +2,8 @@
   font-family: proxima-nova, sans-serif;
   font-style: normal;
   font-weight: bolder;
-  color: lightgrey;
   text-align: center;
+  color: lightgrey;
   right: 0;
   background-image: linear-gradient(to bottom right, darkblue, pink);
   width: 100%;
@@ -21,4 +21,8 @@
 
 .browse-body span {
   padding: 20px;
+}
+
+.browse-body span:hover {
+  color: white;
 }
