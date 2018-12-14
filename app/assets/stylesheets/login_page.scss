@@ -59,6 +59,14 @@
   padding: 10px;
   outline: 1px solid lightgrey;
   font-weight: normal;
+  transition: .1s;
+}
+
+.login-input:focus {
+  padding: 12px;
+  margin-top: -2px;
+  margin-bottom: 18px;
+  outline: 1px solid #1ed760;
 }
 
 .session-submit {
