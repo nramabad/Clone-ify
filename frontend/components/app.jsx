@@ -15,9 +15,9 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <Route path="/browse/*" component={Browse} />
     <Switch>
-      <Route path="/browse/account" component={Account} />
+      <ProtectedRoute path="/browse/account" component={Account} />
       <Route path="/browse/featured" component={Featured} />
-      <Redirect path="/browse" to="/browse/featured" />
+      <Redirect path="/browse " to="/browse/featured" />
     </Switch>
     <Route exact path="/" component={Splash} />
   </div>

@@ -60,8 +60,6 @@ class Splash extends React.Component {
             <Link className='splash-button' to="/signup"> GET CLONE-IFY FREE </Link>
 
           </div>
-          <br></br><br></br>
-          {UserSignInHelper(this.props.currentUser, this.props.logout)}
 
       </div>
     )

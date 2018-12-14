@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import { logout } from '../../actions/session_actions';
 
 class Account extends React.Component {
@@ -12,7 +13,7 @@ class Account extends React.Component {
           <span>{this.props.currentUser.username}</span>
           <Link to="/" className="black-button">VIEW ACCOUNT</Link>
           <Link to="/" className="black-button">FULL WEBSITE</Link>
-          <button className="black-button" onClick={logout}>LOG OUT</button>
+          <button className="black-button" onClick={this.props.logout}>LOG OUT</button>
         </section>
       </div>
     );
