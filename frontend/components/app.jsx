@@ -13,18 +13,17 @@ const App = () => (
   <div>
 
     <Switch>
+      <Route exact from="/" component={Splash} />
       <ProtectedRoute path="/browse/account" component={Account} />
       <Route path="/browse/featured" component={Featured} />
       <Redirect from="/browse" to="/browse/featured" />
-      <Route exact from="/" component={Splash} />
-    </Switch>
-
-    <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route path="/browse/*" component={Browse} />
-      <Redirect from="/*" to="/" />
+
+      <Redirect from="/" to="/" />
     </Switch>
+
+    <Route path="/browse/*" component={Browse} />
 
   </div>
 );
