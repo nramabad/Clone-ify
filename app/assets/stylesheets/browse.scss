@@ -74,20 +74,48 @@
   text-transform: uppercase;
   text-align: center;
   margin-top: 20px;
-  font-size: 13px;
+  width: 90%;
+  font-size: 11px;
   text-decoration: none;
   letter-spacing: 2.5px;
   border: 2px solid #D3D3D3;
-  padding: 15px;
-  padding-left: 8.25%;
-  padding-right: 8.25%;
+  padding: 8px;
+  // padding-left: 8.25%;
+  // padding-right: 8.25%;
   border-radius: 40px;
-  transition: .5s;
+  transition: .1s;
   color: #D3D3D3;
 }
 
-.white-button {
+.black-button:hover {
+  margin-top: 20px;
+  font-size: 12px;
+  border: 2px solid white;
+  width: 100%;
+}
 
+.white-button {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  width: 90%;
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  border: 2px solid white;
+  background-color: white;
+  padding: 8px;
+  // padding-left: 8.25%;
+  // padding-right: 8.25%;
+  border-radius: 40px;
+  transition: .1s;
+  color: black;
+}
+
+.white-button:hover {
+  margin-top: 20px;
+  font-size: 12px;
+  width: 100%;
 }
 
 #username {

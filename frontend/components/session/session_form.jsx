@@ -37,11 +37,19 @@ class SessionForm extends React.Component {
     );
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     this.props.loginDemo();
   }
 
   render() {
+    let emailInput = (<br/>);
+    let switchForm = (<><br></br>
+                          <div className="bold-text">Don't have an account?
+                            <br></br><br></br><br></br>
+                            <Link to="/signup" className="not-green-button" onClick={this.props.clearErrors}>SIGN UP FOR CLONE-IFY</Link>
+                          </div>
+                        </>);
     const demo = (<>
                     <br></br><br></br>
                     <button onClick={this.demoLogin} className="guest-button">LOG IN AS GUEST</button>
@@ -50,7 +58,6 @@ class SessionForm extends React.Component {
                       <legend align="center" className="or-separator" >OR</legend>
                     </fieldset>
                   </>);
-    let emailInput = (<br/>);
     if (this.props.formType === 'sign up') {
       emailInput = (
         <>
@@ -66,7 +73,9 @@ class SessionForm extends React.Component {
           <br/>
         </>
       );
+      switchForm = (<>Already have an account? <Link to="/login" onClick={this.props.clearErrors}><span className="green-link">Log In</span></Link></>);
     }
+
     return (
       <div className="login-form-div">
         <Link to="/"><img src={window.blackLogoURL} /></Link>
@@ -98,7 +107,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
 
-        {this.props.navLink}
+        {switchForm}
 
       </div>
     );

@@ -6,13 +6,14 @@
   text-align: center;
   right: 0;
   background-image: linear-gradient(to bottom right, darkblue, pink);
-  width: 85%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: 0;
 }
 
 .browse-body header {
+  margin-left: 230px;
   font-size: 12px;
   letter-spacing: 2px;
   padding: 30px;
