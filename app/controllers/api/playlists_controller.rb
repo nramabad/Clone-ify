@@ -22,7 +22,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.new(playlist_params)
 
     if @playlist.save
-      redirect_to playlist_url(@playlist)
+      render :show
     else
       render json: @playlist.errors.full_messages
     end
@@ -37,7 +37,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
 
     if @playlist.update(playlist_params)
-      redirect_to playlist_url(@playlist)
+      render :show
     else
       render json: @playlist.errors.full_messages
     end
@@ -47,7 +47,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
     if @playlist
       @playlist.destroy
-      redirect_to user_url(@playlist.user_id)
+      render :show
     else
       render json: ["Nobody signed in"], status: 404
     end
