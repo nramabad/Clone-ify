@@ -8,11 +8,11 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
     resources :follows, only: [:create, :destroy]
     resources :playlist_songs, only: [:create, :destroy]
-    resources :playlists, only: [:index, :new, :show, :create, :update, :destroy]
+    resources :playlists
     resources :search, only: [:index]
     resource :session, only: [:create, :destroy, :show]
     resources :songs, only: [:index, :show]
     resources :user_follows, only: [:index, :create, :destroy]
-    resources :users, only: [:index, :create]
+    resources :users, only: [:index, :show, :create]
   end
 end

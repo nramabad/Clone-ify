@@ -11,6 +11,7 @@ class Account extends React.Component {
       <div className='account-body'>
         <section>
           <div className='body-menu'>
+            
             <span>{this.props.currentUser.username}</span>
             <Link to="/" className="black-button">VIEW ACCOUNT</Link>
             <Link to="/" className="black-button">FULL WEBSITE</Link>

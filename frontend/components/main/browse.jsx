@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
-import { logout } from '../../actions/session_actions';
+// import { logout } from '../../actions/session_actions';
 
 
 class Browse extends React.Component {
@@ -70,7 +70,6 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
   loginDemo: () => dispatch(loginDemo())
 });
 

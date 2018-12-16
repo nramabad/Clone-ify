@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
   before_action :require_logged_in, except: [:index, :show]
 
   def index
-    @playlist = Playlist.all
+    @playlists = Playlist.all
     render :index
   end
 
@@ -14,7 +14,7 @@ class Api::PlaylistsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
-    @album = Playlist.new(user_id: params[:user_id])
+    @playlist = Playlist.new(user_id: params[:user_id])
     render :new
   end
 
