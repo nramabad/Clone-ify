@@ -1,1 +1,1 @@
-json.partial! "api/albums/album", album: @album
+json.partial! "api/playlists/playlist", playlist: @playlist

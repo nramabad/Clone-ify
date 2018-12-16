@@ -1,7 +1,7 @@
 class Api::AlbumsController < ApplicationController
 
   def index
-    @album = Album.all
+    @albums = Album.all
     render :index
   end
 
@@ -9,5 +9,5 @@ class Api::AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     render :show
   end
-  
+
 end

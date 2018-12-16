@@ -6,7 +6,7 @@ class Api::ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Band.find(params[:id])
+    @artist = Artist.find(params[:id])
     render :show
   end
 end

@@ -5,8 +5,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :links
-  has_many :comments
+  has_many :playlists
+  has_one_attached :img
 
   after_initialize :ensure_session_token
 
