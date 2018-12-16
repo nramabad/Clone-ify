@@ -1,5 +1,3 @@
 @songs.each do |song|
-  json.set! song.id do
-    
-  end
+  json.partial! "api/songs/song", song: song
 end

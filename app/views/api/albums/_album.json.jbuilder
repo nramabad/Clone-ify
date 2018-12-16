@@ -1,6 +1,6 @@
-json.extract! album, :id, :title, :year, :genre, :artistId, :imgUrl
-
+json.extract! album, :id, :title, :year, :genre
 json.artist album.artist.name
+
 
 json.songs do
   album.songs.each do |song|
