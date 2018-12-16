@@ -23,6 +23,7 @@ class Browse extends React.Component {
     );
     const isSignedIn = () => (
       <>
+        <img src={currentUser.avatarUrl} />
         <Link to="/browse/account">{currentUser.username}</Link>
       </>
     );
