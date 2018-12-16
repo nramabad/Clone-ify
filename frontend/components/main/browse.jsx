@@ -21,12 +21,14 @@ class Browse extends React.Component {
         <Link to="/login" className="black-button">LOG IN</Link>
       </>
     );
-    const isSignedIn = () => (
+    const isSignedIn = () => {
+      debugger
+      return (
       <>
-        <img src={currentUser.avatarUrl} />
+        <img src={currentUser.avatar_url} alt='belly'></img>
         <Link to="/browse/account">{currentUser.username}</Link>
       </>
-    );
+  )};
 
     return currentUser ? isSignedIn() : isSignedOut();
   }

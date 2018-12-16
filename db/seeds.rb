@@ -8,3 +8,5 @@
 
 User.delete_all
 user = User.create(username: "snowball", email: "snowball@snowball.cute", password: "snowball")
+a = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-dev/users/snowball.jpg')
+user.avatar.attach(io: a, filename: 'snowball.jpg')
