@@ -7,6 +7,6 @@ json.set! song.id do
   json.image_url song.album.cover.service_url
 
   if song.audio.attached?
-    json.audio_url song.audio.service_url
+    json.audio_url url_for(song.audio)
   end
 end

@@ -7,3 +7,7 @@ json.songs do
     json.partial! 'api/songs/song', song: song
   end
 end
+
+if album.cover.attached?
+  json.cover_url url_for(album.cover)
+end

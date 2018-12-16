@@ -8,4 +8,8 @@ json.artist do
       end
     end
   end
+
+  if artist.photo.attached?
+    json.photo_url url_for(artist.photo)
+  end
 end
