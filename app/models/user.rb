@@ -6,7 +6,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :playlists
-  has_one_attached :img
+  has_one_attached :avatar
 
   after_initialize :ensure_session_token
 

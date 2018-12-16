@@ -7,6 +7,7 @@ class Playlist < ApplicationRecord
   has_many :songs, through: :playlist_songs, source: :song
   has_many :artists, through: :songs, source: :artist
   has_many :albums, through: :songs, source: :album
+  has_one_attached :photo
 
 
 end

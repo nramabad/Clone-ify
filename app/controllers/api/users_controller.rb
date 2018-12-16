@@ -18,3 +18,6 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :email)
   end
 end
+
+
+# maybe add functionality to upload :avatar hence permit :avatar
