@@ -39,7 +39,7 @@ class Browse extends React.Component {
           <nav className='browse-nav'>
             <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
-              <Link to="/browse/featured"><div>Search</div></Link>
+              <Link to="/browse/featured"><div className='selected'>Search</div></Link>
               <Link to="/browse/featured"><div>Home</div></Link>
               <Link to="/browse/featured"><div>Your Library</div></Link>
             </div>

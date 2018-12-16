@@ -26,3 +26,18 @@
 .browse-body span:hover {
   color: white;
 }
+
+.selected {
+  color: white;
+}
+
+.selected:after {
+     background: none repeat scroll 0 0 #1ed760;
+     top: 48px;
+     margin-left: -62.5px;
+     content: "";
+     position: absolute;
+     height: 1px;
+
+     width: 30px;
+ }
