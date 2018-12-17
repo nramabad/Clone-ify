@@ -38,13 +38,39 @@
 }
 
 
+.not-auth {
+  width: 182px;
+  position: fixed;
+  bottom: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0px 24px 0px 24px;
+  // border-top: 1px solid #404040;
+}
+
+.not-auth:before {
+  border-bottom: 1px solid #404040;
+  left: -10%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  padding-top: 80px;
+  content: '';
+  display: block;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
 .auth {
   width: 182px;
   position: fixed;
   bottom: 105px;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  // align-items: center;
   justify-content: center;
   color: white;
   margin: 0px 24px 0px 24px;

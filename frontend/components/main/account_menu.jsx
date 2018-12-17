@@ -8,7 +8,6 @@ import SideBar from './side_bar';
 class Account extends React.Component {
 
   render() {
-    console.log('avatar_url', this.props.currentUser.avatar_url);
     return(
       <>
         <SideBar />

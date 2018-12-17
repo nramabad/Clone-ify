@@ -16,15 +16,15 @@ class SideBar extends React.Component {
 
   userLoginHelper(currentUser) {
     const isSignedOut = () => (
-      <>
+      <div className='not-auth'>
         <Link to="/signup" className="white-button">SIGN UP</Link>
         <Link to="/login" className="black-button">LOG IN</Link>
-      </>
+      </div>
     );
     const isSignedIn = () => (
-      <>
+      <div className='auth'>
         <Link to="/settings/account"><div className="pic-n-name"><div><img src={currentUser.avatar_url} alt='🐶' /></div><div className='username'>{currentUser.username}</div></div></Link>
-      </>
+      </div>
     );
 
     return currentUser ? isSignedIn() : isSignedOut();
@@ -43,7 +43,7 @@ class SideBar extends React.Component {
               <Link to="/browse/featured"><div className='selected'>Home</div></Link>
               <Link to="/collection/playlists"><div>Your Library</div></Link>
             </div>
-            <div className='auth'>{this.userLoginHelper(this.props.currentUser)}</div>
+            {this.userLoginHelper(this.props.currentUser)}
           </nav>
 
 
