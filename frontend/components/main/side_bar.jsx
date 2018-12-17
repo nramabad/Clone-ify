@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 // import { logout } from '../../actions/session_actions';
 
 
-class Browse extends React.Component {
+class SideBar extends React.Component {
 
   constructor(props) {
     super(props);
@@ -14,7 +14,7 @@ class Browse extends React.Component {
     document.title = "Clone-ify"
   }
 
-  userLoginHelper(currentUser, logout) {
+  userLoginHelper(currentUser) {
     const isSignedOut = () => (
       <>
         <Link to="/signup" className="white-button">SIGN UP</Link>
@@ -23,7 +23,7 @@ class Browse extends React.Component {
     );
     const isSignedIn = () => (
       <>
-        <Link to="/browse/account"><div className="pic-n-name"><div><img src={currentUser.avatar_url} alt='it broken :(' /></div><div className='username'>{currentUser.username}</div></div></Link>
+        <Link to="/settings/account"><div className="pic-n-name"><div><img src={currentUser.avatar_url} alt='🐶' /></div><div className='username'>{currentUser.username}</div></div></Link>
       </>
     );
 
@@ -39,11 +39,11 @@ class Browse extends React.Component {
           <nav className='browse-nav'>
             <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
-              <Link to="/browse/featured"><div className='selected'>Search</div></Link>
-              <Link to="/browse/featured"><div>Home</div></Link>
-              <Link to="/browse/featured"><div>Your Library</div></Link>
+              <Link to="/browse/featured"><div>Search</div></Link>
+              <Link to="/browse/featured"><div className='selected'>Home</div></Link>
+              <Link to="/collection/playlists"><div>Your Library</div></Link>
             </div>
-            <div className='auth'>{this.userLoginHelper(this.props.currentUser, this.props.logout)}</div>
+            <div className='auth'>{this.userLoginHelper(this.props.currentUser)}</div>
           </nav>
 
 
@@ -73,7 +73,7 @@ const mapDispatchToProps = dispatch => ({
   loginDemo: () => dispatch(loginDemo())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(Browse);
+)(SideBar));

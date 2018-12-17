@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
-import SideBar from './side_bar';
-import Home from './home';
+import SideBar from '../main/side_bar';
 
-class Featured extends React.Component {
+class SingleShow extends React.Component {
 
   render(){
     return(
       <>
         <SideBar />
-        <Home />
+
       </>
     );
   }
@@ -29,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   null
-)(Featured);
+)(PlaylistShow);

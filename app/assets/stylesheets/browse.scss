@@ -61,6 +61,14 @@
   width: 100%;
 }
 
+.auth:active {
+  color: #1ed760;
+}
+
+.auth:hover {
+  color: #1ed760;
+}
+
 .logo {
   left: 0;
   display: inline;
@@ -147,6 +155,8 @@
   margin-top: auto;
   margin-bottom: auto;
   padding: 0px 10px 0px 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 .pic-n-name {
