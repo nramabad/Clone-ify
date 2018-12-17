@@ -39,12 +39,26 @@
 .auth {
   width: 182px;
   position: fixed;
-  bottom: 120px;
+  bottom: 105px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   color: white;
   padding: 0px 24px 0px 24px;
+  // border-top: 1px solid #404040;
+}
+
+.auth:before {
+  border-bottom: 1px solid #404040;
+  left: -10%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  padding-top: 80px;
+  content: '';
+  display: block;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 .logo {
