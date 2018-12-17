@@ -9,4 +9,6 @@ json.set! song.id do
   if song.audio.attached?
     json.audio_url url_for(song.audio)
   end
+
+  # json.followed current_user.followed_song_ids.include?(song.id)
 end
