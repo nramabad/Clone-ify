@@ -16,7 +16,7 @@
 .account-body span {
   font-weight: bold;
   font-size: 35px;
-  padding: 20px;
+  padding: 24px;
 }
 
 .account-body section {
@@ -32,4 +32,10 @@
   margin-right: auto;
   padding-top: 12%;
   align-items: center;
+}
+
+.body-menu img {
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50%;
 }

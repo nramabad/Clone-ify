@@ -128,3 +128,21 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.username {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0px 10px 0px 10px;
+}
+
+.pic-n-name {
+  display: flex;
+  flex-direction: row;
+}
+
+.pic-n-name img {
+  justify-content: space-around;
+  width: 28px;
+  overflow: hidden;
+  border-radius: 50%;
+}

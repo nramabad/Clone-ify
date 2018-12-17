@@ -4,10 +4,10 @@ import Root from './components/root';
 
 import configureStore from './store/store.js'
 // import {login, signup, loginDemo} from './util/session_api_util'
-import {fetchAllAlbums} from './util/album_util'
-import {fetchAllArtists} from './util/artist_util'
-import {fetchAllPlaylists} from './util/playlist_util'
-import {fetchAllSongs} from './util/song_util'
+// import {fetchAllAlbums} from './util/album_util'
+// import {fetchAllArtists} from './util/artist_util'
+// import {fetchAllPlaylists} from './util/playlist_util'
+// import {fetchAllSongs} from './util/song_util'
 // import {logout} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
 
-  window.fetchAllAlbums = fetchAllAlbums
-  window.fetchAllArtists = fetchAllArtists
-  window.fetchAllPlaylists = fetchAllPlaylists
-  window.fetchAllSongs = fetchAllSongs
+  // window.fetchAllAlbums = fetchAllAlbums
+  // window.fetchAllArtists = fetchAllArtists
+  // window.fetchAllPlaylists = fetchAllPlaylists
+  // window.fetchAllSongs = fetchAllSongs
   // window.login = login;
   // window.loginDemo = loginDemo;
   // window.signup = signup;
