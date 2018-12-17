@@ -8,5 +8,6 @@ class Song < ApplicationRecord
   has_many :playlist_songs
   has_many :playlists, through: :playlist_songs
   has_one_attached :audio
+  has_one :cover, through: :album
 
 end
