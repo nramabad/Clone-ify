@@ -94,7 +94,7 @@ song3a9.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 
 artist4 = Artist.create(name: 'Broke For Free')
 album4a = Album.create(title: 'Layers', year: 2012, genre: "Hip Hop", artist_id: artist4.id)
-album4a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Broke_For_Free_-_Layers/Broke_For_Free_-_Layers_-_20120418184903300.jpg', filename: 'cover.jpg')
+album4a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Broke_For_Free_-_Layers/Broke_For_Free_-_Layers_-_20120418184903300.jpg'), filename: 'cover.jpg')
 song4a1 = Song.create(name: "As Colorful As Ever", duration: 234, album_id: album4a.id)
 song4a2 = Song.create(name: "Knock Knock", duration: 156, album_id: album4a.id)
 song4a3 = Song.create(name: "Only Knows", duration: 179, album_id: album4a.id)
