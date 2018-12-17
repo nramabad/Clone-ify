@@ -20,7 +20,7 @@ user1.avatar.attach(io: a, filename: 'snowball.jpg')
 
 artist1 = Artist.create(name: 'Asthmatic Astronaut', bio: "The wheezy space man")
 album1a = Album.create(title: 'Exposing All Emotions', year: 2012, genre: "Hip Hop", artist_id: artist1.id)
-album8b.cover.attached(io: 'https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Asthmatic_Astronaut_-_Exposing_All_Emotions/Asthmatic_Astronaut_-_Exposing_All_Emotions_-_20120815102617148.jpg', filename: 'cover.jpg')
+album1a.cover.attached(io: 'https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Asthmatic_Astronaut_-_Exposing_All_Emotions/Asthmatic_Astronaut_-_Exposing_All_Emotions_-_20120815102617148.jpg', filename: 'cover.jpg')
 song1a1 = Song.create(name: "A New Tone", duration: 211, album_id: album1a.id)
 song1a2 = Song.create(name: "Body Language", duration: 247, album_id: album1a.id)
 song1a3 = Song.create(name: "And Still They Come A Creeping", duration: 276, album_id: album1a.id)
@@ -36,7 +36,7 @@ song1a6.audio.attached(io: 'https://s3-us-west-1.amazonaws.com/clone-ify-public/
 
 artist2 = Artist.create(name: 'Black Ant')
 album2a = Album.create(title: 'Free Beats Sel. 3', year: 2010, genre: "Hip Hop", artist_id: artist2.id)
-album8b.cover.attached(io: 'https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_Free_Beats_Sel_3_-_20100125165648429.jpg', filename: 'cover.jpg')
+album2a.cover.attached(io: 'https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_Free_Beats_Sel_3_-_20100125165648429.jpg', filename: 'cover.jpg')
 song2a1 = Song.create(name: "Fater Lee", duration: 143, album_id: album2a.id)
 song2a2 = Song.create(name: "Oh K.", duration: 83, album_id: album2a.id)
 song2a3 = Song.create(name: "8bit2 3", duration: 38, album_id: album2a.id)
