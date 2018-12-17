@@ -2,13 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
+import Library from '../main/library';
 
-class AlbumShow extends React.Component {
+class SavedArtists extends React.Component {
 
   render(){
     return(
       <>
         <SideBar />
+        <Library />
 
       </>
     );
@@ -28,4 +30,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   null
-)(AlbumShow);
+)(SavedArtists);
