@@ -1,6 +1,79 @@
-.song-item{
-  // left: 500px;
+.songs {
+  margin-left: 260px;
+  position: relative;
+  font-weight: normal;
+  margin-right: 30px;
+  text-align: left;
+}
+
+.songs li {
+  padding: 10px 20px 10px 20px;
+  color: grey;
+}
+
+.songs li:hover {
+  // background-color: darkblue;
+  background: linear-gradient(to right, #324ab2, rgba(0,0,255,0));
+}
+
+.song-item {
+  text-align: left;
+  display: flex;
+  font-family: 'proxima-nova', sans-serif;
+  font-style: normal;
+  font-size: 17px;
+
+  // left: 300px;
+  // top: 10px;
+  color: white;
+  z-index: 0;
+  position: relative;
+  // width: 70%;
+  padding: 2px;
+  justify-content: space-between;
+}
+
+.music-icon {
+  width: 20px;
+  height: 20px;
+  background: url("../images/grey_note.png") no-repeat;
+  display: inline-block;
+}
+.music-icon:hover {
+  background: url("../images/play-arrow-gray.png") no-repeat;
+}
+
+.albums {
+  display: flex;
+  flex: wrap;
+  font-family: 'proxima-nova', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  left: 300px;
+  top: 75px;
   color: white;
   z-index: 5;
   position: relative;
+  width: 500px;
+  margin: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+.album-item img {
+  width: 200px;
+  padding-bottom: 5px
+}
+
+.album-item {
+  display: inline-table;
+  padding: 20px;
+}
+
+.album-item div {
+  font-size: 14px;
+  margin: 5px 0px 5px 0px;
+}
+
+.bold-text {
+  font-weight: bold;
 }

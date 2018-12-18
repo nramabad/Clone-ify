@@ -9,6 +9,7 @@ import configureStore from './store/store.js'
 // import {fetchAllPlaylists} from './util/playlist_util'
 // import {fetchAllSongs} from './util/song_util'
 import {requestAllSongs} from './actions/music_actions'
+import {requestAllAlbums} from './actions/music_actions'
 // import {logout} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchAllArtists = fetchAllArtists
   // window.fetchAllPlaylists = fetchAllPlaylists
   window.requestAllSongs = requestAllSongs
+  window.requestAllAlbums = requestAllAlbums
   // window.login = login;
   // window.loginDemo = loginDemo;
   // window.signup = signup;

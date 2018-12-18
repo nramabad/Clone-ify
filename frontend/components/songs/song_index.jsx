@@ -8,6 +8,20 @@ import SongItem from './song_item';
 
 class SongIndex extends React.Component {
 
+  constructor(props) {
+    super(props)
+    window.addEventListener('scroll', () => {
+    	const { innerHeight } = window;
+    	const { scrollTop, offsetHeight } = document.documentElement;
+
+    	const isBottom = (innerHeight + scrollTop) > (offsetHeight - 5);
+
+    	if (isBottom) {
+    		//do cool things like fecth more songs/pics
+    	}
+    });
+  }
+
   componentDidMount() {
     this.props.requestAllSongs();
   }
@@ -17,10 +31,12 @@ class SongIndex extends React.Component {
     return(
       <>
         <SideBar />
-        <Library />
-        <ul>
-          {allSongs}
-        </ul>
+        <div className='browse-body'>
+          <Library />
+          <ul className='songs'>
+            {allSongs}
+          </ul>
+        </div>
       </>
     );
   }

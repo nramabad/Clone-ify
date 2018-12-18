@@ -1,8 +1,9 @@
 .browse-body {
-  font-family: proxima-nova, sans-serif;
+  font-family: 'proxima-nova', sans-serif;
   font-style: normal;
   font-weight: bolder;
   text-align: center;
+  // justify-content: right;
   color: lightgrey;
   right: 0;
   background-image: linear-gradient(to bottom right, darkblue, pink);
@@ -17,6 +18,7 @@
   font-size: 12px;
   letter-spacing: 2px;
   padding: 30px;
+  z-index: 0;
 }
 
 .browse-body span {

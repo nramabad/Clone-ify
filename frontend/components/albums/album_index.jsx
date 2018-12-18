@@ -3,30 +3,43 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
+import AlbumItem from './album_item';
 
 class AlbumIndex extends React.Component {
 
+  componentDidMount() {
+    this.props.requestAllAlbums();
+  }
+
   render(){
+    const allAlbums = this.props.albums.map( (album, idx) => <AlbumItem key={album.id} album={album} /> );
     return(
       <>
         <SideBar />
-        <Library />
+        <div className='browse-body'>
+          <Library />
+          <ul className='albums'>
+            {allAlbums}
+          </ul>
+      </div>
       </>
     );
   }
 
-}
+  }
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+  const mapStateToProps = state => {
+  // debugger;
   return {
-    currentUser: users[session.id]
+    albums: Object.values(state.entities.albums)
   };
-};
+  };
 
-const mapDispatchToProps = dispatch => ({
-});
+  const mapDispatchToProps = dispatch => ({
+  requestAllAlbums: () => dispatch(requestAllAlbums())
+  });
 
-export default connect(
+  export default withRouter(connect(
   mapStateToProps,
-  null
-)(AlbumIndex);
+  mapDispatchToProps
+)(AlbumIndex));

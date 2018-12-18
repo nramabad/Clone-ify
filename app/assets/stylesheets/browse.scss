@@ -1,5 +1,5 @@
 .browse {
-  font-family: proxima-nova, sans-serif;
+  font-family: 'proxima-nova', sans-serif;
   font-style: normal;
   font-weight: bolder;
   color: grey;
@@ -116,7 +116,7 @@
   position: fixed;
   overflow: hidden;
   background-color: #282828;
-  z-index: 2;
+  z-index: 10;
 }
 
 .player img {

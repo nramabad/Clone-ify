@@ -6,7 +6,7 @@ class Library extends React.Component {
 
   render(){
     return(
-      <div className='browse-body'>
+      <>
         <header>
           <Link to="/collection/playlists"><span className='selected'> PLAYLIST </span></Link>
           <Link to="/collection/playlists"><span> MADE FOR YOU </span></Link>
@@ -15,7 +15,7 @@ class Library extends React.Component {
           <Link to="/collection/artists"><span> ARTISTS </span></Link>
           <Link to="/collection/playlists"><span> PODCASTS </span></Link>
         </header>
-      </div>
+      </>
     );
   }
 
