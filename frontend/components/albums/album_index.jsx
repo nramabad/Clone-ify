@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
-import AlbumItem from './album_item';
+import CoverItem from './cover_item';
 
 class AlbumIndex extends React.Component {
 
@@ -12,7 +12,7 @@ class AlbumIndex extends React.Component {
   }
 
   render(){
-    const allAlbums = this.props.albums.map( (album, idx) => <AlbumItem key={album.id} album={album} /> );
+    const allAlbums = this.props.albums.map( (album, idx) => <CoverItem key={album.id} album={album} /> );
     return(
       <>
         <SideBar />

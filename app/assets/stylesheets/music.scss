@@ -58,10 +58,10 @@
 }
 
 .albums {
-  left: 260px;
+  left: 350px;
   position: relative;
 
-  margin-right: 30px;
+  margin-right: 120px;
   display: flex;
   flex: wrap;
   font-family: 'proxima-nova', sans-serif;
@@ -78,20 +78,22 @@
 }
 
 .album-item img {
-  width: 200px;
+  width: 220px;
   padding-bottom: 5px
 }
 
 .album-item {
   display: inline-table;
-  padding: 20px;
+  padding: 10px;
+  margin-bottom: 50px;
 }
 
 .album-item div {
   font-size: 14px;
-  margin: 5px 0px 5px 0px;
+  margin: 10px 0px 10px 0px;
 }
 
-.bold-text {
-  font-weight: bold;
+.maker {
+  opacity: .6;
+  font-weight: normal;
 }
