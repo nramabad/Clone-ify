@@ -10,7 +10,7 @@ class Library extends React.Component {
         <header>
           <Link to="/collection/playlists"><span className='selected'> PLAYLIST </span></Link>
           <Link to="/collection/playlists"><span> MADE FOR YOU </span></Link>
-          <Link to="/collection/songs"><span> SONGS </span></Link>
+          <Link to="/collection/tracks"><span> SONGS </span></Link>
           <Link to="/collection/albums"><span> ALBUMS </span></Link>
           <Link to="/collection/artists"><span> ARTISTS </span></Link>
           <Link to="/collection/playlists"><span> PODCASTS </span></Link>

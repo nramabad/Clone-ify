@@ -10,8 +10,9 @@ class PlaylistIndex extends React.Component {
     return(
       <>
         <SideBar />
-        <Library />
-        
+        <div className='browse-body'>
+          <Library />
+        </div>
       </>
     );
   }

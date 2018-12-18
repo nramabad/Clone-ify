@@ -5,10 +5,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './session/splash';
 
 import Featured from './main/featured';
-// import SavedAlbums from './albums/saved_albums';
-import SavedArtists from './artists/saved_artists';
-import SavedPlaylists from './playlists/saved_playlists';
-// import SavedSongs from './songs/saved_songs';
+
+
+import ArtistIndex from './artists/artist_index';
+import PlaylistIndex from './playlists/playlist_index';
 import SongIndex from './songs/song_index'
 import AlbumIndex from './albums/album_index'
 import Account from './main/account_menu.jsx';
@@ -27,9 +27,9 @@ const App = () => (
       <Redirect from="/browse" to="/browse/featured" />
 
       <ProtectedRoute path="/collection/albums" component={AlbumIndex} />
-      <ProtectedRoute path="/collection/artists" component={SavedArtists} />
-      <ProtectedRoute path="/collection/playlists" component={SavedPlaylists} />
-      <ProtectedRoute path="/collection/songs" component={SongIndex} />
+      <ProtectedRoute path="/collection/artists" component={ArtistIndex} />
+      <ProtectedRoute path="/collection/playlists" component={PlaylistIndex} />
+      <ProtectedRoute path="/collection/tracks" component={SongIndex} />
       <Redirect from="/collection" to="/collection/playlists" />
 
       <AuthRoute path="/login" component={LoginFormContainer} />

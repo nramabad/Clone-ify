@@ -4,17 +4,21 @@
   font-weight: normal;
   margin-right: 30px;
   text-align: left;
+  margin-bottom: 120px;
+  vertical-align: middle;
 }
 
-.songs li {
+.one-song {
   padding: 10px 20px 10px 20px;
-  color: grey;
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-.songs li:hover {
-  // background-color: darkblue;
-  background: linear-gradient(to right, #324ab2, rgba(0,0,255,0));
+.one-song:hover {
+  background: linear-gradient(to right, #0f1635, rgba(0,0,255,0));
 }
+
 
 .song-item {
   text-align: left;
@@ -22,35 +26,49 @@
   font-family: 'proxima-nova', sans-serif;
   font-style: normal;
   font-size: 17px;
-
-  // left: 300px;
-  // top: 10px;
   color: white;
   z-index: 0;
   position: relative;
-  // width: 70%;
-  padding: 2px;
   justify-content: space-between;
+}
+
+.left div{
+  padding-top: 10px;
+  color: #fff;
+  opacity: .6;
 }
 
 .music-icon {
   width: 20px;
   height: 20px;
-  background: url("../images/grey_note.png") no-repeat;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/grey-note.png") no-repeat;
+  background-size: 12px;
   display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
 }
 .music-icon:hover {
-  background: url("../images/play-arrow-gray.png") no-repeat;
+  width: 20px;
+  height: 20px;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play-arrow-gray.png") no-repeat;
+  background-size: 12px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
 }
 
 .albums {
+  left: 260px;
+  position: relative;
+
+  margin-right: 30px;
   display: flex;
   flex: wrap;
   font-family: 'proxima-nova', sans-serif;
   font-style: normal;
   letter-spacing: 0.5px;
-  left: 300px;
-  top: 75px;
+  // left: 300px;
+  // top: 75px;
   color: white;
   z-index: 5;
   position: relative;

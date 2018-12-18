@@ -4,13 +4,19 @@ import { Link, Route, withRouter } from 'react-router-dom';
 
 
 const SongItem = ({song}) =>(
-    <li>
+    <li className='one-song'>
       <div className='song-item'>
-        <div className="music-icon"></div>{song.title}<div>{Math.floor(song.duration/60)}:{song.duration % 60 < 10 ? `0${song.duration % 60}` : song.duration % 60}</div>
+        <div className="music-icon"></div>
+        <div className='left'>
+          {song.title}
+          <div>
+            {song.artist_name} ∙ {song.album_title}
+          </div>
+        </div>
+
+
       </div>
-      <div>
-        {song.artist_name}
-      </div>
+      <div>{Math.floor(song.duration/60)}:{song.duration % 60 < 10 ? `0${song.duration % 60}` : song.duration % 60}</div>
     </li>
 );
 

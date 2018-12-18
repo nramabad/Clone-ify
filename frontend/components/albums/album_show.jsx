@@ -9,7 +9,9 @@ class AlbumShow extends React.Component {
     return(
       <>
         <SideBar />
+        <div className='browse-body'>
 
+        </div>
       </>
     );
   }
