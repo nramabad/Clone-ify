@@ -65,32 +65,32 @@ export const receiveAllSongs = (songs) => ({
   songs
 });
 
-export const fetchOneAlbum = (albumId) => (dispatch) => (
+export const requestOneAlbum = (albumId) => (dispatch) => (
   AlbumApiUtil.fetchOneAlbum(albumId)
     .then(album => dispatch(receiveOneAlbum(album)))
 );
 
-export const fetchAllAlbums = () => (dispatch) => (
+export const requestAllAlbums = () => (dispatch) => (
   AlbumApiUtil.fetchAllAlbums()
     .then(albums => dispatch(receiveAllAlbums(albums)))
 );
 
-export const fetchOneArtist = (artistId) => (dispatch) => (
+export const requestOneArtist = (artistId) => (dispatch) => (
   ArtistApiUtil.fetchOneArtist(artistId)
     .then(artist => dispatch(receiveOneArtist(artist)))
 );
 
-export const fetchAllArtists = () => (dispatch) => (
+export const requestAllArtists = () => (dispatch) => (
   ArtistApiUtil.fetchAllArtists()
     .then(songs => dispatch(receiveAllArtists(songs)))
 );
 
-export const fetchOnePlaylist = (playlistId) => (dispatch) => (
+export const requestOnePlaylist = (playlistId) => (dispatch) => (
   PlaylistApiUtil.fetchOnePlaylist(playlistId)
     .then(playlist => dispatch(receiveOnePlaylist(playlist)))
 );
 
-export const fetchAllPlaylists = () => (dispatch) => (
+export const requestAllPlaylists = () => (dispatch) => (
   PlaylistApiUtil.fetchAllPlaylists()
     .then(playlists => dispatch(receiveAllPlaylists(playlists)))
 );
@@ -105,12 +105,12 @@ export const deletePlaylist = (id) => (dispatch) => (
     .then( playlist => dispatch(receiveAllPlaylists(playlist)) )
 );
 
-export const fetchOneSong = (songId) => (dispatch) => (
+export const requestOneSong = (songId) => (dispatch) => (
   SongApiUtil.fetchOneSong(songId)
     .then(song => dispatch(receiveOneSong(song)))
 );
 
-export const fetchAllSongs = () => (dispatch) => (
+export const requestAllSongs = () => (dispatch) => (
   SongApiUtil.fetchAllSongs()
     .then(songs => dispatch(receiveAllSongs(songs)))
 );

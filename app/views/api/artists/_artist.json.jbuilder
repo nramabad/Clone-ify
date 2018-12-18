@@ -1,5 +1,6 @@
+# first line is nesting under artist so be sure to account for this
 json.artist do
-  json.extract! artist, :id, :name, :bio, :imgUrl
+  json.extract! artist, :id, :name, :bio
 
   json.albums do
     artist.albums.each do |album|

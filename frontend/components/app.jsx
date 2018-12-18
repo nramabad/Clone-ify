@@ -8,7 +8,8 @@ import Featured from './main/featured';
 import SavedAlbums from './albums/saved_albums';
 import SavedArtists from './artists/saved_artists';
 import SavedPlaylists from './playlists/saved_playlists';
-import SavedSongs from './songs/saved_songs';
+// import SavedSongs from './songs/saved_songs';
+import SongIndex from './songs/song_index'
 import Account from './main/account_menu.jsx';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/sign_up_container'
@@ -27,7 +28,7 @@ const App = () => (
       <Route path="/collection/albums" component={SavedAlbums} />
       <Route path="/collection/artists" component={SavedArtists} />
       <Route path="/collection/playlists" component={SavedPlaylists} />
-      <Route path="/collection/songs" component={SavedSongs} />
+      <Route path="/collection/songs" component={SongIndex} />
       <Redirect from="/collection" to="/collection/playlists" />
 
       <AuthRoute path="/login" component={LoginFormContainer} />
