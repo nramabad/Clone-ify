@@ -4,6 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import CoverItem from './cover_item';
 import SongItem from '../songs/song_item';
+import { requestOneAlbum } from '../../actions/music_actions';
 
 class AlbumShow extends React.Component {
 
@@ -12,16 +13,17 @@ class AlbumShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestOneAlbum();
+    this.props.requestOneAlbum(this.props.match.params.albumId);
   }
 
   render(){
-    const allSongs = this.props.album.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
+    console.log(this.props)
+    const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
     return(
       <>
         <SideBar />
         <div className='browse-body'>
-          <div><CoverItem album={this.props}/></div>
+          <div><CoverItem album={this.props.match}/></div>
           <div>
             <ul>
               {allSongs}
@@ -35,13 +37,15 @@ class AlbumShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return {
-    album: Object.values(state.entities.albums[ownProps.match.params.albumId])
+    album: state.entities.albums[ownProps.match.params.albumId],
+    songs: Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestOneAlbum: () => dispatch(requestOneAlbum())
+  requestOneAlbum: (id) => dispatch(requestOneAlbum(id))
 });
 
 export default connect(

@@ -20,9 +20,10 @@ export const receiveOneAlbum = (payload) => ({
   payload
 });
 
-export const receiveAllAlbums = (albums) => ({
+export const receiveAllAlbums = (payload) => ({
   type: RECEIVE_ALL_ALBUMS,
-  albums
+  albums: payload.albums,
+  songs: payload.songs
 });
 
 export const receiveOneArtist = (payload) => ({

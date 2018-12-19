@@ -8,7 +8,7 @@ import configureStore from './store/store.js'
 // import {fetchAllArtists} from './util/artist_util'
 // import {fetchAllPlaylists} from './util/playlist_util'
 // import {fetchAllSongs} from './util/song_util'
-import {requestAllSongs} from './actions/music_actions'
+import {requestOneAlbum, requestAllSongs} from './actions/music_actions'
 import {requestAllAlbums} from './actions/music_actions'
 // import {logout} from './actions/session_actions'
 
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.fetchAllAlbums = fetchAllAlbums
   // window.fetchAllArtists = fetchAllArtists
   // window.fetchAllPlaylists = fetchAllPlaylists
+  window.requestOneAlbum = requestOneAlbum
   window.requestAllSongs = requestAllSongs
   window.requestAllAlbums = requestAllAlbums
   // window.login = login;

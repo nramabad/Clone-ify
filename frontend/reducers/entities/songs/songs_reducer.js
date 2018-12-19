@@ -1,4 +1,4 @@
-import { RECEIVE_ONE_SONG, RECEIVE_ALL_SONGS, RECEIVE_ONE_ALBUM, RECEIVE_ONE_ARTIST, RECEIVE_ONE_PLAYLIST } from '../../../actions/music_actions';
+import { RECEIVE_ONE_SONG, RECEIVE_ALL_SONGS, RECEIVE_ONE_ALBUM, RECEIVE_ALL_ALBUMS, RECEIVE_ONE_ARTIST, RECEIVE_ONE_PLAYLIST } from '../../../actions/music_actions';
 
 const songsReducer = (state={}, action) => {
   Object.freeze(state);
@@ -9,6 +9,8 @@ const songsReducer = (state={}, action) => {
       return action.songs
     case RECEIVE_ONE_ALBUM:
       return action.payload.songs
+    case RECEIVE_ALL_ALBUMS:
+      return action.songs
     case RECEIVE_ONE_ARTIST:
       return action.payload.songs
     case RECEIVE_ONE_PLAYLIST:

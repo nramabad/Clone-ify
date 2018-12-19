@@ -33,7 +33,7 @@ const App = () => (
       <ProtectedRoute path="/collection/tracks" component={SongIndex} />
       <Redirect from="/collection" to="/collection/playlists" />
 
-      <Route path="/album" component={AlbumShow} />
+      <Route path="/album/:albumId" component={AlbumShow} />
 
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
