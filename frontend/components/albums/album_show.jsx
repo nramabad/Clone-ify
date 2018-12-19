@@ -5,6 +5,7 @@ import SideBar from '../main/side_bar';
 import CoverItem from './cover_item';
 import SongItem from '../songs/song_item';
 import { requestAllAlbums, requestOneAlbum } from '../../actions/music_actions';
+import { albumSongsSelector } from '../../reducers/entities/selectors';
 
 class AlbumShow extends React.Component {
 
@@ -47,9 +48,11 @@ class AlbumShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  const albumId = ownProps.match.params.albumId;
   return {
-    album: state.entities.albums[ownProps.match.params.albumId],
-    songs: Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
+    album: state.entities.albums[albumId],
+    songs: albumSongsSelector(state, albumId)
+    // Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
   };
 };
 
