@@ -4,6 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import SongItem from '../songs/song_item'
 import { playlistSongsSelector } from '../../reducers/entities/selectors'
+import { requestOnePlaylist } from '../../actions/music_actions'
 
 class PlaylistShow extends React.Component {
 
@@ -48,11 +49,14 @@ class PlaylistShow extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   debugger
-  const playlistId = ownProps.match.params.playlistId;
+  const playlistId = Number(ownProps.match.params.playlistId);
   return {
     user: state.entities.users[state.entities.playlists[playlistId].user_id],
     playlist: state.entities.playlists[playlistId],
-    songs: playlistSongsSelector(state, playlistId)
+    songs: Object.values(state.entities.playlistSongs)
+      .filter( song => song.playlist_id == playlistId )
+      .map( song => state.entities.songs[song.song_id] )
+    // songs: playlistSongsSelector(state, playlistId)
   };
 };
 

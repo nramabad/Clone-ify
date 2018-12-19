@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
 import CoverItem from './cover_item';
-import { requetAllAlbums } from '../../actions/music_actions';
+import { requestAllAlbums } from '../../actions/music_actions';
 
 class AlbumIndex extends React.Component {
 

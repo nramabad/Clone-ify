@@ -6,7 +6,7 @@ const playlistsReducer = (state={}, action) => {
     case RECEIVE_ONE_PLAYLIST:
       return { [action.payload.playlist.id]: action.payload.playlist };
     case RECEIVE_ALL_PLAYLISTS:
-      return action.playlists
+      return action.payload.playlists
     case REMOVE_ONE_PLAYLIST:
       let newState = Object.assign({}, state);
       delete newState[action.playlist.id];
