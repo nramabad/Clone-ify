@@ -106,6 +106,17 @@ export const deletePlaylist = (id) => (dispatch) => (
     .then( playlist => dispatch(receiveAllPlaylists(playlist)) )
 );
 
+export const addSongToPlaylist = (data) => (dispatch) => (
+  PlaylistApiUtil.addSongToPlaylist(data)
+    .then( null, errors => dispatch(receivePlaylistErrors(errors.responseJSON)) )
+);
+
+export const removeSongFromPlaylist = (id, data) => (dispatch) => (
+  PlaylistApiUtil.removeSongFromPlaylist(id, data)
+    .then( (playlist) => dispatch(receiveOnePlaylist(playlist)),
+            errors => dispatch(receivePlaylistErrors(errors.responseJSON)) )
+);
+
 export const requestOneSong = (songId) => (dispatch) => (
   SongApiUtil.fetchOneSong(songId)
     .then(song => dispatch(receiveOneSong(song)))

@@ -22,6 +22,11 @@
   z-index: 0;
 }
 
+.browse-body section {
+  // display: inline-block;
+  display: inline;
+}
+
 .browse-body span {
   padding: 20px;
 }

@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import CoverItem from './cover_item';
 import SongItem from '../songs/song_item';
-import { requestOneAlbum } from '../../actions/music_actions';
+import { requestAllAlbums, requestOneAlbum } from '../../actions/music_actions';
 
 class AlbumShow extends React.Component {
 
@@ -17,18 +17,23 @@ class AlbumShow extends React.Component {
   }
 
   render(){
-    console.log(this.props)
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
     return(
       <>
         <SideBar />
         <div className='browse-body'>
-          <div><CoverItem album={this.props.match}/></div>
-          <div>
-            <ul>
-              {allSongs}
-            </ul>
-          </div>
+          <section>
+            <div>
+              <img src={this.props.album.cover_url} alt='it broke :('/>
+              <div>{this.props.album.title}</div>
+              <div className='maker'>{this.props.album.artist}</div>
+            </div>
+            <div>
+              <ul className='songs'>
+                {allSongs}
+              </ul>
+            </div>
+          </section>
         </div>
       </>
     );
@@ -37,7 +42,6 @@ class AlbumShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     album: state.entities.albums[ownProps.match.params.albumId],
     songs: Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )

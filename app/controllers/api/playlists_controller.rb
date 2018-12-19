@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
   before_action :require_logged_in, except: [:index, :show]
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.with_attached_cover.all
     render :index
   end
 
@@ -29,12 +29,12 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def edit
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.find_by(id: params[:id])
     render :edit
   end
 
   def update
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.find_by(id: params[:id])
 
     if @playlist.update(playlist_params)
       render :show

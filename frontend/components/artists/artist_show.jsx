@@ -9,7 +9,9 @@ class ArtistShow extends React.Component {
     return(
       <>
         <SideBar />
-
+        <div className='browse-body'>
+          <Library />
+        </div>
       </>
     );
   }

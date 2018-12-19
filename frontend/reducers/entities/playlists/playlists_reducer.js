@@ -1,4 +1,4 @@
-import { RECEIVE_ONE_PLAYLIST, RECEIVE_ALL_PLAYLISTS, REMOVE_ONE_PLAYLIST} from '../actions/music_actions';
+import { RECEIVE_ONE_PLAYLIST, RECEIVE_ALL_PLAYLISTS, REMOVE_ONE_PLAYLIST} from '../../../actions/music_actions';
 
 const playlistsReducer = (state={}, action) => {
   Object.freeze(state);
