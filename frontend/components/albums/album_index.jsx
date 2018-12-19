@@ -13,7 +13,8 @@ class AlbumIndex extends React.Component {
   }
 
   render(){
-    const allAlbums = this.props.albums.map( (album, idx) => <CoverItem key={album.id} album={album} /> );
+
+    const allAlbums = this.props.albums.map( (item, idx) => <CoverItem key={item.id} item={item} /> );
     return(
       <>
         <SideBar />
@@ -22,7 +23,7 @@ class AlbumIndex extends React.Component {
           <ul className='albums'>
             {allAlbums}
           </ul>
-      </div>
+        </div>
       </>
     );
   }
@@ -30,10 +31,10 @@ class AlbumIndex extends React.Component {
   }
 
   const mapStateToProps = state => {
-  // debugger;
-  return {
-    albums: Object.values(state.entities.albums)
-  };
+    // debugger;
+    return {
+      albums: Object.values(state.entities.albums)
+    };
   };
 
   const mapDispatchToProps = dispatch => ({

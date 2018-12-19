@@ -1,8 +1,5 @@
-json.extract! playlist, :id, :title, :song_ids
-json.set! 'user' do
-  json.extract! playlist.user, :username, :id
-end
+json.extract! playlist, :id, :title, :description, :user_id
 
 if playlist.photo.attached?
-  json.photo_url url_for(playlist.photo)
+  json.cover_url url_for(playlist.photo)
 end

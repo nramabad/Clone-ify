@@ -3,8 +3,8 @@ json.album do
   json.artist_name @album.artist.name
   json.artist_id @album.artist.id
 
-  if album.cover.attached?
-    json.cover_url url_for(album.cover)
+  if @album.cover.attached?
+    json.cover_url url_for(@album.cover)
   end
 end
 

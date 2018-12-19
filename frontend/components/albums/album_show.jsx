@@ -18,6 +18,11 @@ class AlbumShow extends React.Component {
 
   render(){
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
+
+    if (!this.props.album) {
+      return null;
+    }
+
     return(
       <>
         <SideBar />
