@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import SongItem from '../songs/song_item'
+import { playlistSongsSelector } from '../../reducers/entities/selectors'
 
 class PlaylistShow extends React.Component {
 
@@ -15,6 +16,7 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
+    debugger
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
 
     if (!this.props.playlist) {
@@ -45,10 +47,12 @@ class PlaylistShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
+  const playlistId = ownProps.match.params.playlistId;
   return {
-    user: state.entities.users[state.entities.playlists[ownProps.match.params.playlistId].user_id],
-    playlist: state.entities.playlists[ownProps.match.params.playlistId],
-    songs: Object.values(state.entities.songs).filter( song => song.playlist_id == ownProps.match.params.playlistId )
+    user: state.entities.users[state.entities.playlists[playlistId].user_id],
+    playlist: state.entities.playlists[playlistId],
+    songs: playlistSongsSelector(state, playlistId)
   };
 };
 

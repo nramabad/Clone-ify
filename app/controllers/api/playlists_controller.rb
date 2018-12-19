@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
   before_action :require_logged_in, except: [:index, :show]
 
   def index
-    @playlists = Playlist.with_attached_cover.all
+    @playlists = Playlist.with_attached_photo.all
     render :index
   end
 

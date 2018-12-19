@@ -8,6 +8,7 @@
 
 User.delete_all
 Song.delete_all
+PlaylistSong.delete_all
 Playlist.delete_all
 Artist.delete_all
 Album.delete_all
@@ -16,7 +17,9 @@ Album.delete_all
 user1 = User.create(username: "snowball", email: "snowball@snowball.cute", password: "snowball")
 a = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
 user1.avatar.attach(io: a, filename: 'snowball.jpg')
-
+b = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
+user2 = User.create(username: "snoop dogg", email: "snoop@lion.rasta", password: "snoopy")
+user2.avatar.attach(io: b, filename: 'snowball.jpg')
 
 artist1 = Artist.create(name: 'Asthmatic Astronaut', bio: "The wheezy space man")
 album1a = Album.create(title: 'Exposing All Emotions', year: 2012, genre: "Hip Hop", artist_id: artist1.id)
@@ -68,3 +71,26 @@ song2a12.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/cl
 song2a13.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_13_-_1982.mp3'), filename: 'audio.mp3')
 song2a14.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_14_-_Underdog.mp3'), filename: 'audio.mp3')
 song2a15.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_15_-_D8M3.mp3'), filename: 'audio.mp3')
+
+
+playlist1 = Playlist.create(title: '(૭ ◉༬◉)૭⁾⁾⁾⁾', description: "^_^", user_id: 1)
+c = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
+playlist1.photo.attach(io: c, filename: 'snowball.jpg')
+playlist2 = Playlist.create(title: '~ ✰ 💸 𝘣𝘰𝘰𝘰𝘫𝘦𝘦𝘦  💸 ✰ ~', user_id: 2)
+d = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
+playlist2.photo.attach(io: d, filename: 'snowball.jpg')
+playlist3 = Playlist.create(title: 'love is a box of chocolates.', description: "you never know what you're gonna get. 😕", user_id: 1 )
+e = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
+playlist3.photo.attach(io: e, filename: 'snowball.jpg')
+
+pS1 = PlaylistSong.create(playlist_id: 1,song_id: 2)
+pS2 = PlaylistSong.create(playlist_id: 3,song_id: 5)
+pS2 = PlaylistSong.create(playlist_id: 1,song_id: 2)
+pS3 = PlaylistSong.create(playlist_id: 2,song_id: 1)
+pS4 = PlaylistSong.create(playlist_id: 1,song_id: 3)
+pS5 = PlaylistSong.create(playlist_id: 2,song_id: 10)
+pS6 = PlaylistSong.create(playlist_id: 2,song_id: 11)
+pS7 = PlaylistSong.create(playlist_id: 1,song_id: 11)
+pS8 = PlaylistSong.create(playlist_id: 3,song_id: 11)
+pS9 = PlaylistSong.create(playlist_id: 2,song_id: 12)
+pS10 = PlaylistSong.create(playlist_id: 1,song_id: 7)
