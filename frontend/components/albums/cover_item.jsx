@@ -5,9 +5,11 @@ import { Link, Route, withRouter } from 'react-router-dom';
 
 const CoverItem = ({album}) => (
       <li className='album-item'>
-        <img src={album.cover_url} alt='it broke :('/>
-        <div>{album.title}</div>
-        <div className='maker'>{album.artist}</div>
+        <Link to={`/album/${album.id}`}>
+          <img src={album.cover_url} alt='it broke :('/>
+          <div>{album.title}</div>
+          <div className='maker'>{album.artist}</div>
+        </Link>
       </li>
 );
 

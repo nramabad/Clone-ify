@@ -11,14 +11,17 @@ class AlbumShow extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.requestOneAlbum();
+  }
+
   render(){
-    const allSongs = this.props.albums.song.map( (song, idx) => <SongItem key={song.id} song={song} /> );
+    const allSongs = this.props.album.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
     return(
       <>
         <SideBar />
         <div className='browse-body'>
-          <div></div>
-          <CoverItem album={}/>
+          <div><CoverItem album={this.props}/></div>
           <div>
             <ul>
               {allSongs}
@@ -31,9 +34,9 @@ class AlbumShow extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    albums: Object.values(state.entities.albums)
+    album: Object.values(state.entities.albums[ownProps.match.params.albumId])
   };
 };
 
@@ -43,5 +46,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(AlbumShow);
