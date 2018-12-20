@@ -1,6 +1,8 @@
 json.playlists do
   @playlists.each do |playlist|
-    json.partial! "api/playlists/playlist", playlist: playlist
+    json.set! playlist.id do
+      json.partial! "api/playlists/playlist", playlist: playlist
+    end
   end
 end
 
@@ -20,8 +22,10 @@ json.playlistSongs do
   end
 end
 
-# json.users do
-#   @playlists.each do |playlist|
-#     json.partial! 'api/users/user', user: playlist.user_id
-#   end
-# end
+json.users do
+  @playlists.each do |playlist|
+    json.set! playlist.user.id do
+      json.partial! 'api/users/user', user: playlist.user
+    end
+  end
+end

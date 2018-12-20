@@ -17,7 +17,6 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
-    debugger
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
 
     if (!this.props.playlist) {
@@ -32,7 +31,7 @@ class PlaylistShow extends React.Component {
             <div>
               <img src={this.props.playlist.cover_url} alt='it broke :('/>
               <div>{this.props.playlist.title}</div>
-              <div className='maker'>{this.props.user}</div>
+              <div className='maker'>{this.props.users[this.props.playlist.user_id].username}</div>
             </div>
             <div>
               <ul className='songs'>
@@ -48,15 +47,11 @@ class PlaylistShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const playlistId = Number(ownProps.match.params.playlistId);
   return {
-    user: state.entities.users[state.entities.playlists[playlistId].user_id],
     playlist: state.entities.playlists[playlistId],
-    songs: Object.values(state.entities.playlistSongs)
-      .filter( song => song.playlist_id == playlistId )
-      .map( song => state.entities.songs[song.song_id] )
-    // songs: playlistSongsSelector(state, playlistId)
+    users: state.entities.users,
+    songs: playlistSongsSelector(state, playlistId)
   };
 };
 

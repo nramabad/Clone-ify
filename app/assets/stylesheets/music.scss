@@ -90,6 +90,16 @@
   margin-bottom: 50px;
 }
 
+.dot-button {
+  width: 20px;
+  height: 20px;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/white-three-dot.png") no-repeat;
+  background-size: 12px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
+}
+
 .album-item div {
   font-size: 14px;
   margin: 10px 0px 10px 0px;

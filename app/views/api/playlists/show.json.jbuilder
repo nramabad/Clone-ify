@@ -13,9 +13,3 @@ json.playlistSongs do
     json.partial! 'api/playlist_songs/playlist_song', playlist_song: playlist_song
   end
 end
-
-json.albums do
-  @playlist.songs.each do |song|
-    json.partial! 'api/albums/album', album: song.album
-  end
-end

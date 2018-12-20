@@ -1,3 +1,4 @@
+
 json.extract! user, :id, :username, :email
 
 if user.avatar.attached?

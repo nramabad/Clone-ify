@@ -7,7 +7,6 @@ const playlistSongsReducer = (state = {}, action) => {
     case RECEIVE_ONE_PLAYLIST:
       return Object.assign({}, state, action.payload.playlistSongs)
     case RECEIVE_ALL_PLAYLISTS:
-      debugger
       return action.payload.playlistSongs;
     default:
       return state;

@@ -13,10 +13,13 @@ const SongItem = ({song}) =>(
             {song.artist_name} ∙ {song.album_title}
           </div>
         </div>
-
-
       </div>
-      <div>{Math.floor(song.duration/60)}:{song.duration % 60 < 10 ? `0${song.duration % 60}` : song.duration % 60}</div>
+      <div>
+        <div className='dot-button'></div>
+        <div>
+          {Math.floor(song.duration/60)}:{song.duration % 60 < 10 ? `0${song.duration % 60}` : song.duration % 60}
+        </div>
+      </div>
     </li>
 );
 

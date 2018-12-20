@@ -8,13 +8,21 @@ import { requestAllPlaylists } from '../../actions/music_actions'
 
 class PlaylistIndex extends React.Component {
 
+  componentDidMount() {
+    this.props.requestAllPlaylists();
+  }
+
   render(){
-    const allPlaylists = this.props.playlists.map( (item, idx) => <CoverItem key={item.id} item={item} users={this.props.users} /> );
+    const allPlaylists = this.props.playlists.map( (item, idx) => {
+      return(<CoverItem key={item.id} item={item} users={this.props.users} />)
+
+   });
     return(
       <>
         <SideBar />
         <div className='browse-body'>
           <Library />
+
           <ul className='albums'>
             {allPlaylists}
           </ul>
@@ -25,8 +33,9 @@ class PlaylistIndex extends React.Component {
 
 }
 
+//<div><button className="session-submit">NEW PLAYLIST</button></div>
+
 const mapStateToProps = state => {
-  // debugger;
   return {
     users: state.entities.users,
     playlists: Object.values(state.entities.playlists)

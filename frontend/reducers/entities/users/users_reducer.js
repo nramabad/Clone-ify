@@ -1,20 +1,15 @@
-import merge from 'lodash/merge';
+
 
 import { RECEIVE_CURRENT_USER } from '../../../actions/session_actions';
-
-// change below to playlist and stuff. also check if path is right
-
-// import { RECEIVE_REVIEW, RECEIVE_BENCH } from '../../../actions/bench_actions';
+import { RECEIVE_ALL_PLAYLISTS } from '../../../actions/music_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, { [action.currentUser.id]: action.currentUser });
-    // case RECEIVE_REVIEW: // change to whatever
-    //   return merge({}, state, { [action.author.id]: action.author });
-    // case RECEIVE_BENCH: // change to whatever
-    //   return merge({}, state, action.authors);
+      return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
+    case RECEIVE_ALL_PLAYLISTS:
+      return action.payload.users
     default:
       return state;
   }
