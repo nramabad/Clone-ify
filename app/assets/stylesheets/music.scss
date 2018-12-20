@@ -17,6 +17,8 @@
   font-size: 28px;
   color: white;
   font-weight: bold;
+  word-wrap: break-word;
+  width: 300px;
 }
 
 .songs {
@@ -117,6 +119,7 @@
   background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/white-three-dot.png") no-repeat;
   background-size: 12px;
   display: inline-block;
+  position: fixed;
   margin-top: 15px;
   padding: 5px;
 }
@@ -129,6 +132,7 @@
 .maker {
   opacity: .6;
   font-weight: normal;
+  word-wrap: break-word;
 }
 
 .right {
@@ -201,5 +205,6 @@
 .duration {
   margin-top: auto;
   margin-bottom: auto;
-  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-bottom: 10px;
 }

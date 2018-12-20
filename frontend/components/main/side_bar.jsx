@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
+import Player from './player';
 // import { logout } from '../../actions/session_actions';
 
 
@@ -40,17 +41,13 @@ class SideBar extends React.Component {
             <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
               <Link to="/browse/featured"><div>Search</div></Link>
-              <Link to="/browse/featured"><div className='selected'>Home</div></Link>
-              <Link to="/collection/playlists"><div>Your Library</div></Link>
+              <Link to="/browse/featured"><div>Home</div></Link>
+              <Link to="/collection/playlists"><div className='selected'>Your Library</div></Link>
             </div>
             {this.userLoginHelper(this.props.currentUser)}
           </nav>
 
-
-
-          <nav className='player'>
-            <img src={window.playButton} />
-          </nav>
+          <Player />
 
 
 

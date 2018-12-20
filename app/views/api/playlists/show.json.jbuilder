@@ -13,3 +13,9 @@ json.playlistSongs do
     json.partial! 'api/playlist_songs/playlist_song', playlist_song: playlist_song
   end
 end
+
+json.users do
+  json.set! @playlist.user.id do
+    json.partial! 'api/users/user', user: @playlist.user
+  end
+end

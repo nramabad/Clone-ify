@@ -8,6 +8,7 @@ class Api::PlaylistSongsController < ApplicationController
   def destroy
     @playlist_song = PlaylistSong.find(params[:id])
     @playlist_song.delete
+    render json: @playlist_song.id
   end
 
 end

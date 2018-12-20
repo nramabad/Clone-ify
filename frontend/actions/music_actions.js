@@ -7,6 +7,7 @@ export const RECEIVE_ONE_ALBUM = 'RECEIVE_ONE_ALBUM';
 export const RECEIVE_ONE_SONG = 'RECEIVE_ONE_SONG';
 export const RECEIVE_ONE_ARTIST = 'RECEIVE_ONE_ARTIST';
 export const RECEIVE_ONE_PLAYLIST = 'RECEIVE_ONE_PLAYLIST';
+export const REMOVE_ONE_PLAYLIST_SONG = 'REMOVE_ONE_PLAYLIST_SONG';
 export const REMOVE_ONE_PLAYLIST = 'REMOVE_ONE_PLAYLIST';
 export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 
@@ -44,6 +45,11 @@ export const receiveOnePlaylist = (payload) => ({
 export const receiveAllPlaylists = (payload) => ({
   type: RECEIVE_ALL_PLAYLISTS,
   payload
+});
+
+export const removeOnePlaylistSong = id => ({
+  type: REMOVE_ONE_PLAYLIST_SONG,
+  id
 });
 
 export const removeOnePlaylist = (playlist) => ({
@@ -111,9 +117,9 @@ export const addSongToPlaylist = (data) => (dispatch) => (
     .then( null, errors => dispatch(receivePlaylistErrors(errors.responseJSON)) )
 );
 
-export const removeSongFromPlaylist = (id, data) => (dispatch) => (
-  PlaylistApiUtil.removeSongFromPlaylist(id, data)
-    .then( (playlist) => dispatch(receiveOnePlaylist(playlist)),
+export const removeSongFromPlaylist = (id) => (dispatch) => (
+  PlaylistApiUtil.removeSongFromPlaylist(id)
+    .then( (id) => dispatch(removeOnePlaylistSong(id)),
             errors => dispatch(receivePlaylistErrors(errors.responseJSON)) )
 );
 

@@ -1,36 +1,61 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
+import { removeSongFromPlaylist } from '../../actions/music_actions'
+import { getPlaylistSongSelector } from '../../reducers/entities/selectors'
 
 
-const SongItem = ({song}) =>(
+class SongItem extends React.Component {
 
-    <li className='one-song'>
-      <div className='song-item'>
-        <div className="music-icon"></div>
-        <div className='left'>
-          {song.title}
-          <div>
-            {song.artist_name} ∙ {song.album_title}
+  constructor(props) {
+    super(props)
+  }
+  //
+
+  render () {
+    // debugger
+    return (
+      <li className='one-song'>
+        <div className='song-item'>
+          <div className="music-icon"></div>
+          <div className='left'>
+            {this.props.song.title}
+            <div>
+              {this.props.song.artist_name} ∙ {this.props.song.album_title}
+            </div>
           </div>
         </div>
-      </div>
-      <div className='right'>
-        <div>
-          <input id="check01" type="checkbox" name="dropdown"/>
-          <label for="check01"><div className='dot-button'></div></label>
-          <ul class="submenu">
-            <li><Link to="/browse/featured" >Play</Link></li>
-            <li><Link to="/browse/featured" >Remove from Playlist</Link></li>
-          </ul>
+        <div className='right'>
+          <div>
+            <input id="check01" type="checkbox" name="dropdown"/>
+            <label htmlFor="check01"><div className='dot-button'></div></label>
+            <ul className="submenu">
+              <li><Link to="/browse/featured" >Play</Link></li>
+              <li><Link to="/browse/featured" >Add to Playlist</Link></li>
+              <li><button onClick={() => this.props.removeSongFromPlaylist(this.props.playlistSong.id)}>Remove from Playlist</button></li>
+            </ul>
+          </div>
+          <div className='duration'>
+            {Math.floor(this.props.song.duration/60)}:{this.props.song.duration % 60 < 10 ? `0${this.props.song.duration % 60}` : this.props.song.duration % 60}
+          </div>
         </div>
-        <div className='duration'>
-          {Math.floor(song.duration/60)}:{song.duration % 60 < 10 ? `0${song.duration % 60}` : song.duration % 60}
-        </div>
-      </div>
-    </li>
+      </li>
+    );
+  }
+}
 
-);
+const mapStateToProps = (state, ownProps) => {
+  const playlistId = parseInt(ownProps.match.params.playlistId);
+  const songId = ownProps.song.id;
+  return ({
+    playlistSong: getPlaylistSongSelector(state, songId, playlistId)
 
+  });
+}
 
-export default SongItem;
+const mapDispatchToProps = dispatch => ({
+  removeSongFromPlaylist: (id) => dispatch(removeSongFromPlaylist(id))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SongItem));
+//onClick={this.props.removeSongFromPlaylist(this.props.song.id)}

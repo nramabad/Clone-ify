@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import SongItem from '../songs/song_item'
 import { playlistSongsSelector } from '../../reducers/entities/selectors'
-import { requestOnePlaylist } from '../../actions/music_actions'
+import { requestOnePlaylist, removeSongFromPlaylist } from '../../actions/music_actions'
 
 class PlaylistShow extends React.Component {
 
@@ -19,10 +19,10 @@ class PlaylistShow extends React.Component {
   render(){
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
 
-    if (!this.props.playlist) {
+    // debugger
+    if (!this.props.playlist || !this.props.users[this.props.playlist.user_id]) {
       return null;
     }
-
     return(
       <>
         <SideBar />
@@ -56,7 +56,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestOnePlaylist: (id) => dispatch(requestOnePlaylist(id))
+  requestOnePlaylist: (id) => dispatch(requestOnePlaylist(id)),
+  removeSongFromPlaylist: id => dispatch(removeSongFromPlaylist)
 });
 
 export default connect(

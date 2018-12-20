@@ -25,7 +25,8 @@ const App = () => (
 
       <ProtectedRoute path="/settings/account" component={Account} />
 
-      <Route path="/browse/featured" component={Featured} />
+      <Redirect from="/browse/featured" to="/collection/playlists" />
+      // <Route path="/browse/featured" component={Featured} />
       <Redirect from="/browse" to="/browse/featured" />
 
       <ProtectedRoute path="/collection/albums" component={AlbumIndex} />
