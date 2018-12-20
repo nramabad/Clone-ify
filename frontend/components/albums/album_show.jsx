@@ -29,12 +29,12 @@ class AlbumShow extends React.Component {
         <SideBar />
         <div className='browse-body'>
           <section>
-            <div>
+            <div className='album-content'>
               <img src={this.props.album.cover_url} alt='it broke :('/>
-              <div>{this.props.album.title}</div>
+              <div className='title'>{this.props.album.title}</div>
               <div className='maker'>{this.props.album.artist}</div>
             </div>
-            <div>
+            <div className='fit-songs'>
               <ul className='songs'>
                 {allSongs}
               </ul>

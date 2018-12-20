@@ -28,12 +28,12 @@ class PlaylistShow extends React.Component {
         <SideBar />
         <div className='browse-body'>
           <section>
-            <div>
+            <div className='album-content'>
               <img src={this.props.playlist.cover_url} alt='it broke :('/>
-              <div>{this.props.playlist.title}</div>
+              <div className='title'>{this.props.playlist.title}</div>
               <div className='maker'>{this.props.users[this.props.playlist.user_id].username}</div>
             </div>
-            <div>
+            <div className='fit-songs'>
               <ul className='songs'>
                 {allSongs}
               </ul>

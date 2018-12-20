@@ -33,9 +33,11 @@ class SongIndex extends React.Component {
         <SideBar />
         <div className='browse-body'>
           <Library />
-          <ul className='songs'>
-            {allSongs}
-          </ul>
+          <div className='fit-songs'>
+            <ul className='songs'>
+              {allSongs}
+            </ul>
+          </div>
         </div>
       </>
     );

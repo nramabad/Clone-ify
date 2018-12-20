@@ -24,7 +24,12 @@
 
 .browse-body section {
   // display: inline-block;
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  position: relative;
+  margin-top: 50px;
+  left: 200px;
 }
 
 .browse-body span {
@@ -34,6 +39,8 @@
 .browse-body span:hover {
   color: white;
 }
+
+
 
 .selected {
   color: white;
