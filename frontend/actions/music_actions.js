@@ -11,7 +11,7 @@ export const REMOVE_ONE_PLAYLIST_SONG = 'REMOVE_ONE_PLAYLIST_SONG';
 export const REMOVE_ONE_PLAYLIST = 'REMOVE_ONE_PLAYLIST';
 export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 
-import * as AlbumApiUtil from '../util/Album_util'
+import * as AlbumApiUtil from '../util/album_util'
 import * as ArtistApiUtil from '../util/artist_util'
 import * as PlaylistApiUtil from '../util/playlist_util'
 import * as SongApiUtil from '../util/song_util'
