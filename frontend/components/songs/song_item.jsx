@@ -63,7 +63,7 @@ class SongItem extends React.Component {
           <div>
             <div className='dot-button' onClick={this.props.openMenu || null}></div>
             <ul className={`submenu${"-"+(this.props.menuOpen || false) || ""}`}>
-              <li><button onClick={this.toggle} >Play</button></li>
+              <li><button onClick={this.handlePlay} >Play</button></li>
               <li><Link to="/browse/featured" >Add to Playlist</Link></li>
               <li><button onClick={() => this.props.removeSongFromPlaylist(this.props.playlistSong.id)}>Remove from Playlist</button></li>
             </ul>
