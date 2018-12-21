@@ -15,16 +15,16 @@ class Player extends React.Component {
   //   return { playStatus: false}
   // }
   componentDidMount() {
-    this.props.togglePlay();
+    // this.props.togglePlay();
   }
 
 
 
-  toggle() {
+  toggle(event) {
     let audio = document.getElementById('song-player');
     this.status ? audio.pause() : audio.play();
     this.status = !this.status
-    // this.props.togglePlay();
+
   }
 
   render() {

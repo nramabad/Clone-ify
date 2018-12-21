@@ -3,12 +3,31 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import { removeSongFromPlaylist } from '../../actions/music_actions'
 import { getPlaylistSongSelector } from '../../reducers/entities/selectors'
+import { togglePlay, setCurrentSong } from '../../actions/player_actions'
 
 
 class SongItem extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
+    this.toggle = this.toggle.bind(this);
+  }
+
+  // getInitialState() {
+  //   return { playStatus: false}
+  // }
+  componentDidMount() {
+  }
+
+
+
+  toggle() {
+    // this.props.togglePlay();
+    // this.props.setCurrentSong(this.props.song);
+    let audio = document.getElementById('song-player');
+    audio.setAttribute("src", this.props.song.audio_url)
+    this.status ? audio.pause() : audio.play();
+    this.status = !this.status
   }
 
   render () {
@@ -16,7 +35,7 @@ class SongItem extends React.Component {
     return (
       <li className='one-song'>
         <div className='song-item'>
-          <div className="music-icon"></div>
+          <button onClick={this.toggle} className="music-icon" />
           <div className='left'>
             {this.props.song.title}
             <div>
@@ -28,7 +47,7 @@ class SongItem extends React.Component {
           <div>
             <div className='dot-button' onClick={this.props.openMenu || null}></div>
             <ul className={`submenu${"-"+(this.props.menuOpen || false) || ""}`}>
-              <li><Link to="/browse/featured" >Play</Link></li>
+              <li><button onClick={this.toggle} >Play</button></li>
               <li><Link to="/browse/featured" >Add to Playlist</Link></li>
               <li><button onClick={() => this.props.removeSongFromPlaylist(this.props.playlistSong.id)}>Remove from Playlist</button></li>
             </ul>
@@ -52,6 +71,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  togglePlay: () => dispatch(togglePlay()),
+  setCurrentSong: song => dispatch(setCurrentSong(song)),
   removeSongFromPlaylist: (id) => dispatch(removeSongFromPlaylist(id))
 });
 
