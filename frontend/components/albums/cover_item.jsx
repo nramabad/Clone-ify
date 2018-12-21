@@ -7,7 +7,7 @@ const CoverItem = ({item}) => (
       <li className='album-item'>
         <Link to={`/album/${item.id}`}>
           <img src={item.cover_url} alt='it broke :('/>
-          <div>{item.title}</div>
+          <div className='subtitle'>{item.title}</div>
           <div className='maker'>{item.artist}</div>
         </Link>
       </li>

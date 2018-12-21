@@ -82,6 +82,11 @@
   padding: 5px;
 }
 
+.subtitle {
+  word-wrap: break-word;
+  width: 200px;
+}
+
 .albums {
   left: 350px;
   position: relative;
@@ -104,7 +109,7 @@
 }
 
 .album-item img {
-  width: 220px;
+  width: 200px;
   padding-bottom: 5px
 }
 
