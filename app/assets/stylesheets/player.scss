@@ -184,6 +184,8 @@
 }
 
 .center-player {
+  display: flex;
+  flex-direction: row;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
@@ -197,9 +199,9 @@
   background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play_button.png') no-repeat;
   background-size: contain;
   display: block;
-  width: 30px;
-  height: 30px;
-
+  margin: -5px 15px 0px 15px;
+  width: 35px;
+  height: 35px;
   z-index: 7
 }
 
@@ -207,8 +209,9 @@
   background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play_button_white.png') no-repeat;
   background-size: contain;
   display: block;
-  width: 30px;
-  height: 30px;
+  margin: -6.125px 13.75px 0px 13.75px;
+  width: 37.5px;
+  height: 37.5px;
 
   z-index: 7
 }
@@ -253,4 +256,91 @@
   font-family: 'proxima-nova', sans-serif;
   font-weight: bold;
   word-wrap: break-word;
+}
+
+.shuffle {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/shuffle_grey.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+
+  z-index: 7
+}
+
+.shuffle:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/shuffle_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+
+  z-index: 7
+}
+
+.prev-song {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/prev_song_grey.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+  z-index: 7
+}
+
+.prev-song:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/prev_song_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+
+  z-index: 7
+}
+
+.next-song {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/next_song_grey.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+
+  z-index: 7
+}
+
+.next-song:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/next_song_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 5px 15px 0px 15px;
+
+  z-index: 7
+}
+
+.repeat {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/repeat_grey.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 2.5px 12.5px 0px 15px;
+
+  z-index: 7
+}
+
+.repeat:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/repeat_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 2.5px 12.5px 0px 15px;
+
+  z-index: 7
 }

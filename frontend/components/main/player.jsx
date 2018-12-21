@@ -58,7 +58,11 @@ class Player extends React.Component {
 
         <div className='center-player'>
           <audio id='song-player' src={this.props.currentSong.audio_url} autoPlay/>
+          <button className='shuffle' />
+          <button className='prev-song' />
           <button onClick={this.handleToggle} className='play-btn'/>
+          <button className='next-song' />
+          <button className='repeat' />
         </div>
 
         <div className='volume-control'></div>
