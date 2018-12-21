@@ -16,10 +16,10 @@ class SongItem extends React.Component {
 
 
   handlePlay() {
-    this.props.setCurrentSong(this.props.song);
-    this.props.setQueue(this.props.queue);
-    if (!this.props.isPlaying) {
-      this.props.togglePlay();
+    this.props.togglePlay();
+    if (!(this.props.song.id === this.props.currentSong.id && this.props.isPlaying)) {
+      this.props.setCurrentSong(this.props.song);
+      this.props.setQueue(this.props.queue);
     }
   }
 
@@ -29,6 +29,14 @@ class SongItem extends React.Component {
   //   return { playStatus: false}
   // }
   componentDidMount() {
+  }
+
+
+  showAudioButton() {
+    if (this.props.song.id === this.props.currentSong.id && this.props.isPlaying) {
+      return (<button onClick={this.handlePlay} className='paused-song' />)
+    }
+    return (<button onClick={this.handlePlay} className="music-icon" />)
   }
 
 
@@ -51,7 +59,7 @@ class SongItem extends React.Component {
     return (
       <li className='one-song'>
         <div className='song-item'>
-          <button onClick={this.handlePlay} className="music-icon" />
+          {this.showAudioButton()}
           <div className='left'>
             {this.props.song.title}
             <div>
@@ -82,7 +90,8 @@ const mapStateToProps = (state, ownProps) => {
   const songId = ownProps.song.id;
   return ({
     playlistSong: getPlaylistSongSelector(state, songId, playlistId),
-    isPlaying: state.ui.togglePlay
+    isPlaying: state.ui.togglePlay,
+    currentSong: state.ui.currentSong
   });
 }
 

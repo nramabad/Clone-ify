@@ -175,6 +175,8 @@
   height: 90px;
   bottom: 0;
   color: white;
+  display: flex;
+  flex-direction: row;
   position: fixed;
   overflow: hidden;
   background-color: #282828;
@@ -182,7 +184,9 @@
 }
 
 .center-player {
-
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }
 
 .play-btn {
@@ -191,8 +195,50 @@
   display: block;
   width: 30px;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+
   z-index: 7
 }
+
+.play-btn:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play_button_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  z-index: 7
+}
+
+.player-img img {
+  width: 55px;
+  height: 55px;
+  padding: 18px;
+
+}
+
+.player-img-empty {
+  width: 55px;
+  height: 55px;
+  padding: 18px;
+  // background-color: #161313;
+}
+
+// .artist-info {
+//   padding: 60px 35px 35px;
+// }
+
+// .artist-name,
+// .artist-song-name {
+//   margin: 0;
+// }
+//
+// .artist-name {
+//   margin-bottom: 5px;
+//
+//   font-size: 12px;
+// }
+//
+// .artist-song-name {
+//   font-size: 12px;
+//   font-weight: bold;
+// }

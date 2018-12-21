@@ -28,11 +28,38 @@ class Player extends React.Component {
 
   render() {
     // debugger
+    let img = (
+                <div className='player-img-empty'>
+                  <img></img>
+                </div>
+    );
+    if (Object.keys(this.props.currentSong).length != 0) {
+      img = (
+              <div className='player-img'>
+                <Link to={`/albums/${this.props.currentSong.album_id}`}>
+                  <img src={this.props.currentSong.image_url}></img>
+                </Link>
+              </div>
+            );
+    }
+
     return (
       <nav className='player'>
+
+        {img}
+
+        <div className="artist-info">
+            <Link to={`/albums/${this.props.currentSong.album_id}`}>
+              <h2 className="artist-song-name">{this.props.currentSong.name}</h2>
+            </Link>
+            <Link to={`/artists/${this.props.currentSong.artist_id}`}>
+              <h3 className="artist-name">{this.props.currentSong.artist_name}</h3>
+            </Link>
+        </div>
+
         <div className='center-player'>
           <audio id='song-player' src={this.props.currentSong.audio_url} autoPlay/>
-          <button onClick={this.handleToggle} className='play-btn' />
+          <button onClick={this.handleToggle} className='play-btn'/>
         </div>
       </nav>
     );

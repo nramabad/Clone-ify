@@ -72,6 +72,16 @@
   padding: 5px;
 }
 
+.paused-song {
+  width: 20px;
+  height: 8px;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/pause_grey.png") no-repeat;
+  background-size: 8px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px;
+}
+
 .one-song:hover .music-icon, .one-song.hover .music-icon {
   width: 20px;
   height: 20px;

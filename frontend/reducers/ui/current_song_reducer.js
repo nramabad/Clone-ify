@@ -10,7 +10,7 @@ const currentSongReducer = (state={}, action) => {
         audio.setAttribute('src', action.song.audio_url);
       // audio.play();
       } else  {
-        audio.paused ? audio.play() : audio.pause();
+        // audio.paused ? audio.play() : audio.pause();
       };
       return action.song
     default:
