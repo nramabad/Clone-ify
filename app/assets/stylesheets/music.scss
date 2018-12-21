@@ -88,7 +88,7 @@
 }
 
 .albums {
-  left: 350px;
+  left: 230px;
   position: relative;
 
   margin-right: 120px;
@@ -104,7 +104,10 @@
   z-index: 5;
   position: relative;
   width: 70%;
-  margin: 20px 0px 20px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
