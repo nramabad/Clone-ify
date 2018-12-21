@@ -10,8 +10,7 @@ class Player extends React.Component {
 
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
-    this.status = this.props.isPlaying;
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   // getInitialState() {
@@ -23,11 +22,8 @@ class Player extends React.Component {
 
 
 
-  toggle(event) {
-    let audio = document.getElementById('song-player');
-    this.status ? audio.pause() : audio.play();
-    this.status = !this.status
-
+  handleToggle() {
+    this.props.togglePlay();
   }
 
   render() {
@@ -35,8 +31,8 @@ class Player extends React.Component {
     return (
       <nav className='player'>
         <div className='center-player'>
-          <audio id='song-player' src={this.props.currentSong.audio_url}/>
-          <button onClick={this.toggle} className='play-btn' />
+          <audio id='song-player' src={this.props.currentSong.audio_url} autoPlay/>
+          <button onClick={this.handleToggle} className='play-btn' />
         </div>
       </nav>
     );

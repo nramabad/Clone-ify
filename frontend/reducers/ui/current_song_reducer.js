@@ -5,8 +5,13 @@ const currentSongReducer = (state={}, action) => {
   switch(action.type) {
     case SET_CURRENT_SONG:
       const audio = document.getElementById("song-player");
-      audio.setAttribute('src', action.song.audio_url);
-      audio.play();
+      // audio.pause();
+      if (audio.getAttribute('src') != action.song.audio_url) {
+        audio.setAttribute('src', action.song.audio_url);
+      // audio.play();
+      } else  {
+        audio.paused ? audio.play() : audio.pause();
+      };
       return action.song
     default:
       return state;
