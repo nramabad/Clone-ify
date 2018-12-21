@@ -20,9 +20,11 @@ class AlbumIndex extends React.Component {
         <SideBar />
         <div className='browse-body'>
           <Library />
-          <ul className='albums'>
-            {allAlbums}
-          </ul>
+          <div className='scoot'>
+            <ul className='albums'>
+              {allAlbums}
+            </ul>
+          </div>
         </div>
       </>
     );

@@ -18,8 +18,12 @@ class SongItem extends React.Component {
   handlePlay() {
     this.props.setCurrentSong(this.props.song);
     this.props.setQueue(this.props.queue);
-    this.props.togglePlay();
+    if (!this.props.isPlaying) {
+      this.props.togglePlay();
+    }
   }
+
+
 
   // getInitialState() {
   //   return { playStatus: false}
@@ -77,8 +81,8 @@ const mapStateToProps = (state, ownProps) => {
   const playlistId = parseInt(ownProps.match.params.playlistId);
   const songId = ownProps.song.id;
   return ({
-    playlistSong: getPlaylistSongSelector(state, songId, playlistId)
-
+    playlistSong: getPlaylistSongSelector(state, songId, playlistId),
+    isPlaying: state.ui.togglePlay
   });
 }
 

@@ -22,10 +22,11 @@ class PlaylistIndex extends React.Component {
         <SideBar />
         <div className='browse-body'>
           <Library />
-
-          <ul className='albums'>
-            {allPlaylists}
-          </ul>
+          <div className='scoot'>
+            <ul className='albums'>
+              {allPlaylists}
+            </ul>
+          </div>
         </div>
       </>
     );
