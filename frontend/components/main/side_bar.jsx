@@ -47,7 +47,6 @@ class SideBar extends React.Component {
             {this.userLoginHelper(this.props.currentUser)}
           </nav>
 
-          <Player />
 
 
 
@@ -62,7 +61,7 @@ class SideBar extends React.Component {
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
-    currentUser: users[session.id]
+    currentUser: users[session.id],
   };
 };
 

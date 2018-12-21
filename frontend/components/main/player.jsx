@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import { togglePlay, setCurrentSong } from '../../actions/player_actions'
 
+
+
+
 class Player extends React.Component {
 
   constructor(props) {
@@ -28,6 +31,7 @@ class Player extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <nav className='player'>
         <div className='center-player'>

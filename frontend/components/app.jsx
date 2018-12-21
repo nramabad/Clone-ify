@@ -13,9 +13,10 @@ import ArtistIndex from './artists/artist_index';
 import PlaylistIndex from './playlists/playlist_index';
 import SongIndex from './songs/song_index'
 import AlbumIndex from './albums/album_index'
-import Account from './main/account_menu.jsx';
+import Account from './main/account_menu';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/sign_up_container'
+import Player from './main/player'
 
 const App = () => (
   <div>
@@ -44,6 +45,7 @@ const App = () => (
       <Redirect from="/" to="/" />
     </Switch>
 
+    <Route path="/(collection|browse|settings|album|playlist)/" component={Player} />
   </div>
 );
 

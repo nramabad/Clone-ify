@@ -3,14 +3,22 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import { removeSongFromPlaylist } from '../../actions/music_actions'
 import { getPlaylistSongSelector } from '../../reducers/entities/selectors'
-import { togglePlay, setCurrentSong } from '../../actions/player_actions'
+import { togglePlay, setCurrentSong, setQueue } from '../../actions/player_actions'
 
 
 class SongItem extends React.Component {
 
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
+    // this.toggle = this.toggle.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+  }
+
+
+  handlePlay() {
+    this.props.setCurrentSong(this.props.song);
+    this.props.setQueue(this.props.queue);
+    this.props.togglePlay();
   }
 
   // getInitialState() {
@@ -21,21 +29,25 @@ class SongItem extends React.Component {
 
 
 
-  toggle() {
-    // this.props.togglePlay();
-    // this.props.setCurrentSong(this.props.song);
-    let audio = document.getElementById('song-player');
-    audio.setAttribute("src", this.props.song.audio_url)
-    this.status ? audio.pause() : audio.play();
-    this.status = !this.status
-  }
+  // toggle() {
+  //   // this.props.togglePlay();
+  //   // this.props.setCurrentSong(this.props.song);
+  //   let audio = document.getElementById('song-player');
+  //   audio.setAttribute("src", this.props.song.audio_url)
+  //   this.status ? audio.pause() : audio.play();
+  //   this.status = !this.status
+  // }
 
   render () {
+
+    if (!this.props.song) {
+      return null;
+    }
     // debugger
     return (
       <li className='one-song'>
         <div className='song-item'>
-          <button onClick={this.toggle} className="music-icon" />
+          <button onClick={this.handlePlay} className="music-icon" />
           <div className='left'>
             {this.props.song.title}
             <div>
@@ -73,6 +85,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   togglePlay: () => dispatch(togglePlay()),
   setCurrentSong: song => dispatch(setCurrentSong(song)),
+  setQueue: (queue) => (dispatch(setQueue(queue))),
   removeSongFromPlaylist: (id) => dispatch(removeSongFromPlaylist(id))
 });
 
