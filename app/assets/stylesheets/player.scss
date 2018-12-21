@@ -189,6 +189,10 @@
   margin-top: 30px;
 }
 
+.volume-control {
+  width: 290px;
+  margin: 25px;
+}
 .play-btn {
   background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play_button.png') no-repeat;
   background-size: contain;
@@ -223,22 +227,30 @@
   // background-color: #161313;
 }
 
-// .artist-info {
-//   padding: 60px 35px 35px;
-// }
+.artist-info {
+  padding: 25px;
+  width: 200px
+}
 
-// .artist-name,
-// .artist-song-name {
-//   margin: 0;
-// }
-//
-// .artist-name {
-//   margin-bottom: 5px;
-//
-//   font-size: 12px;
-// }
-//
-// .artist-song-name {
-//   font-size: 12px;
-//   font-weight: bold;
-// }
+.artist-name,
+.artist-song-name {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.artist-name {
+  margin: 0px 15px 5px -15px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: grey;
+  word-wrap: break-word;
+}
+
+.artist-song-name {
+  margin: 2px 15px 5px -15px;
+  font-size: 15px;
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: bold;
+  word-wrap: break-word;
+}

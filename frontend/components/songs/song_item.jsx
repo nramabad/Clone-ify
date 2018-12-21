@@ -34,7 +34,7 @@ class SongItem extends React.Component {
 
   showAudioButton() {
     if (this.props.song.id === this.props.currentSong.id && this.props.isPlaying) {
-      return (<button onClick={this.handlePlay} className='paused-song' />)
+      return (<button onClick={this.handlePlay} className='played-song' />)
     }
     return (<button onClick={this.handlePlay} className="music-icon" />)
   }

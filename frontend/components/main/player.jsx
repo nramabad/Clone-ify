@@ -42,7 +42,6 @@ class Player extends React.Component {
               </div>
             );
     }
-
     return (
       <nav className='player'>
 
@@ -50,7 +49,7 @@ class Player extends React.Component {
 
         <div className="artist-info">
             <Link to={`/albums/${this.props.currentSong.album_id}`}>
-              <h2 className="artist-song-name">{this.props.currentSong.name}</h2>
+              <h2 className="artist-song-name">{this.props.currentSong.title}</h2>
             </Link>
             <Link to={`/artists/${this.props.currentSong.artist_id}`}>
               <h3 className="artist-name">{this.props.currentSong.artist_name}</h3>
@@ -61,6 +60,8 @@ class Player extends React.Component {
           <audio id='song-player' src={this.props.currentSong.audio_url} autoPlay/>
           <button onClick={this.handleToggle} className='play-btn'/>
         </div>
+
+        <div className='volume-control'></div>
       </nav>
     );
   }

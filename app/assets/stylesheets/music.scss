@@ -72,13 +72,23 @@
   padding: 5px;
 }
 
-.paused-song {
+.played-song {
   width: 20px;
   height: 8px;
-  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/pause_grey.png") no-repeat;
-  background-size: 8px;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/volume_grey.png") no-repeat;
+  background-size: contain;
   display: inline-block;
-  margin-top: 15px;
+  margin: 15px 2px 0px -2px;
+  padding: 5px;
+}
+
+.one-song:hover .played-song, .one-song.hover .played-song {
+  width: 20px;
+  height: 6px;
+  background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/pause_grey.png") no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin: 15px -2px 0px 2px;
   padding: 5px;
 }
 
