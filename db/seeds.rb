@@ -16,6 +16,9 @@ Album.delete_all
 user1 = User.create(username: "snowball", email: "snowball@snowball.cute", password: "snowball")
 a = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
 user1.avatar.attach(io: a, filename: 'snowball.jpg')
+b = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/users/snowball.jpg')
+user2 = User.create(username: "snoop dogg", email: "snoop@lion.rasta", password: "snoopy")
+user2.avatar.attach(io: b, filename: 'snowball.jpg')
 
 
 artist1 = Artist.create(name: 'Asthmatic Astronaut', bio: "The wheezy space man")
