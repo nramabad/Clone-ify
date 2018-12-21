@@ -8,8 +8,9 @@ import configureStore from './store/store.js'
 // import {fetchAllArtists} from './util/artist_util'
 import {fetchAllPlaylists} from './util/playlist_util'
 // import {fetchAllSongs} from './util/song_util'
-import {requestOneAlbum, requestAllPlaylists} from './actions/music_actions'
-import {requestAllAlbums} from './actions/music_actions'
+import {setCurrentSong, togglePlay} from './actions/player_actions'
+// import {requestOneAlbum, requestAllPlaylists} from './actions/music_actions'
+import {requestAllSongs} from './actions/music_actions'
 // import {logout} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // window.fetchAllAlbums = fetchAllAlbums
   // window.fetchAllArtists = fetchAllArtists
-  window.fetchAllPlaylists = fetchAllPlaylists
-  window.requestOneAlbum = requestOneAlbum
-  // window.requestAllSongs = requestAllSongs
-  window.requestAllPlaylists = requestAllPlaylists
+  // window.fetchAllPlaylists = fetchAllPlaylists
+  // window.requestOneAlbum = requestOneAlbum
+  window.requestAllSongs = requestAllSongs
+  window.setCurrentSong = setCurrentSong
+  window.togglePlay = togglePlay
+  // window.requestAllPlaylists = requestAllPlaylists
   // window.login = login;
   // window.loginDemo = loginDemo;
   // window.signup = signup;

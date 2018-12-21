@@ -1,4 +1,4 @@
-import { TOGGLE_PLAY } from '../../../actions/player_actions';
+import { TOGGLE_PLAY } from '../../actions/player_actions';
 
 const togglePlayReducer = (state=false, action) => {
   Object.freeze(state);

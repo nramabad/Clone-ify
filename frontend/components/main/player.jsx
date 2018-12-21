@@ -1,31 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
+import { togglePlay, setCurrentSong } from '../../actions/player_actions'
 
 class Player extends React.Component {
 
-  getInitialState() {
-    return { playStatus: false, currentTime: 0 }
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.status = this.props.isPlaying;
+  }
+
+  // getInitialState() {
+  //   return { playStatus: false}
+  // }
+  componentDidMount() {
+    this.props.togglePlay();
   }
 
 
 
   toggle() {
-    let status = this.state.playStatus;
-    let audio = document.getElementById('audio');
-    if(status === 'play') {
-      status = 'pause'; audio.play();
-    } else {
-      status = 'play'; audio.pause();
-    }
-    this.setState({ playStatus: status });
+    let audio = document.getElementById('song-player');
+    this.status ? audio.pause() : audio.play();
+    this.status = !this.status
+    // this.props.togglePlay();
   }
 
   render() {
     return (
       <nav className='player'>
         <div className='center-player'>
-          <button className='play-btn' />
+          <audio id='song-player' src={this.props.currentSong.audio_url}/>
+          <button onClick={this.toggle} className='play-btn' />
         </div>
       </nav>
     );
@@ -40,15 +47,19 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-
+  togglePlay: () => dispatch(togglePlay()),
 });
 
-export default withRouter(connect(
-  null,
+export default connect(
+  mapStateToProps,
   mapDispatchToProps
-)(Player));
+)(Player);
 
 //<Scrubber /><Controls />
 // <audio><source src={this.props.track.source} /></audio>
 
-//
+//        current: 0,
+        // progress: 0,
+        // random: false,
+        // repeat: false,
+        // mute: false,

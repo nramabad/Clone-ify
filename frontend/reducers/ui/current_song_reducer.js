@@ -1,4 +1,4 @@
-import { SET_CURRENT_SONG } from '../../../actions/player_actions';
+import { SET_CURRENT_SONG } from '../../actions/player_actions';
 
 const currentSongReducer = (state={}, action) => {
   Object.freeze(state);
