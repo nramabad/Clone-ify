@@ -10,7 +10,6 @@ class SongItem extends React.Component {
   constructor(props) {
     super(props)
   }
-  //
 
   render () {
     // debugger
@@ -27,9 +26,8 @@ class SongItem extends React.Component {
         </div>
         <div className='right'>
           <div>
-            <input id="check01" type="checkbox" name="dropdown"/>
-            <label htmlFor="check01"><div className='dot-button'></div></label>
-            <ul className="submenu">
+            <div className='dot-button' onClick={this.props.openMenu || null}></div>
+            <ul className={`submenu${"-"+(this.props.menuOpen || false) || ""}`}>
               <li><Link to="/browse/featured" >Play</Link></li>
               <li><Link to="/browse/featured" >Add to Playlist</Link></li>
               <li><button onClick={() => this.props.removeSongFromPlaylist(this.props.playlistSong.id)}>Remove from Playlist</button></li>

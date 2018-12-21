@@ -9,15 +9,35 @@ import { requestOnePlaylist, removeSongFromPlaylist } from '../../actions/music_
 class PlaylistShow extends React.Component {
 
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      openMenu: null
+    }
+    window.addEventListener('click', e => {
+      if (e.target.className === "dot-button") {
+        console.log("do nothing here")
+      } else {
+        this.setState({ openMenu: null });
+      }
+    });
+    this.click = this.click.bind(this);
   }
 
   componentDidMount() {
     this.props.requestOnePlaylist(this.props.match.params.playlistId);
   }
 
+  click(id) {
+    this.setState({ openMenu: id })
+  }
   render(){
-    const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
+    const allSongs = this.props.songs.map( (song, idx) =>
+      <SongItem
+        key={song.id}
+        song={song}
+        menuOpen={this.state.openMenu == song.id}
+        openMenu={() => this.click(song.id)}
+      /> );
 
     // debugger
     if (!this.props.playlist || !this.props.users[this.props.playlist.user_id]) {

@@ -8,7 +8,9 @@ class Player extends React.Component {
     return { playStatus: false, currentTime: 0 }
   }
 
-  togglePlay() {
+
+
+  toggle() {
     let status = this.state.playStatus;
     let audio = document.getElementById('audio');
     if(status === 'play') {
@@ -22,8 +24,9 @@ class Player extends React.Component {
   render() {
     return (
       <nav className='player'>
-        <Link to="/browse/featured"><img src={window.playButton} /></Link>
-        
+        <div className='center-player'>
+          <button className='play-btn' />
+        </div>
       </nav>
     );
   }

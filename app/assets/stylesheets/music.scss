@@ -9,7 +9,7 @@
 }
 
 .fit-songs {
-  width: 73%;
+  width: 100%;
 }
 
 .title {
@@ -47,8 +47,8 @@
   text-align: left;
   display: flex;
   font-family: 'proxima-nova', sans-serif;
-  font-style: normal;
-  font-size: 17px;
+  font-style: bold;
+  font-size: 22px;
   color: white;
   z-index: 0;
   position: relative;
@@ -56,6 +56,7 @@
 }
 
 .left div{
+  font-size: 18px;
   padding-top: 10px;
   color: #fff;
   opacity: .6;
@@ -114,10 +115,10 @@
 
 .dot-button {
   opacity: 0;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background: url("https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/white-three-dot.png") no-repeat;
-  background-size: 12px;
+  background-size: 18px;
   display: inline-block;
   position: fixed;
   margin-top: 15px;
@@ -135,58 +136,97 @@
   word-wrap: break-word;
 }
 
-.right {
-  display: flex;
-  position: relative;
-}
-
-.right label {
-  position:relative;
-  display:block;
-  padding:0 18px 0 12px;
-  line-height:3em;
-
-  cursor:pointer;
-}
 
 .one-song:hover .dot-button, .one-song.hover .dot-button {
   opacity: 1;
 }
 
-.right input:checked ~ label:after{
-  border-top:0 solid rgba(255,255,255,.5);
-  border-bottom:4px solid rgba(255,255,255,.5);
-  transition:border-top .1s, border-bottom .1s .1s;
+// .right {
+//   display: flex;
+//   position: relative;
+// }
+//
+// .right label {
+//   position:relative;
+//   display:block;
+//   padding:0 18px 0 12px;
+//   line-height:3em;
+//
+//   cursor:pointer;
+// }
+//
+// .right input:checked ~ label:after{
+//   border-top:0 solid rgba(255,255,255,.5);
+//   border-bottom:4px solid rgba(255,255,255,.5);
+//   transition:border-top .1s, border-bottom .1s .1s;
+// }
+//
+// /*hide the inputs*/
+// .right input{display:none}
+//
+// /*show the second levele menu of the selected voice*/
+// .right input:checked ~ ul.submenu{
+//   max-height:300px;
+//   // transition:max-height 0.1s ease-in;
+// }
+//
+// /*style for the second level menu*/
+// .right ul.submenu{
+//   font-size: 15px;
+//   max-height: 0;
+//   padding: 0px;
+//   overflow: hidden;
+//   list-style-type: none;
+//   background: #363636;
+//   box-shadow: 0 0 1px rgba(0,0,0,.3);
+//   // transition: max-height 0.1s ease-out;
+//   position: absolute;
+//   right: 75px;
+//   top: 25px;
+//   min-width: 100%;
+//   border-radius: 5px;
+//   z-index: 5;
+// }
+//
+// .right ul.submenu li a{
+//   display:block;
+//   margin: 5px 0px 5px 0px;
+//   padding: 10px 15px 10px 15px;
+//   color:#ddd;
+//   text-decoration:none;
+//   // box-shadow:0 -1px rgba(0,0,0,.5) inset;
+//   // transition: background .1s;
+//   white-space:nowrap;
+// }
+//
+// .right ul.submenu li a:hover{
+//   background: #444444;
+//   color: white
+// }
+.right {
+  display: flex;
+  position: relative;
+}
+.submenu-false {
+  display: none;
 }
 
-/*hide the inputs*/
-.right input{display:none}
-
-/*show the second levele menu of the selected voice*/
-.right input:checked ~ ul.submenu{
-  max-height:300px;
-  // transition:max-height 0.1s ease-in;
-}
-
-/*style for the second level menu*/
-.right ul.submenu{
+.submenu-true {
+  display: flex;
+  flex-direction: column;
   font-size: 15px;
-  max-height: 0;
-  padding: 0px;
   overflow: hidden;
   list-style-type: none;
   background: #363636;
   box-shadow: 0 0 1px rgba(0,0,0,.3);
-  // transition: max-height 0.1s ease-out;
   position: absolute;
-  right: 75px;
-  top: 25px;
-  min-width: 100%;
+  top:25px;
+  right:90px;
   border-radius: 5px;
   z-index: 5;
 }
 
-.right ul.submenu li a{
+.right ul.submenu-true li a{
   display:block;
   margin: 5px 0px 5px 0px;
   padding: 10px 15px 10px 15px;
@@ -197,14 +237,26 @@
   white-space:nowrap;
 }
 
-.right ul.submenu li a:hover{
+.right ul.submenu-true li button{
+  display:block;
+  margin: 5px 0px 5px 0px;
+  padding: 10px 15px 10px 15px;
+  color:#ddd;
+  text-decoration:none;
+  // box-shadow:0 -1px rgba(0,0,0,.5) inset;
+  // transition: background .1s;
+  white-space:nowrap;
+}
+
+.right ul.submenu-true li a:hover{
   background: #444444;
   color: white
 }
 
 .duration {
+  font-size: 22px;
+  padding-left: 60px;
   margin-top: auto;
   margin-bottom: auto;
-  padding-left: 30px;
   padding-bottom: 10px;
 }

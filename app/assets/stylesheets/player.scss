@@ -1,0 +1,26 @@
+.player {
+  width: 100%;
+  height: 90px;
+  bottom: 0;
+  color: white;
+  position: fixed;
+  overflow: hidden;
+  background-color: #282828;
+  z-index: 4;
+}
+
+.center-player {
+
+}
+
+.play-btn {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/play_button.png') no-repeat;
+  background-size: contain;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  z-index: 7
+}
