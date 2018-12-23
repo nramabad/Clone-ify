@@ -216,6 +216,27 @@
   z-index: 7
 }
 
+.pause-btn {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/pause_button_grey.png') no-repeat;
+  background-size: contain;
+  display: block;
+  margin: -12.5px 7.5px 0px 7.5px;
+  width: 50px;
+  height: 50px;
+  z-index: 7
+}
+
+.pause-btn:hover {
+  background: url('https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/pause_button_white.png') no-repeat;
+  background-size: contain;
+  display: block;
+  margin: -13.75px 6.25px 0px 6.25px;
+  width: 52.5px;
+  height: 52.5px;
+
+  z-index: 7
+}
+
 .player-img img {
   width: 55px;
   height: 55px;

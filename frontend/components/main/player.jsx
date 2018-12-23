@@ -19,7 +19,9 @@ class Player extends React.Component {
 
 
   handleToggle() {
-    this.props.togglePlay();
+    if (Object.values(this.props.currentSong).length !== 0) {
+          this.props.togglePlay();
+    }
   }
 
 
