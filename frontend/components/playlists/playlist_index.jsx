@@ -5,6 +5,7 @@ import SideBar from '../main/side_bar';
 import Library from '../main/library';
 import CoverItem from './cover_item'
 import { requestAllPlaylists } from '../../actions/music_actions'
+import Modal from '../main/modal';
 
 class PlaylistIndex extends React.Component {
 

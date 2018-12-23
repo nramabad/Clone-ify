@@ -30,7 +30,7 @@ class AlbumShow extends React.Component {
         <div className='browse-body'>
           <section>
             <div className='album-content'>
-              <img src={this.props.album.cover_url} alt='it broke :('/>
+              <img src={this.props.album.cover_url || 'https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/default_cover.jpg'} alt='it broke :('/>
               <div className='title'>{this.props.album.title}</div>
               <div className='maker'>{this.props.album.artist}</div>
             </div>

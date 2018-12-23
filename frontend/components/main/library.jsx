@@ -1,20 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Route, withRouter } from 'react-router-dom';
+import { NavLink, Link, Route, withRouter } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class Library extends React.Component {
 
   render(){
     return(
       <>
-        <header>
-          <Link to="/collection/playlists"><span className='selected'> PLAYLIST </span></Link>
-          <Link to="/collection/playlists"><span> MADE FOR YOU </span></Link>
-          <Link to="/collection/tracks"><span> SONGS </span></Link>
-          <Link to="/collection/albums"><span> ALBUMS </span></Link>
-          <Link to="/collection/artists"><span> ARTISTS </span></Link>
-          <Link to="/collection/playlists"><span> PODCASTS </span></Link>
-        </header>
+        <div className='top-bar'>
+          <header>
+            <Link to="/collection/playlists"><span className='selected'> PLAYLIST </span></Link>
+            <Link to="/collection/playlists"><span> MADE FOR YOU </span></Link>
+            <Link to="/collection/tracks"><span> SONGS </span></Link>
+            <Link to="/collection/albums"><span> ALBUMS </span></Link>
+            <Link to="/collection/artists"><span> ARTISTS </span></Link>
+            <Link to="/collection/playlists"><span> PODCASTS </span></Link>
+          </header>
+          <button className="session-submit" onClick={() => this.props.openModal('new_playlist')}>NEW PLAYLIST</button>
+        </div>
       </>
     );
   }
@@ -28,9 +32,10 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default withRouter(connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Library));

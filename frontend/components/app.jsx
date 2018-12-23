@@ -17,10 +17,12 @@ import Account from './main/account_menu';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/sign_up_container'
 import Player from './main/player'
+// import GeneralModal from './main/general_modal';
+import Modal from './main/modal';
 
 const App = () => (
   <div>
-
+    <Modal />
     <Switch>
       <Route exact from="/" component={Splash} />
 

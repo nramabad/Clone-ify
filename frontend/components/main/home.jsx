@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Route, withRouter } from 'react-router-dom';
+import { NavLink, Link, Route, withRouter } from 'react-router-dom';
 
 class Home extends React.Component {
 
@@ -9,12 +9,13 @@ class Home extends React.Component {
       <>
         <div className='browse-body'>
           <header>
-            <Link to="/browse/featured"><span className='selected'> FEATURED </span></Link>
-            <Link to="/browse/featured"><span> PODCASTS </span></Link>
-            <Link to="/browse/featured"><span> GENRE & MOODS </span></Link>
-            <Link to="/browse/featured"><span> NEW RELEASES </span></Link>
-            <Link to="/browse/featured"><span> DISCOVER </span></Link>
+            <NavLink to="/browse/featured"><span className='selected'> FEATURED </span></NavLink>
+            <NavLink to="/browse/featured"><span> PODCASTS </span></NavLink>
+            <NavLink to="/browse/featured"><span> GENRE & MOODS </span></NavLink>
+            <NavLink to="/browse/featured"><span> NEW RELEASES </span></NavLink>
+            <NavLink to="/browse/featured"><span> DISCOVER </span></NavLink>
           </header>
+
         </div>
       </>
     );
@@ -29,9 +30,10 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default withRouter(connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Home));

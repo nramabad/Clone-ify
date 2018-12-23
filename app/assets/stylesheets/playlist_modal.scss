@@ -1,0 +1,121 @@
+.playlist-form {
+  font-family: 'proxima-nova', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // padding: 0 20%;
+}
+
+.x-btn {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  font-size: 80px;
+  font-weight: 100;
+  transition: 0.3s;
+}
+
+.button-strip {
+  background-color: transparent;
+
+}
+
+.button-strip:hover {
+  background-color: transparent;
+}
+
+.x-btn:hover {
+  color: red;
+  transition: 0.3s;
+}
+
+.input-box-input {
+  width: 100%;
+  height: 73px;
+  font-size: 32px;
+  color: white;
+  caret-color: rgb(0, 197, 85);
+}
+
+.playlist-form-header {
+  width: 457px;
+  height: 56px;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 48px;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+.input-box-label {
+  font-size: 13px;
+}
+
+.playlist-name-field {
+  width: 100%;
+  height: 147px;
+  background-color: rgb(40, 40, 40);
+  padding: 0 20%;
+  margin-bottom: 20px;
+}
+
+.playlist-btns {
+  margin: auto;
+  height: 39px;
+  font-size: 12px;
+  font-weight: 100;
+  button {
+    width: 140px;
+    display: inline-block;
+    margin: 7px;
+    font-weight: 400;
+  }
+
+  .cancel-btn {
+    background-color: transparent;
+    border: 1px solid rgb(170, 170, 170);
+  }
+
+  .cancel-btn:hover {
+    border: 1px solid white;
+  }
+}
+
+.playlist-song-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25%;
+}
+
+.user-playlists {
+  justify-content: center;
+}
+
+.create-playlist-btn {
+  transition: 0.2s;
+}
+
+.create-playlist-btn:hover {
+  color: #e023ca;
+  background-color: white;
+  transition: 0.2s;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

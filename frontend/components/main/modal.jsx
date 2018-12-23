@@ -1,23 +1,23 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions'; //WRONG
-
-//IGNORE THIS FOR NOW
-
-
+import NewPlaylistContainer from '../playlists/new_playlist_container';
+import DeletePlaylistContainer from '../playlists/delete_playlist_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
-    case 'login':
-      component = <LoginFormContainer />;
+  switch (modal.type) {
+    case 'new_playlist':
+      component = <NewPlaylistContainer />;
       break;
-    case 'signup':
-      component = <SignupFormContainer />;
+    // case 'add_song_to_playlist':
+    //   component = <AddSongToPlaylist />;
+    //   break;
+    case 'delete_playlist':
+      component = <DeletePlaylistContainer />;
       break;
     default:
       return null;
@@ -33,8 +33,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal,
-    currentUser: users[session.id]
+    modal: state.ui.modalOpen,
   };
 };
 
