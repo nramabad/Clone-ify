@@ -45,7 +45,8 @@ const App = () => (
       <Redirect from="/" to="/" />
     </Switch>
 
-    <Route path="/(collection|browse|settings|album|playlist)/" component={Player} />
+    <Route path="/browse" component={Player} />
+    <ProtectedRoute path="/(collection|settings|album|playlist)/" component={Player} />
   </div>
 );
 

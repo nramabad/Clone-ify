@@ -6,7 +6,6 @@ const togglePlayReducer = (state=false, action) => {
     case TOGGLE_PLAY:
       let p;
       let audio = document.getElementById('song-player');
-      console.log(state)
       if (state) {
         console.log("pausing");
          p = audio.pause();

@@ -13,11 +13,7 @@ class Player extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
   }
 
-  // getInitialState() {
-  //   return { playStatus: false}
-  // }
   componentDidMount() {
-    // this.props.togglePlay();
   }
 
 
@@ -26,8 +22,8 @@ class Player extends React.Component {
     this.props.togglePlay();
   }
 
+
   render() {
-    // debugger
     let img = (
                 <div className='player-img-empty'>
                   <img></img>
@@ -60,7 +56,7 @@ class Player extends React.Component {
           <audio id='song-player' src={this.props.currentSong.audio_url} autoPlay/>
           <button className='shuffle' />
           <button className='prev-song' />
-          <button onClick={this.handleToggle} className='play-btn'/>
+          <button onClick={this.handleToggle} className={ this.props.isPlaying ? 'pause-btn' : 'play-btn' } />
           <button className='next-song' />
           <button className='repeat' />
         </div>

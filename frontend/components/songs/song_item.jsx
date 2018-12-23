@@ -16,10 +16,13 @@ class SongItem extends React.Component {
 
 
   handlePlay() {
-    this.props.togglePlay();
-    if (!(this.props.song.id === this.props.currentSong.id && this.props.isPlaying)) {
+
+    if (!(this.props.song.id == this.props.currentSong.id)) {
       this.props.setCurrentSong(this.props.song);
       this.props.setQueue(this.props.queue);
+    }
+    if (!this.props.isPlaying || this.props.song.id == this.props.currentSong.id) {
+      this.props.togglePlay();
     }
   }
 
@@ -33,6 +36,7 @@ class SongItem extends React.Component {
 
 
   showAudioButton() {
+    // debugger
     if (this.props.song.id === this.props.currentSong.id && this.props.isPlaying) {
       return (<button onClick={this.handlePlay} className='played-song' />)
     }
