@@ -33,14 +33,14 @@ class AlbumIndex extends React.Component {
   }
 
   const mapStateToProps = state => {
-    // debugger;
+    debugger
     return {
       albums: Object.values(state.entities.albums)
     };
   };
 
   const mapDispatchToProps = dispatch => ({
-  requestAllAlbums: () => dispatch(requestAllAlbums())
+    requestAllAlbums: () => dispatch(requestAllAlbums())
   });
 
   export default withRouter(connect(

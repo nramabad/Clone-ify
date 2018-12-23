@@ -3,30 +3,47 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
+import CoverItem from './cover_item';
+import { requestAllArtists } from '../../actions/music_actions';
 
 class ArtistIndex extends React.Component {
 
+  componentDidMount() {
+    this.props.requestAllArtists();
+  }
+
+
   render(){
-    return(
+    const allArtists = this.props.artists.map( (item, idx) => <CoverItem key={item.id} item={item} /> );
+    return (
       <>
         <SideBar />
-        <Library />
+        <div className='browse-body'>
+          <Library />
+          <div className='scoot'>
+            <ul className='albums'>
+              {allArtists}
+            </ul>
+          </div>
+        </div>
       </>
     );
   }
 
 }
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = state => {
+  // debugger
   return {
-    currentUser: users[session.id]
+    artists: Object.values(state.entities.artists)
   };
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestAllArtists: () => dispatch(requestAllArtists())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  null
-)(ArtistIndex);
+  mapDispatchToProps
+)(ArtistIndex));
