@@ -3,16 +3,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   // padding: 0 20%;
 }
 
 .x-btn {
+  text-align: center;
   width: 80px;
   height: 80px;
-  margin: auto;
-  font-size: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 35px;
   font-weight: 100;
-  transition: 0.3s;
+  transition: 1s;
+  color: white;
+  margin-bottom: 30px;
+  transition: transform 1s ease-in-out 0s;
 }
 
 .button-strip {
@@ -25,14 +31,19 @@
 }
 
 .x-btn:hover {
-  color: red;
-  transition: 0.3s;
+  font-size: 40px;
+  transition: 1s;
+  cursor: default;
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out 0s;
 }
 
 .input-box-input {
   width: 100%;
   height: 73px;
-  font-size: 32px;
+  font-size: 50px;
+  margin-top: 10px;
+  font-weight: bold;
   color: white;
   caret-color: rgb(0, 197, 85);
 }
@@ -46,10 +57,14 @@
   font-size: 48px;
   letter-spacing: -2px;
   margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .input-box-label {
   font-size: 13px;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: -5px;
 }
 
 .playlist-name-field {
@@ -118,4 +133,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%
 }

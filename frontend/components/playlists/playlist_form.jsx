@@ -30,14 +30,10 @@ class PlaylistForm extends React.Component {
 
   render() {
 
-    return (
-      <div className="playlist-form">
-
-        <button
-          className="x-btn button-strip"
-          onClick={this.props.closeModal}>X</button>
-
-
+    return <div className="playlist-form">
+        <button className="x-btn button-strip" onClick={this.props.closeModal}>
+          ╳
+        </button>
 
         <h1 className="playlist-form-header">Create new playlist</h1>
 
@@ -45,25 +41,20 @@ class PlaylistForm extends React.Component {
           <div className="input-box">
             <div className="content-spacing">
               <h4 className="input-box-label">Playlist Name</h4>
-              <input type='text'
-                className="input-box-input"
-                placeholder="Start typing..."
-
-                onChange={this.handleChange()}>
-              </input>
+              <input type="text" className="input-box-input" placeholder="Start typing..." onChange={this.handleChange()} />
             </div>
           </div>
         </form>
 
         <div className="playlist-btns">
-          <button
-            onClick={this.props.closeModal}
-            className="black-button"
-            >CANCEL</button>
-          <button className="session-submit" onClick={this.handleSubmit}>CREATE</button>
+          <button onClick={this.props.closeModal} className="black-button">
+            CANCEL
+          </button>
+          <button className="session-submit" onClick={this.handleSubmit}>
+            CREATE
+          </button>
         </div>
-      </div>
-    )
+      </div>;
   }
 
 }
