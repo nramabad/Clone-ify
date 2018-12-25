@@ -132,13 +132,25 @@
 }
 
 .top-bar {
-
+  margin-left: 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.flexed-row {
-
+.right-menu-space {
+  margin-right: 30px;
+  width: 160px;
 }
 
+.right-menu-space button {
+  padding: 8px;
+}
+
+.right-menu-space button:hover {
+  margin-top: 20px;
+  margin-left: -8px;
+}
 
 .green-button {
   text-transform: uppercase;
