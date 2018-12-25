@@ -15,10 +15,9 @@
   margin-right: auto;
   font-size: 35px;
   font-weight: 100;
-  transition: 1s;
   color: white;
   margin-bottom: 30px;
-  transition: transform 1s ease-in-out 0s;
+  transition: all 1s ease-in-out 0s;
 }
 
 .button-strip {
@@ -31,11 +30,11 @@
 }
 
 .x-btn:hover {
-  font-size: 40px;
-  transition: 1s;
+  font-size: 45px;
+  font-weight: bold;
   cursor: default;
     transform: rotate(360deg);
-    transition: transform 1s ease-in-out 0s;
+    transition: all 1s ease-in-out 0s;
 }
 
 .input-box-input {
@@ -76,24 +75,20 @@
 }
 
 .playlist-btns {
+  width: 375px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: auto;
   height: 39px;
   font-size: 12px;
   font-weight: 100;
   button {
-    width: 140px;
+    // width: 50%;
+    padding: 13px 0px 28px 0px;
     display: inline-block;
-    margin: 7px;
+    margin: 0px 10px 0px 10px;
     font-weight: 400;
-  }
-
-  .cancel-btn {
-    background-color: transparent;
-    border: 1px solid rgb(170, 170, 170);
-  }
-
-  .cancel-btn:hover {
-    border: 1px solid white;
   }
 }
 
@@ -134,4 +129,40 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%
+}
+
+.top-bar {
+
+}
+
+.flexed-row {
+
+}
+
+
+.green-button {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  width: 90%;
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  background-color: #1db954;
+  border: 2px solid #1DB954;
+  // padding: 15px;
+  // padding-left: 50px;
+  // padding-right: 50px;
+  border-radius: 40px;
+  color: white;
+  transition: .1s;
+  outline: none;
+}
+
+.green-button:hover {
+  font-size: 12px;
+  background-color: #1ed760;
+  border: 2px solid #1ed760;
+  width: 100%;
+  margin: 0px 1px 0px 1px;
 }

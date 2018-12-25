@@ -50,7 +50,7 @@ class PlaylistForm extends React.Component {
           <button onClick={this.props.closeModal} className="black-button">
             CANCEL
           </button>
-          <button className="session-submit" onClick={this.handleSubmit}>
+          <button className="green-button" onClick={this.handleSubmit}>
             CREATE
           </button>
         </div>
