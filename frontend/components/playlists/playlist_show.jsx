@@ -4,7 +4,11 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import SongItem from '../songs/song_item'
 import { playlistSongsSelector } from '../../reducers/entities/selectors'
-import { requestOnePlaylist, removeSongFromPlaylist } from '../../actions/music_actions'
+import {
+  requestAllPlaylists, requestOnePlaylist,
+  removeSongFromPlaylist,
+  deletePlaylist
+} from "../../actions/music_actions";
 
 class PlaylistShow extends React.Component {
 
@@ -27,8 +31,10 @@ class PlaylistShow extends React.Component {
     this.props.requestOnePlaylist(this.props.match.params.playlistId);
   }
 
+
   click(id) {
-    this.setState({ openMenu: id })
+    // debugger
+    this.setState({ openMenu: id})
   }
   render(){
     const allSongs = this.props.songs.map( (song, idx) =>
@@ -38,8 +44,8 @@ class PlaylistShow extends React.Component {
         menuOpen={this.state.openMenu == song.id}
         openMenu={() => this.click(song.id)}
       /> );
+    let openMain = false;
 
-    // debugger
     if (!this.props.playlist || !this.props.users[this.props.playlist.user_id]) {
       return null;
     }
@@ -52,6 +58,17 @@ class PlaylistShow extends React.Component {
               <img src={this.props.playlist.cover_url || 'https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/default_cover.jpg'} alt='it broke :('/>
               <div className='title'>{this.props.playlist.title}</div>
               <div className='maker'>{this.props.users[this.props.playlist.user_id].username}</div>
+              <div className='maker'>{allSongs.length} SONGS</div>
+              <ul id="menu">
+                <li>
+                  <input id="check01" type="checkbox" className="menu" />
+                  <label htmlFor="check01"><img id='playlist-button' src='https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/white-three-dot.png' alt='it broke :(' /></label>
+                  <ul className="submenu">
+                    <li><button onClick={() => this.props.deletePlaylist(this.props.playlist.id)}>Delete Playlist</button></li>
+                    <li><button>Copy Link to Playlist</button></li>
+                  </ul>
+                </li>
+              </ul> 
             </div>
             <div className='fit-songs'>
               <ul className='songs'>
@@ -76,11 +93,15 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestAllPlaylists: payload => dispatch(requestAllPlaylists),
   requestOnePlaylist: (id) => dispatch(requestOnePlaylist(id)),
-  removeSongFromPlaylist: id => dispatch(removeSongFromPlaylist)
+  removeSongFromPlaylist: id => dispatch(removeSongFromPlaylist),
+  deletePlaylist: id => dispatch(deletePlaylist(id))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(PlaylistShow);
+
+

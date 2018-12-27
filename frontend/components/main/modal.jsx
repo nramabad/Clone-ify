@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewPlaylistContainer from '../playlists/new_playlist_container';
-import DeletePlaylistContainer from '../playlists/delete_playlist_container';
+import DeletePlaylistForm from '../playlists/delete_playlist_form';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -17,7 +17,7 @@ function Modal({modal, closeModal}) {
     //   component = <AddSongToPlaylist />;
     //   break;
     case 'delete_playlist':
-      component = <DeletePlaylistContainer />;
+      component = <DeletePlaylistForm />;
       break;
     default:
       return null;

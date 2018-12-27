@@ -301,3 +301,113 @@
   margin-bottom: auto;
   padding-bottom: 10px;
 }
+
+
+// other 
+
+/*Style for the first level menu bar*/
+ul#menu{
+  position:relative;
+  top:0;
+  width:100%;
+  height:3em;
+  margin: 0;
+  padding:0 10px;
+
+  // background:#333;
+  // color:#eee;
+  // box-shadow:0 -1px rgba(0,0,0,.5) inset;
+}
+
+ul#menu > li{
+  float:left;
+  list-style-type:none;
+  position:relative;
+}
+
+#menu label{
+  position:relative;
+  display:block;
+  // height: 20px;
+  // width: 20px;
+  padding:0 18px 0 12px;
+  line-height:3em;
+  // transition:background 0.3s;
+  cursor:pointer;
+  
+}
+
+#playlist-button {
+  height: 20px;
+  width: 20px;
+}
+
+#menu label:after{
+  content:"";
+  position:absolute;
+  display:block;
+  top:50%;
+  right:5px;
+  width:0;
+  height:0;
+  // border-top:4px solid rgba(255,255,255,.5);
+  // border-bottom:0 solid rgba(255,255,255,.5);
+  // border-left:4px solid transparent;
+  // border-right:4px solid transparent;
+  // transition:border-bottom .1s, border-top .1s .1s;
+  }
+
+#menu label:hover,
+input:checked ~ label{
+  // background:rgba(0,0,0,.3);
+}
+
+#menu input:checked ~ label:after{
+  border-top:0 solid rgba(255,255,255,.5);
+  border-bottom:4px solid rgba(255,255,255,.5);
+  // transition:border-top .1s, border-bottom .1s .1s;
+}
+
+/*hide the inputs*/
+#menu input{display:none}
+
+/*show the second levele menu of the selected voice*/
+#menu input:checked ~ ul.submenu{
+  max-height:300px;
+  // transition:max-height 0.5s ease-in;
+}
+
+/*style for the second level menu*/
+#menu ul.submenu{
+  max-height:0;
+  padding:0;
+  overflow:hidden;
+  list-style-type:none;
+  background: #363636;
+  box-shadow: 0 0 1px rgba(0,0,0,.3);
+  // box-shadow:0 0 1px rgba(0,0,0,.3);
+  // transition:max-height 0.5s ease-out;
+  position:absolute;
+  min-width:100%;
+  border-radius: 5px;
+  
+
+}
+
+#menu ul.submenu li button{
+  font-weight: normal;
+  display:block;
+  margin: 5px 0px 5px 0px;
+  padding: 10px 15px 10px 15px;
+  color:#ddd;
+  text-decoration:none;
+  // box-shadow:0 -1px rgba(0,0,0,.5) inset;
+  // transition: background .1s;
+  white-space:nowrap;
+  width: 100%;
+}
+
+#menu ul.submenu li button:hover{
+  background: #444444;
+  color: white
+}

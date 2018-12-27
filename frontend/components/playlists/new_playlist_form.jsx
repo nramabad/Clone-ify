@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { createPlaylist } from '../../actions/music_actions';
 
-class PlaylistForm extends React.Component {
+class NewPlaylistForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -59,4 +59,4 @@ class PlaylistForm extends React.Component {
 
 }
 
-export default PlaylistForm;
+export default NewPlaylistForm;
