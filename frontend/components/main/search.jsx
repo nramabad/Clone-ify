@@ -30,12 +30,11 @@ class Search extends React.Component {
 
         const renderContent = (
             <div>
-                <h1>Search Cadenze</h1>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
             </div>
         )
-        this.state.query.length > 0 ? (
-            <div>
+        if (this.state.query.length > 0) {
+            renderContent = (<div>
                 <div className="search-nav-and-results">
                     <Switch>
                         <Route path="/search/albums" render={() =>
@@ -56,8 +55,8 @@ class Search extends React.Component {
                         <Redirect to="/search/albums" />
                     </Switch>
                 </div>
-            </div>
-        ) : 
+            </div>);
+        } 
 
         return (
             <div className="search">
