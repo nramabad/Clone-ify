@@ -41,3 +41,10 @@ export const removeSongFromPlaylist = (id) => (
     url: `/api/playlist_songs/${id}`
   })
 )
+
+export const searchPlaylists = searchTerm =>
+  $.ajax({
+    url: `/api/playlists/search`,
+    method: "GET",
+    data: { search_term: searchTerm }
+  });

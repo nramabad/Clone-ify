@@ -11,3 +11,10 @@ export const fetchAllArtists = () => (
     url: 'api/artists'
   })
 );
+
+export const searchArtists = searchTerm =>
+  $.ajax({
+    url: `/api/artists/search`,
+    method: "GET",
+    data: { search_term: searchTerm }
+  });

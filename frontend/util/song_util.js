@@ -11,3 +11,10 @@ export const fetchAllSongs = () => (
     url: 'api/songs'
   })
 );
+
+export const searchSongs = searchTerm =>
+  $.ajax({
+    url: `/api/songs/search`,
+    method: "GET",
+    data: { search_term: searchTerm }
+  });

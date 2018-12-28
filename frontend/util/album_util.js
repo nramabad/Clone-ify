@@ -11,3 +11,10 @@ export const fetchAllAlbums = () => (
     url: 'api/albums'
   })
 );
+
+export const searchAlbums = searchTerm =>
+  $.ajax({
+    url: `/api/albums/search`,
+    method: "GET",
+    data: { search_term: searchTerm }
+  });
