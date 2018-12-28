@@ -54,8 +54,8 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def search
-    search_term = params[:search_term]
-    @playlists = Playlist.where('lower(name) like ?', "%#{search_term.downcase}%").limit(5)
+    query = params[:query]
+    @playlists = Playlist.where('lower(name) like ?', "%#{query.downcase}%").limit(5)
     render :index
   end
 

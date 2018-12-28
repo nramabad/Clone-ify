@@ -1,61 +1,79 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import SearchResults from './search_results';
+import Navbar from '../navbars/navbar';
+
+import { Route, Redirect, Switch } from 'react-router-dom';
+
+import AlbumsIndex from '../albums/albums_index';
+import ArtistsIndex from '../artists/artists_index';
+import PlaylistsIndex from '../playlists/playlists_index';
+import SongsIndex from '../songs/songs_index';
 
 class Search extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { searchTerm: '', render: false };
-        this.timeout = 0;
-        this.updateInput = this.updateInput.bind(this);
+        this.state = {
+            query: ''
+        }
     }
 
-    updateInput(e) {
-        this.setState({ render: false })
+    componentDidMount() {
+    }
 
-        let val = e.target.value
-
-        if (this.timeout) clearTimeout(this.timeout);
-
-        this.timeout = setTimeout(() => {
-            this.setState({ render: true });
-        }, 300);
-        this.setState({ searchTerm: val });
+    handleChange() {
+        return (e) => {
+            this.setState({ query: e.target.value })
+        };
     }
 
     render() {
-        let { searchTerm, render } = this.state;
-        // console.log(searchTerm);
 
-        let results;
-        let default_res = false;
-        if (!(searchTerm.length > 0)) {
-            default_res = true;
-            results = (
-                <div className="null-search-results">
-                    <h1>Search Spookify</h1>
-                    <h4>Find your favorite songs, artists, albums, podcasts, playlists, and other users to follow.</h4>
+        const renderContent = (
+            <div>
+                <h1>Search Cadenze</h1>
+                <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
+            </div>
+        )
+        this.state.query.length > 0 ? (
+            <div>
+                <div className="search-nav-and-results">
+                    <Switch>
+                        <Route path="/search/albums" render={() =>
+                            <AlbumsIndexContainer
+                                searchQuery={this.state.query} />} />
+
+                        <Route path="/search/artists" render={() =>
+                            <ArtistsIndexContainer
+                                searchQuery={this.state.query} />} />
+
+                        <Route path="/search/playlists" render={() =>
+                            <PlaylistsIndexContainer
+                                searchQuery={this.state.query} />} />
+
+                        <Route path="/search/songs" render={() =>
+                            <SongsIndexContainer
+                                searchQuery={this.state.query} />} />
+                        <Redirect to="/search/albums" />
+                    </Switch>
                 </div>
-            )
-        } else {
-            results = (<SearchResults searchTerm={searchTerm} ></SearchResults>)
-        }
+            </div>
+        ) : 
 
         return (
             <div className="search">
-                <div className="search-input">
-                    <input autoFocus="autoFocus"
+                <form className="search-form">
+                    <input
                         type="text"
-                        value={this.state.searchTerm}
-                        onChange={this.updateInput}
-                        placeholder="Start typing..."></input>
-                </div>
-
-                {(render || default_res) ? results : null}
+                        value={this.state.query}
+                        placeholder="Start typing..."
+                        onChange={this.handleChange()}
+                    ></input>
+                </form>
+                {renderContent}
             </div>
         )
     }
+
 }
 
 export default Search;

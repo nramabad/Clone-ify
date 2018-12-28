@@ -21,8 +21,8 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    search_term = params[:search_term]
-    users = User.where('lower(username) like ?', "%#{search_term.downcase}%").limit(5)
+    query = params[:query]
+    users = User.where('lower(username) like ?', "%#{query.downcase}%").limit(5)
     curr_user = User.where(id: current_user.id)
 
     @users = users + curr_user
