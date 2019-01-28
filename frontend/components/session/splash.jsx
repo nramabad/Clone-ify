@@ -53,12 +53,12 @@ class Splash extends React.Component {
             <ul className="header-list">
               <li>
                 <a href="https://github.com/nramabad" target="_blank">
-                  <i className="fab fa-github" />
+                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/github-icon.png" />
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
-                  <i className="fab fa-linkedin" />
+                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/linkedin-icon.png" />
                 </a>
               </li>
               <li>|</li>
@@ -92,7 +92,9 @@ class Splash extends React.Component {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/nramabad/" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
+                LinkedIn
+              </a>
             </li>
           </div>
         </footer>
