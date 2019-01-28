@@ -35,7 +35,7 @@ class Search extends React.Component {
         )
         if (this.state.query.length > 0) {
             renderContent = (<div>
-                <div className="search-nav-and-results">
+                <div className="search-page">
                     <Switch>
                         <Route path="/search/albums" render={() =>
                             <AlbumsIndexContainer

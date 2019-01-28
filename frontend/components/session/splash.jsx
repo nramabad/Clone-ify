@@ -42,24 +42,44 @@ class Splash extends React.Component {
 
   render() {
     return (
-      <div className='splash'>
+      <div>
 
-          <div className='splash-nav'>
-            <a href="/#/" className='splash-logo'> Clone-ify </a>
-            <a href="https://github.com/nramabad"> GitHub </a>
-            <a href="https://www.linkedin.com/in/nramabad/"> LinkedIn </a>
-            <Link to="/signup"> Sign Up </Link>
-            <Link to="/login"> Login </Link>
+        <header className="header">
+          <nav className="nav-bar">
+            <div className="logo">
+              <i className="fab fa-spotify"></i>
+              <h1 className="header-logo">Clone-ify</h1>
+            </div>
+            <ul className="header-list">
+              <li><a href="https://github.com/nramabad"><i className="fab fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/nramabad/"><i className="fab fa-linkedin"></i></a></li>
+              <li>|</li>
+              <li><Link to="/signup">Sign Up</Link></li>
+              <li><Link to="/login">Log In</Link></li>
+            </ul>
+          </nav>
+        </header>
+
+        <section className="main-content">
+          <h1>Music for everyone.</h1>
+          <h3>Millions of songs. No credit card needed.</h3>
+          <Link to="/login">GET CLONE-IFY FREE</Link>
+
+        </section>
+
+        <footer className="footer">
+
+          <div className="footer-logo">
+            <i className="fab fa-spotify"></i>
+            <h1 className="header-logo">Clone-ify</h1>
           </div>
 
-          <div className='splash-img'>
-            <h3>Music for everyone.</h3>
-            <h1>Millions of songs. No credit card needed.</h1>
-            <br></br>
-            <br></br>
-            <Link className='splash-button' to="/signup"> GET CLONE-IFY FREE </Link>
-
+          <div className="footer-links">
+            <h5>LINKS</h5>
+            <li><a href="#">Github</a></li>
+            <li><a href="#">LinkedIn</a></li>
           </div>
+        </footer>
 
       </div>
     )
