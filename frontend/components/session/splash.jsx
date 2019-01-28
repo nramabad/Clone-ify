@@ -41,21 +41,33 @@ class Splash extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-
+    return <div>
         <header className="header">
           <nav className="nav-bar">
             <div className="splash-logo">
-              <i className="fab fa-spotify"></i>
+              <Link to="/" className="logo">
+                <img src={window.whiteLogoURL} />
+              </Link>
               <h1 className="header-logo">Clone-ify</h1>
             </div>
             <ul className="header-list">
-              <li><a href="https://github.com/nramabad"><i className="fab fa-github"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/nramabad/"><i className="fab fa-linkedin"></i></a></li>
+              <li>
+                <a href="https://github.com/nramabad" target="_blank">
+                  <i className="fab fa-github" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
+                  <i className="fab fa-linkedin" />
+                </a>
+              </li>
               <li>|</li>
-              <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/login">Log In</Link></li>
+              <li>
+                <Link to="/signup">Sign Up</Link>
+              </li>
+              <li>
+                <Link to="/login">Log In</Link>
+              </li>
             </ul>
           </nav>
         </header>
@@ -64,25 +76,27 @@ class Splash extends React.Component {
           <h1>Music for everyone.</h1>
           <h3>Millions of songs. No credit card needed.</h3>
           <Link to="/login">GET CLONE-IFY FREE</Link>
-
         </section>
 
         <footer className="footer">
-
           <div className="footer-logo">
-            <i className="fab fa-spotify"></i>
+            <i className="fab fa-spotify" />
             <h1 className="header-logo">Clone-ify</h1>
           </div>
 
           <div className="footer-links">
             <h5>LINKS</h5>
-            <li><a href="#">Github</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li>
+              <a href="https://github.com/nramabad" target="_blank">
+                Github
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/nramabad/" target="_blank">LinkedIn</a>
+            </li>
           </div>
         </footer>
-
-      </div>
-    )
+      </div>;
   }
 
 }
