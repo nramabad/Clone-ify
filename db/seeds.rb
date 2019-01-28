@@ -408,7 +408,7 @@ song11a11.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/c
 playlist1 = Playlist.create(title: '(૭ ◉༬◉)૭⁾⁾⁾⁾', description: "^_^", user_id: user1.id)
 c = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/everything-everything-get-to-heaven-big.jpg')
 playlist1.photo.attach(io: c, filename: 'snowball.jpg')
-playlist2 = Playlist.create(title: '~ ✰ 💸 make that money 💸 ✰ ~', user_id: user2.id)
+playlist2 = Playlist.create(title: '~ ✰ 💸 make that $$$ 💸 ✰ ~', user_id: user2.id)
 d = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/How-to-Destroy-Angels-EP-Digital-Cover-Art-600px.jpg')
 playlist2.photo.attach(io: d, filename: 'snowball.jpg')
 playlist3 = Playlist.create(title: 'flowers and hearts', description: "<3", user_id: user1.id )
