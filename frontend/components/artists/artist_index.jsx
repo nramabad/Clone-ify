@@ -14,7 +14,12 @@ class ArtistIndex extends React.Component {
 
 
   render(){
-    const allArtists = this.props.artists.map( (item, idx) => <CoverItem key={item.id} item={item} /> );
+    debugger
+    let allArtists = (<></>)
+    if (this.props.artists[0] !== undefined ) {
+      debugger
+      allArtists = Object.values(this.props.artists[0]).map((item, idx) => <CoverItem key={item.id} item={item} />);
+    }
     return (
       <>
         <SideBar />
