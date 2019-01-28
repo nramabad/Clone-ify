@@ -23,6 +23,7 @@ user2.avatar.attach(io: b, filename: 'snowball.jpg')
 
 
 artist1 = Artist.create(name: 'Asthmatic Astronaut', bio: "The wheezy space man")
+artist1.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist1.jpg'), filename: 'pic.jpg')
 album1a = Album.create(title: 'Exposing All Emotions', year: 2012, genre: "Hip Hop", artist_id: artist1.id)
 album1a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Asthmatic_Astronaut_-_Exposing_All_Emotions/Asthmatic_Astronaut_-_Exposing_All_Emotions_-_20120815102617148.jpg'), filename: 'cover.jpg')
 song1a1 = Song.create(title: "A New Tone", duration: 211, album_id: album1a.id)
@@ -40,6 +41,7 @@ song1a6.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 
 
 artist2 = Artist.create(name: 'Black Ant')
+artist2.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist2.jpg'), filename: 'pic.jpg')
 album2a = Album.create(title: 'Free Beats Sel. 3', year: 2010, genre: "Hip Hop", artist_id: artist2.id)
 album2a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Black_Ant_-_Free_Beats_Sel_3/Black_Ant_-_Free_Beats_Sel_3_-_20100125165648429.jpg'), filename: 'cover.jpg')
 song2a1 = Song.create(title: "Fater Lee", duration: 143, album_id: album2a.id)
@@ -75,6 +77,7 @@ song2a15.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/cl
 
 
 artist3 = Artist.create(name: 'Blank & Kytt')
+artist3.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist3.jpg'), filename: 'pic.jpg')
 album3a = Album.create(title: 'Heavy, Crazy, Serious', year: 2012, genre: "Hip Hop", artist_id: artist3.id)
 album3a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Blank__Kytt_-_Heavy_Crazy_Serious/Blank__Kytt_-_Heavy_Crazy_Serious_-_20120510124341734.png'), filename: 'cover.png')
 song3a1 = Song.create(title: "Thursday & Snow (Reprise)", duration: 116, album_id: album3a.id)
@@ -98,6 +101,7 @@ song3a9.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 
 
 artist4 = Artist.create(name: 'Broke For Free')
+artist4.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist4.jpg'), filename: 'pic.jpg')
 album4a = Album.create(title: 'Layers', year: 2012, genre: "Hip Hop", artist_id: artist4.id)
 album4a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Broke_For_Free_-_Layers/Broke_For_Free_-_Layers_-_20120418184903300.jpg'), filename: 'cover.jpg')
 song4a1 = Song.create(title: "As Colorful As Ever", duration: 234, album_id: album4a.id)
@@ -137,6 +141,7 @@ song4a5.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 
 artist5 = Artist.create(name: 'Hogan Grip',
   bio: "Hogan Grip (DeclanQKelly and Tony Higgins aka junior85) is a duo born in a charity shop in the westside of Galway city on a warm June afternoon, in which was found an old, yellowing copy of Ben Hogan's seminal instructional golf book “Power Golf”. Inspired first by the exquisite line drawings and evocative chapter names and later (upon closer examination of the book's actual text) by Hogan's avuncular, firm-but-fair teaching technique and his touching dedication to a friend (Henry Picard) in the opening chapter, the band Hogan Grip came to fruition.")
+artist5.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist5.jpg'), filename: 'pic.jpg')
 album5a = Album.create(title: 'Stance Gives You Balance', year: 2010, genre: "Hip Hop", artist_id: artist5.id)
 album5a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/hip+hop/Hogan_Grip_-_Hogan_Grip_-_Stance_Gives_You_Balance/junior85_-_Hogan_Grip_-_Stance_Gives_You_Balance_-_20100821193724436.jpg'), filename: 'cover.jpg')
 song5a1 = Song.create(title: "Stance Gives You Power", duration: 225, album_id: album5a.id)
@@ -156,6 +161,7 @@ song5a7.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 
 
 artist6 = Artist.create(name: 'Jahzzar')
+artist6.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist6.jpg'), filename: 'pic.jpg')
 album6a = Album.create(title: 'Smoke Factory', year: 2012, genre: "Indie Rock", artist_id: artist6.id)
 album6a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/Jahzzar_-_Smoke_Factory/Jahzzar_-_Smoke_Factory_-_20120326162411609.jpg'), filename: 'cover.jpg')
 song6a1 = Song.create(title: "The last ones", duration: 180, album_id: album6a.id)
@@ -208,6 +214,7 @@ song6b14.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/cl
 
 
 artist7 = Artist.create(name: 'Scott Holmes')
+artist7.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist7.jpg'), filename: 'pic.jpg')
 album7a = Album.create(title: 'Corporate & Motivational Music', year: 2017, genre: "Indie Rock", artist_id: artist7.id)
 album7a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/Scott_Holmes_-_Corporate__Motivational_Music/Scott_Holmes_-_Corporate__Motivational_Music_-_2017030692053365.png'), filename: 'cover.jpg')
 song7a1 = Song.create(title: "Corporate Success", duration: 226, album_id: album7a.id)
@@ -294,6 +301,7 @@ song7c14.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/cl
 song7c15.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/Scott_Holmes_-_Happy_Music/Scott_Holmes_-_15_-_Clap_your_Hands.mp3'), filename: 'audio.mp3')
 
 artist8 = Artist.create(name: 'State Shirt')
+artist8.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist8.jpg'), filename: 'pic.jpg')
 album8a = Album.create(title: 'This Is Old', year: 2010, genre: "Indie Rock", artist_id: artist8.id)
 album8a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/State_Shirt_-_This_Is_Old/State_Shirt_-_This_Is_Old_-_20110821155111436.jpg'), filename: 'cover.jpg')
 song8a1 = Song.create(title: "This Is Old", duration: 226, album_id: album8a.id)
@@ -318,6 +326,7 @@ song8a9.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 song8a10.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/State_Shirt_-_This_Is_Old/State_Shirt_-_10_-_Conway_Station_Road.mp3'), filename: 'audio.mp3')
 
 artist9 = Artist.create(name: 'The Freak Fandango Orchestra')
+artist9.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist9.jpg'), filename: 'pic.jpg')
 album9a = Album.create(title: 'Tales Of A Dead Fish', year: 2011, genre: "Indie Rock", artist_id: artist9.id)
 album9a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/The_Freak_Fandango_Orchestra_-_Tales_Of_A_Dead_Fish/The_Freak_Fandango_Orchestra_-_Tales_Of_A_Dead_Fish_-_2012020325233354.jpg'), filename: 'cover.jpg')
 song9a1 = Song.create(title: "Requiem for a Fish", duration: 220, album_id: album9a.id)
@@ -334,6 +343,7 @@ song9a5.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clo
 song9a6.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/indie+rock/The_Freak_Fandango_Orchestra_-_Tales_Of_A_Dead_Fish/The_Freak_Fandango_Orchestra_-_06_-_At_the_beginning.mp3'), filename: 'audio.mp3')
 
 artist10 = Artist.create(name: 'Stone Byron')
+artist10.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist10.jpg'), filename: 'pic.jpg')
 album10a = Album.create(title: 'Camera I, Camera II', year: 2017, genre: "Psych Rock", artist_id: artist10.id)
 album10a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/psych+rock/Camera_I_Camera_II_-_CI_CII/Camera_I_Camera_II_-_CI_CII_-_20181013203427435.JPG'), filename: 'cover.jpg')
 song10a1 = Song.create(title: "Summer Never Rolls", duration: 226, album_id: album10a.id)
@@ -366,6 +376,7 @@ song10a13.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/c
 song10a14.audio.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/house/Lobo_Loco_-_Over_Midnight/Lobo_Loco_-_12_-_Searching_for_Zelda_ID_948.mp3'), filename: 'audio.mp3')
 
 artist11 = Artist.create(name: 'KieLoBot')
+artist11.photo.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/artists/artist11.jpg'), filename: 'pic.jpg')
 album11a = Album.create(title: 'Hounds of Darkmoor', year: 2017, genre: "Psych Rock", artist_id: artist11.id)
 album11a.cover.attach(io: EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/songs/psych+rock/KieLoBot_-_Hounds_of_Darkmoor/KieLoBot_-_Hounds_of_Darkmoor_-_2017071090224168.jpg'), filename: 'cover.jpg')
 song11a1 = Song.create(title: "Tanzen (K ID 22)", duration: 224, album_id: album11a.id)
@@ -404,19 +415,19 @@ playlist3 = Playlist.create(title: 'flowers and hearts', description: "<3", user
 e = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/images.jpeg')
 playlist3.photo.attach(io: e, filename: 'snowball.jpg')
 playlist4 = Playlist.create(title: 'chill vibes', description: "", user_id: user2.id )
-f = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/hitlist.jpeg')
+f = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/hitlist.jpg')
 playlist4.photo.attach(io: f, filename: 'snowball.jpg')
 playlist5 = Playlist.create(title: 'study music', description: "", user_id: user2.id )
-g = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/space.jpeg')
+g = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/space.jpg')
 playlist5.photo.attach(io: g, filename: 'snowball.jpg')
 playlist6 = Playlist.create(title: '🌞 🌧🌚 🌧🌞 🌧🌝 🌧🌞', description: "", user_id: user1.id )
-h = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/woman.jpeg')
+h = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/woman.jpg')
 playlist6.photo.attach(io: h, filename: 'snowball.jpg')
 playlist7 = Playlist.create(title: 'workout music', description: "", user_id: user1.id )
-i = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/zebra.jpeg')
+i = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/zebra.jpg')
 playlist7.photo.attach(io: i, filename: 'snowball.jpg')
 playlist8 = Playlist.create(title: 'googled it', description: "", user_id: user1.id )
-j = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/collage.jpeg')
+j = EzDownload.open('https://s3-us-west-1.amazonaws.com/clone-ify-public/playlists/collage.jpg')
 playlist8.photo.attach(io: j, filename: 'snowball.jpg')
 
 pS1 = PlaylistSong.create(playlist_id: playlist1.id,song_id: song2a2.id)
