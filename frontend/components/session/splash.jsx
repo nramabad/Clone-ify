@@ -46,7 +46,7 @@ class Splash extends React.Component {
 
         <header className="header">
           <nav className="nav-bar">
-            <div className="logo">
+            <div className="splash-logo">
               <i className="fab fa-spotify"></i>
               <h1 className="header-logo">Clone-ify</h1>
             </div>
