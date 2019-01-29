@@ -2,8 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
+import { requestAllArtists, requestOneArtist } from "../../actions/music_actions";
 
 class ArtistShow extends React.Component {
+
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    this.props.requestOneArtist(this.props.match.params.artistId);
+  }
 
   render(){
     debugger
@@ -26,19 +35,19 @@ class ArtistShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const albumId = ownProps.match.params.albumId;
+  const artistId = ownProps.match.params.artistId;
   return {
-    album: state.entities.albums[albumId],
-    songs: albumSongsSelector(state, albumId)
-    // Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
+    artist: state.entities.artists[artistId]
+    // songs: albumSongsSelector(state, albumId)
+    // // Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestOneArtist: id => dispatch(requestOneAlbum(id))
+  requestOneArtist: id => dispatch(requestOneArtist(id))
 });
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(ArtistShow);
