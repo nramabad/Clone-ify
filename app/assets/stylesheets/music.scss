@@ -135,8 +135,9 @@
 }
 
 .album-item img {
+  object-fit: cover;
   width: 200px;
-  height: 200px;
+  // height: 200px;
   padding-bottom: 5px
 }
 

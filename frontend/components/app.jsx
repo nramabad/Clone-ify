@@ -7,6 +7,7 @@ import Splash from './session/splash';
 import Featured from './main/featured';
 
 import AlbumShow from './albums/album_show';
+import ArtistShow from "./artists/artist_show";
 import PlaylistShow from './playlists/playlist_show';
 
 import ArtistIndex from './artists/artist_index';
@@ -39,6 +40,7 @@ const App = () => (
       <Redirect from="/collection" to="/collection/playlists" />
 
       <Route path="/album/:albumId" component={AlbumShow} />
+      <Route path="/artist/:artistId" component={ArtistShow} />
       <Route path="/playlist/:playlistId" component={PlaylistShow} />
 
       <AuthRoute path="/login" component={LoginFormContainer} />
@@ -48,7 +50,10 @@ const App = () => (
     </Switch>
 
     <Route path="/browse" component={Player} />
-    <ProtectedRoute path="/(collection|settings|album|playlist)/" component={Player} />
+    <ProtectedRoute
+      path="/(collection|settings|album|playlist)/"
+      component={Player}
+    />
   </div>
 );
 
