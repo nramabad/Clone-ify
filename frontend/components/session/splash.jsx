@@ -52,17 +52,6 @@ class Splash extends React.Component {
             </div>
             <ul className="header-list">
               <li>
-                <a href="https://github.com/nramabad" target="_blank">
-                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/github-icon.png" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
-                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/linkedin-icon.png" />
-                </a>
-              </li>
-              <li>|</li>
-              <li>
                 <Link to="/signup">Sign Up</Link>
               </li>
               <li>
@@ -86,16 +75,16 @@ class Splash extends React.Component {
 
           <div className="footer-links">
             <h5>LINKS</h5>
-            <li>
-              <a href="https://github.com/nramabad" target="_blank">
-                Github
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
-                LinkedIn
-              </a>
-            </li>
+              <li>
+                <a href="https://github.com/nramabad" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/github-icon.png" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
+                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/linkedin-icon.png" />
+                </a>
+              </li>
           </div>
         </footer>
       </div>;
