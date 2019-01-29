@@ -18,6 +18,7 @@ import Account from './main/account_menu';
 import LoginFormContainer from './session/login_form_container'
 import SignupFormContainer from './session/sign_up_container'
 import Player from './main/player'
+import Search from './main/search'
 // import GeneralModal from './main/general_modal';
 import Modal from './main/modal';
 
@@ -32,6 +33,8 @@ const App = () => (
       <Redirect from="/browse/featured" to="/collection/playlists" />
       <Route path="/browse/featured" component={Featured} />
       <Redirect from="/browse" to="/browse/featured" />
+
+      <Route path="/search" component={Search} />
 
       <ProtectedRoute path="/collection/albums" component={AlbumIndex} />
       <ProtectedRoute path="/collection/artists" component={ArtistIndex} />

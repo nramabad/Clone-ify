@@ -40,7 +40,7 @@ class SideBar extends React.Component {
           <nav className='browse-nav'>
             <Link to="/browse/featured" className='logo'><img src={window.whiteLogoURL} /></Link>
             <div className="general-pages">
-              <Link to="/browse/featured"><div>Search</div></Link>
+              <Link to="/search"><div>Search</div></Link>
               <Link to="/browse/featured"><div>Home</div></Link>
               <Link to="/collection/playlists"><div className='selected'>Your Library</div></Link>
             </div>

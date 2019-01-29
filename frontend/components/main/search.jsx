@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from '../navbars/navbar';
+import Sidebar from './side_bar';
 
 import { Route, Redirect, Switch } from 'react-router-dom';
 
-import AlbumsIndex from '../albums/albums_index';
-import ArtistsIndex from '../artists/artists_index';
-import PlaylistsIndex from '../playlists/playlists_index';
-import SongsIndex from '../songs/songs_index';
+import AlbumsIndex from '../albums/album_index';
+import ArtistsIndex from '../artists/artist_index';
+import PlaylistsIndex from '../playlists/playlist_index';
+import SongsIndex from '../songs/song_index';
 
 class Search extends React.Component {
 
@@ -38,19 +38,19 @@ class Search extends React.Component {
                 <div className="search-page">
                     <Switch>
                         <Route path="/search/albums" render={() =>
-                            <AlbumsIndexContainer
+                            <AlbumsIndex
                                 searchQuery={this.state.query} />} />
 
                         <Route path="/search/artists" render={() =>
-                            <ArtistsIndexContainer
+                            <ArtistsIndex
                                 searchQuery={this.state.query} />} />
 
                         <Route path="/search/playlists" render={() =>
-                            <PlaylistsIndexContainer
+                            <PlaylistsIndex
                                 searchQuery={this.state.query} />} />
 
                         <Route path="/search/songs" render={() =>
-                            <SongsIndexContainer
+                            <SongsIndex
                                 searchQuery={this.state.query} />} />
                         <Redirect to="/search/albums" />
                     </Switch>
