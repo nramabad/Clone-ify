@@ -7,30 +7,33 @@ import CoverItem from './cover_item';
 import { requestAllAlbums } from '../../actions/music_actions';
 
 class AlbumIndex extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
 
   componentDidMount() {
     this.props.requestAllAlbums();
   }
 
-  render(){
-
-    const allAlbums = this.props.albums.map( (item, idx) => <CoverItem key={item.id} item={item} /> );
-    return(
+  render() {
+    const allAlbums = this.props.albums.map((item, idx) => (
+      <CoverItem key={item.id} item={item} />
+    ));
+    return (
       <>
         <SideBar />
-        <div className='browse-body'>
+        <div className="browse-body">
           <Library />
-          <div className='scoot'>
-            <ul className='albums'>
-              {allAlbums}
-            </ul>
+          <div className="scoot">
+            <ul className="albums">{allAlbums}</ul>
           </div>
         </div>
       </>
     );
   }
-
-  }
+}
 
   const mapStateToProps = state => {
     // debugger

@@ -7,32 +7,35 @@ import CoverItem from './cover_item';
 import { requestAllArtists } from '../../actions/music_actions';
 
 class ArtistIndex extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = { loading: true };
+  }
 
   componentDidMount() {
     this.props.requestAllArtists();
   }
 
-
-  render(){
-    let allArtists = (<></>)
-    if (this.props.artists[0] !== undefined ) {
-      allArtists = Object.values(this.props.artists[0]).map((item, idx) => <CoverItem key={item.id} item={item} />);
+  render() {
+    let allArtists = <></>;
+    if (this.props.artists[0] !== undefined) {
+      allArtists = Object.values(this.props.artists[0]).map((item, idx) => (
+        <CoverItem key={item.id} item={item} />
+      ));
     }
     return (
       <>
         <SideBar />
-        <div className='browse-body'>
+        <div className="browse-body">
           <Library />
-          <div className='scoot'>
-            <ul className='albums'>
-              {allArtists}
-            </ul>
+          <div className="scoot">
+            <ul className="albums">{allArtists}</ul>
           </div>
         </div>
       </>
     );
   }
-
 }
 
 const mapStateToProps = state => {

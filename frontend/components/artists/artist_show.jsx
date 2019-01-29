@@ -15,7 +15,8 @@ class ArtistShow extends React.Component {
   }
 
   render(){
-    debugger
+    // debugger
+
     return <>
         <SideBar />
         <div className="browse-body">
@@ -24,9 +25,9 @@ class ArtistShow extends React.Component {
               <img className="artist-item" src={this.props.artist.photo_url} alt="it broke :(" />
               <div className="title">{this.props.artist.name}</div>
             </div>
-            <div className="fit-songs">
+            {/* <div className="fit-songs">
               <ul className="songs">{allSongs}</ul>
-            </div>
+            </div> */}
           </section>
         </div>
       </>;
@@ -35,10 +36,11 @@ class ArtistShow extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
   const artistId = ownProps.match.params.artistId;
   return {
-    artist: state.entities.artists[artistId]
-    // songs: albumSongsSelector(state, albumId)
+    artist: state.entities.artists.artists[artistId]
+    // songs: albumSongsSelector(state.entities.artists, albumId)
     // // Object.values(state.entities.songs).filter( song => song.album_id == ownProps.match.params.albumId )
   };
 };
