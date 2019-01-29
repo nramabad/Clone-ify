@@ -10,7 +10,17 @@ class ArtistShow extends React.Component {
       <>
         <SideBar />
         <div className='browse-body'>
-          <Library />
+          <section>
+            <div className='album-content'>
+              <img className='artist-item' src={item.photo_url} alt='it broke :(' />
+              <div className='title'>{item.name}</div>
+            </div>
+            <div className='fit-songs'>
+              <ul className='songs'>
+                {allSongs}
+              </ul>
+            </div>
+          </section>
         </div>
       </>
     );
