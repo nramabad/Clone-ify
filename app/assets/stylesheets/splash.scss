@@ -135,12 +135,17 @@ a {
   display: flex;
 }
 
+.footer img {
+  height: 40px;
+  width: 40px
+}
+
 .footer-logo {
   display: flex;
   align-items: center;
   justify-content: center;
   float: left;
-  margin-left: 2%;
+  margin-left: 65px;
   margin-right: 75px;
   margin-bottom: 80px;
 }
@@ -149,11 +154,27 @@ a {
   font-size: 22px;
 }
 
-.footer-links h5 {
+.footer-section {
+  flex: row;
+}
+
+.footer-section h5 {
   color: #919496;
   margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-links img {
+  height: 50px;
+  width: 50px;
+  padding-right: 5px;
 }
 
 .footer-links a {
+  flex: column;
   font-size: 14px;
 }

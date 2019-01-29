@@ -69,23 +69,24 @@ class Splash extends React.Component {
 
         <footer className="footer">
           <div className="footer-logo">
-            <i className="fab fa-spotify" />
+            <Link to="/" className="logo">
+              <img src={window.whiteLogoURL} />
+            </Link>
             <h1 className="header-logo">Clone-ify</h1>
           </div>
 
-          <div className="footer-links">
-            <h5>LINKS</h5>
-              <li>
-                <a href="https://github.com/nramabad" target="_blank">
-                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/github-icon.png" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
-                  <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/linkedin-icon.png" />
-                </a>
-              </li>
+          <div className="footer-section">
+            <h5>LINKS</h5><br />
+            <div className="footer-links">
+              <a href="https://github.com/nramabad" target="_blank">
+                <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/github-icon.png" />
+              </a>
+              <a href="https://www.linkedin.com/in/nramabad/" target="_blank">
+                <img src="https://s3-us-west-1.amazonaws.com/clone-ify-public/misc/linkedin-icon.png" />
+              </a>
+            </div>
           </div>
+          
         </footer>
       </div>;
   }
