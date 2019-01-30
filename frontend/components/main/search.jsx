@@ -28,7 +28,7 @@ class Search extends React.Component {
 
     render() {
 
-        const renderContent = (
+        let renderContent = (
             <div>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
             </div>
