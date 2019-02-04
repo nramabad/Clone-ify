@@ -54,7 +54,7 @@ const App = () => (
 
     <Route path="/browse" component={Player} />
     <ProtectedRoute
-      path="/(collection|settings|album|playlist)/"
+      path="/(collection|settings|album|playlist|search)/"
       component={Player}
     />
   </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './side_bar';
+import SideBar from './side_bar';
 
 import { Route, Redirect, Switch } from 'react-router-dom';
 
@@ -59,17 +59,21 @@ class Search extends React.Component {
         } 
 
         return (
-            <div className="search">
-                <form className="search-form">
-                    <input
-                        type="text"
-                        value={this.state.query}
-                        placeholder="Start typing..."
-                        onChange={this.handleChange()}
-                    ></input>
-                </form>
-                {renderContent}
-            </div>
+            <>
+                <SideBar />
+                
+                <div className="search">
+                    <form className="search-form">
+                        <input
+                            type="text"
+                            value={this.state.query}
+                            placeholder="Start typing..."
+                            onChange={this.handleChange()}
+                        ></input>
+                    </form>
+                    {renderContent}
+                </div>
+            </>
         )
     }
 

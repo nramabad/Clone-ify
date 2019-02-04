@@ -7,14 +7,19 @@ import CoverItem from './cover_item';
 import { requestAllArtists } from '../../actions/music_actions';
 
 class ArtistIndex extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { loading: true };
   }
 
   componentDidMount() {
-    this.props.requestAllArtists();
+    if (this.props.location.pathname == "/collection/artists") {
+      this.props.requestAllArtists();
+    // } else if (this.props.searchTerm != undefined) {
+    //   this.props.requestSearchedArtists(this.props.searchTerm)
+    }
+
   }
 
   render() {

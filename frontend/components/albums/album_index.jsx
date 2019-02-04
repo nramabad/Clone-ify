@@ -4,31 +4,39 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
 import CoverItem from './cover_item';
-import { requestAllAlbums } from '../../actions/music_actions';
+import { requestAllAlbums, requestSearchedAlbums } from '../../actions/music_actions';
 
 class AlbumIndex extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { loading: true };
   }
 
   componentDidMount() {
-    this.props.requestAllAlbums();
+    if (this.props.location.pathname == "/browse/albums") {
+      this.props.requestAllAlbums();
+    } else if(this.props.searchTerm != undefined ) {
+      this.props.requestSearchedAlbums(this.props.searchTerm)
+    }
   }
 
   render() {
     const allAlbums = this.props.albums.map((item, idx) => (
       <CoverItem key={item.id} item={item} />
     ));
+    const displayContent = (
+      <div className="scoot">
+        <ul className="albums">{allAlbums}</ul>
+      </div>
+    )
+
     return (
       <>
         <SideBar />
         <div className="browse-body">
           <Library />
-          <div className="scoot">
-            <ul className="albums">{allAlbums}</ul>
-          </div>
+            {displayContent}
         </div>
       </>
     );
@@ -42,8 +50,9 @@ class AlbumIndex extends React.Component {
     };
   };
 
-  const mapDispatchToProps = dispatch => ({
-    requestAllAlbums: () => dispatch(requestAllAlbums())
+  const mapDispatchToProps = dispatch => ({ 
+    requestAllAlbums: () => dispatch(requestAllAlbums()), 
+    requestSearchedAlbums: search => dispatch(requestSearchedAlbums(search))
   });
 
   export default withRouter(connect(
