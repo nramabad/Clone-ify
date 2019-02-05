@@ -29,6 +29,15 @@ class ArtistIndex extends React.Component {
         <CoverItem key={item.id} item={item} />
       ));
     }
+
+    if (this.props.searchQuery) {
+      return (
+        <div className="scoot">
+          <ul className="albums">{allArtists}</ul>
+        </div>
+      )
+    }
+
     return (
       <>
         <SideBar />

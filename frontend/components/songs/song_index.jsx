@@ -29,6 +29,17 @@ class SongIndex extends React.Component {
 
   render(){
     const allSongs = this.props.songs.map( (song, idx) => <SongItem key={song.id} song={song} /> );
+
+    if (this.props.searchQuery) {
+      return (
+        <div className='fit-songs'>
+          <ul className='songs'>
+            {allSongs}
+          </ul>
+        </div>
+      )
+    }
+
     return(
       <>
         <SideBar />

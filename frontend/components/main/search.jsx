@@ -27,7 +27,7 @@ class Search extends React.Component {
     }
 
     render() {
-
+        // debugger
         let renderContent = (
             <div>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
@@ -52,7 +52,7 @@ class Search extends React.Component {
                         <Route path="/search/songs" render={() =>
                             <SongsIndex
                                 searchQuery={this.state.query} />} />
-                        <Redirect to="/search/albums" />
+                        <Redirect to="/search" />
                     </Switch>
                 </div>
             </div>);

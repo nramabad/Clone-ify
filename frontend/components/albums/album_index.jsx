@@ -25,18 +25,23 @@ class AlbumIndex extends React.Component {
     const allAlbums = this.props.albums.map((item, idx) => (
       <CoverItem key={item.id} item={item} />
     ));
-    const displayContent = (
-      <div className="scoot">
-        <ul className="albums">{allAlbums}</ul>
-      </div>
-    )
+    if (this.props.searchQuery) {
+      return (
+        <div className="scoot">
+          <ul className="albums">{allAlbums}</ul>
+        </div>
+      )
+    }
+    
 
     return (
       <>
         <SideBar />
         <div className="browse-body">
           <Library />
-            {displayContent}
+          <div className="scoot">
+            <ul className="albums">{allAlbums}</ul>
+          </div>
         </div>
       </>
     );

@@ -17,7 +17,18 @@ class PlaylistIndex extends React.Component {
     const allPlaylists = this.props.playlists.map( (item, idx) => {
       return(<CoverItem key={item.id} item={item} users={this.props.users} />)
 
-   });
+    });
+
+    if (this.props.searchQuery) {
+      return (
+        <div className='scoot'>
+          <ul className='albums'>
+            {allPlaylists}
+          </ul>
+        </div>
+      );
+    }
+
     return(
       <>
         <SideBar />
