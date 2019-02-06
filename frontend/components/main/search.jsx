@@ -52,7 +52,7 @@ class Search extends React.Component {
                         <Route path="/search/songs" render={() =>
                             <SongsIndex
                                 searchQuery={this.state.query} />} />
-                        <Redirect to="/search" />
+                        <Redirect to="/search/albums" />
                     </Switch>
                 </div>
             </div>);

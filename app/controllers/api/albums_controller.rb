@@ -12,7 +12,7 @@ class Api::AlbumsController < ApplicationController
 
   def search
     query = params[:query]
-    @albums = Album.where('lower(name) like ?', "%#{query.downcase}%").limit(5)
+    @albums = Album.where('lower(title) like ?', "%#{query.downcase}%").limit(5)
     render :index
   end
 

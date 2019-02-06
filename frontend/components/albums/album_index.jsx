@@ -14,10 +14,11 @@ class AlbumIndex extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     if (this.props.location.pathname == "/browse/albums") {
       this.props.requestAllAlbums();
-    } else if(this.props.searchTerm != undefined ) {
-      this.props.requestSearchedAlbums(this.props.searchTerm)
+    } else if(this.props.searchQuery != undefined ) {
+      this.props.requestSearchedAlbums(this.props.searchQuery)
     }
   }
 

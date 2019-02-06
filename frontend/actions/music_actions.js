@@ -82,15 +82,15 @@ export const requestAllAlbums = () => (dispatch) => (
     .then(albums => dispatch(receiveAllAlbums(albums)))
 );
 
-export const requestOneArtist = (artistId) => (dispatch) => (
-  ArtistApiUtil.fetchOneArtist(artistId)
-    .then(artist => dispatch(receiveOneArtist(artist)))
+export const requestSearchedAlbums = query => dispatch =>
+  AlbumApiUtil.searchAlbums(query).then(albums =>
+    dispatch(receiveAllAlbums(albums))
 );
 
-export const requestSearchedAlbums = query => dispatch =>
-  MusicApiUtil.searchAlbums(query).then(albums =>
-    dispatch(receiveAllAlbums(albums))
-  );
+export const requestOneArtist = artistId => dispatch =>
+  ArtistApiUtil.fetchOneArtist(artistId).then(artist =>
+    dispatch(receiveOneArtist(artist))
+);
 
 export const requestAllArtists = () => (dispatch) => (
   ArtistApiUtil.fetchAllArtists()
@@ -98,7 +98,7 @@ export const requestAllArtists = () => (dispatch) => (
 );
 
 export const requestSearchedArtists = query => dispatch =>
-  MusicApiUtil.searchArtists(query).then(artists =>
+  ArtistApiUtil.searchArtists(query).then(artists =>
     dispatch(receiveAllArtists(artists))
   );
 
@@ -123,7 +123,7 @@ export const deletePlaylist = (id) => (dispatch) => (
 );
 
 export const requestSearchedPlaylists = query => dispatch =>
-  MusicApiUtil.searchPlaylists(query).then(playlists =>
+  PlaylistApiUtil.searchPlaylists(query).then(playlists =>
     dispatch(receiveAllPlaylists(playlists))
 );
 
@@ -150,7 +150,7 @@ export const requestAllSongs = () => (dispatch) => (
 
 export const requestSearchedSongs = (query) => (dispatch) => {
   return (
-    MusicApiUtil.searchSongs(query)
+    SongApiUtil.searchSongs(query)
       .then(songs => dispatch(receiveAllSongs(songs)))
   )
 }
