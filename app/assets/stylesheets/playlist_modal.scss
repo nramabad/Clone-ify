@@ -132,10 +132,14 @@
 }
 
 .top-bar {
-  margin-left: 230px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.top-bar header {
+  margin-left: 35%;
+  margin-right: auto;
 }
 
 .right-menu-space {

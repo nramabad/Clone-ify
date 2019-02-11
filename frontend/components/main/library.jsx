@@ -12,9 +12,6 @@ class Library extends React.Component {
             <Link to="/collection/playlists">
               <span className="selected"> PLAYLIST </span>
             </Link>
-            <Link to="/collection/playlists">
-              <span> MADE FOR YOU </span>
-            </Link>
             <Link to="/collection/tracks">
               <span> SONGS </span>
             </Link>
@@ -23,9 +20,6 @@ class Library extends React.Component {
             </Link>
             <Link to="/collection/artists">
               <span> ARTISTS </span>
-            </Link>
-            <Link to="/collection/playlists">
-              <span> PODCASTS </span>
             </Link>
           </header>
           <div className="right-menu-space">
