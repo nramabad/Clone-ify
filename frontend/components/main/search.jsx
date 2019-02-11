@@ -30,6 +30,7 @@ class Search extends React.Component {
         // debugger
         let renderContent = (
             <div>
+                <h2>Search Clone-ify</h2>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
             </div>
         )
