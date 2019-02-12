@@ -29,7 +29,7 @@ class Search extends React.Component {
     render() {
         // debugger
         let renderContent = (
-            <div>
+            <div id="begin">
                 <h2>Search Clone-ify</h2>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
             </div>
@@ -37,7 +37,16 @@ class Search extends React.Component {
         if (this.state.query.length > 0) {
             renderContent = (<div>
                 <div className="search-page">
-                    <Switch>
+                    <h2>Albums</h2>
+                    <AlbumsIndex
+                        searchQuery={this.state.query} />
+                    <h2>Artists</h2>
+                    <ArtistsIndex
+                        searchQuery={this.state.query} />
+                    <h2>Playlists</h2>
+                    <PlaylistsIndex
+                        searchQuery={this.state.query} />
+                    {/* <Switch>
                         <Route path="/search/albums" render={() =>
                             <AlbumsIndex
                                 searchQuery={this.state.query} />} />
@@ -54,7 +63,7 @@ class Search extends React.Component {
                             <SongsIndex
                                 searchQuery={this.state.query} />} />
                         <Redirect to="/search/albums" />
-                    </Switch>
+                    </Switch> */}
                 </div>
             </div>);
         } 
