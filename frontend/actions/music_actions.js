@@ -97,10 +97,13 @@ export const requestAllArtists = () => (dispatch) => (
     .then(songs => dispatch(receiveAllArtists(songs)))
 );
 
-export const requestSearchedArtists = query => dispatch =>
-  ArtistApiUtil.searchArtists(query).then(artists =>
+export const requestSearchedArtists = query => dispatch => {
+  console.log('hahaha')
+  console.log(query)
+  return ArtistApiUtil.searchArtists(query).then(artists =>
     dispatch(receiveAllArtists(artists))
   );
+}
 
 export const requestOnePlaylist = (playlistId) => (dispatch) => (
   PlaylistApiUtil.fetchOnePlaylist(playlistId)

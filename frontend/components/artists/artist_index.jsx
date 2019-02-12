@@ -4,7 +4,10 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
 import CoverItem from './cover_item';
-import { requestAllArtists } from '../../actions/music_actions';
+import {
+  requestAllArtists,
+  requestSearchedArtists 
+} from "../../actions/music_actions";
 
 class ArtistIndex extends React.Component {
 
@@ -14,12 +17,11 @@ class ArtistIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.location.pathname == "/collection/artists") {
+    if (this.props.searchQuery != undefined) {
+      this.props.requestSearchedArtists(this.props.searchQuery)
+    } else {
       this.props.requestAllArtists();
-    // } else if (this.props.searchTerm != undefined) {
-    //   this.props.requestSearchedArtists(this.props.searchTerm)
     }
-
   }
 
   render() {
@@ -60,7 +62,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestAllArtists: () => dispatch(requestAllArtists())
+  requestAllArtists: () => dispatch(requestAllArtists()),
+  requestSearchedArtists: search => dispatch(requestSearchedArtists(search))
 });
 
 export default withRouter(connect(

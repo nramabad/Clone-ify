@@ -4,13 +4,20 @@ import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
 import CoverItem from './cover_item'
-import { requestAllPlaylists } from '../../actions/music_actions'
+import {
+  requestAllPlaylists,
+  requestSearchedPlaylists
+} from "../../actions/music_actions";
 import Modal from '../main/modal';
 
 class PlaylistIndex extends React.Component {
 
   componentDidMount() {
-    this.props.requestAllPlaylists();
+    if (this.props.searchQuery != undefined) {
+      this.props.requestSearchedPlaylists(this.props.searchQuery);
+    } else {
+      this.props.requestAllPlaylists();
+    }
   }
 
   render(){
@@ -56,7 +63,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestAllPlaylists: () => dispatch(requestAllPlaylists())
+  requestAllPlaylists: () => dispatch(requestAllPlaylists()),
+  requestSearchedPlaylists: search => dispatch(requestSearchedPlaylists(search))
 });
 
 export default withRouter(connect(

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom';
 import SideBar from '../main/side_bar';
 import Library from '../main/library';
-import { requestAllSongs, removeSongFromPlaylist } from '../../actions/music_actions';
+import { requestAllSongs, removeSongFromPlaylist, requestSearchedSongs } from '../../actions/music_actions';
 import SongItem from './song_item';
 
 class SongIndex extends React.Component {
@@ -23,8 +23,12 @@ class SongIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestAllSongs();
-    this.props.removeSongFromPlaylist
+    if (this.props.searchQuery != undefined) {
+      this.props.requestSearchedSongs(this.props.searchQuery);
+    } else {
+      this.props.requestAllSongs();
+      this.props.removeSongFromPlaylist;
+    }s
   }
 
   render(){
@@ -66,6 +70,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   requestAllSongs: () => dispatch(requestAllSongs()),
+  requestSearchedSongs: search => dispatch(requestSearchedSongs(search))
 });
 
 export default withRouter(connect(
