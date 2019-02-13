@@ -7,7 +7,6 @@ import CoverItem from './cover_item';
 import { requestAllAlbums, requestSearchedAlbums } from '../../actions/music_actions';
 
 class AlbumIndex extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { loading: true };
@@ -15,12 +14,18 @@ class AlbumIndex extends React.Component {
 
   componentDidMount() {
     // debugger
-    if(this.props.searchQuery != undefined ) {
+    if (this.props.searchQuery != undefined) {
       // debugger
-      this.props.requestSearchedAlbums(this.props.searchQuery)
+      this.props.requestSearchedAlbums(this.props.searchQuery);
     } else {
       // debugger
       this.props.requestAllAlbums();
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchQuery != newProps.searchQuery) {
+      this.props.requestSearchedAlbums(newProps.searchQuery);
     }
   }
 
@@ -33,9 +38,8 @@ class AlbumIndex extends React.Component {
         <div className="scoot">
           <ul className="albums">{allAlbums}</ul>
         </div>
-      )
+      );
     }
-    
 
     return (
       <>

@@ -11,7 +11,6 @@ import {
 import Modal from '../main/modal';
 
 class PlaylistIndex extends React.Component {
-
   componentDidMount() {
     if (this.props.searchQuery != undefined) {
       this.props.requestSearchedPlaylists(this.props.searchQuery);
@@ -20,37 +19,37 @@ class PlaylistIndex extends React.Component {
     }
   }
 
-  render(){
-    const allPlaylists = this.props.playlists.map( (item, idx) => {
-      return(<CoverItem key={item.id} item={item} users={this.props.users} />)
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchQuery != newProps.searchQuery) {
+      this.props.requestSearchedPlaylists(newProps.searchQuery);
+    }
+  }
 
+  render() {
+    const allPlaylists = this.props.playlists.map((item, idx) => {
+      return <CoverItem key={item.id} item={item} users={this.props.users} />;
     });
 
     if (this.props.searchQuery) {
       return (
-        <div className='scoot'>
-          <ul className='albums'>
-            {allPlaylists}
-          </ul>
+        <div className="scoot">
+          <ul className="albums">{allPlaylists}</ul>
         </div>
       );
     }
 
-    return(
+    return (
       <>
         <SideBar />
-        <div className='browse-body'>
+        <div className="browse-body">
           <Library />
-          <div className='scoot'>
-            <ul className='albums'>
-              {allPlaylists}
-            </ul>
+          <div className="scoot">
+            <ul className="albums">{allPlaylists}</ul>
           </div>
         </div>
       </>
     );
   }
-
 }
 
 //<div><button className="session-submit">NEW PLAYLIST</button></div>

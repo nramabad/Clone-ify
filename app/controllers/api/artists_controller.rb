@@ -12,8 +12,6 @@ class Api::ArtistsController < ApplicationController
 
   def search
     query = params[:query]
-    print "hahahahaha"
-    print params
     @artists = Artist.where('lower(name) like ?', "%#{query.downcase}%").limit(5)
     render :index
   end

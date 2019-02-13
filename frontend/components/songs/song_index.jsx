@@ -28,7 +28,13 @@ class SongIndex extends React.Component {
     } else {
       this.props.requestAllSongs();
       this.props.removeSongFromPlaylist;
-    }s
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchQuery != newProps.searchQuery) {
+      this.props.requestSearchedSongs(newProps.searchQuery);
+    }
   }
 
   render(){

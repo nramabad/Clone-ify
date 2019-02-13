@@ -24,6 +24,12 @@ class ArtistIndex extends React.Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.searchQuery != newProps.searchQuery) {
+      this.props.requestSearchedArtists(newProps.searchQuery);
+    }
+  }
+
   render() {
     let allArtists = <></>;
     if (this.props.artists[0] !== undefined) {
