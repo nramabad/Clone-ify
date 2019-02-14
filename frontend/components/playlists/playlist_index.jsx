@@ -19,9 +19,9 @@ class PlaylistIndex extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.searchQuery != newProps.searchQuery) {
-      this.props.requestSearchedPlaylists(newProps.searchQuery);
+  componentDidUpdate(prevProps) {
+    if (this.props.searchQuery != prevProps.searchQuery) {
+      this.props.requestSearchedPlaylists(this.props.searchQuery);
     }
   }
 

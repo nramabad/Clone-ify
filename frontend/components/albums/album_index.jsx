@@ -23,9 +23,9 @@ class AlbumIndex extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.searchQuery != newProps.searchQuery) {
-      this.props.requestSearchedAlbums(newProps.searchQuery);
+  componentDidUpdate(prevProps) {
+    if (this.props.searchQuery != prevProps.searchQuery) {
+      this.props.requestSearchedAlbums(this.props.searchQuery);
     }
   }
 

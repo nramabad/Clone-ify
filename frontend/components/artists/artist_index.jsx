@@ -10,7 +10,6 @@ import {
 } from "../../actions/music_actions";
 
 class ArtistIndex extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { loading: true };
@@ -18,15 +17,15 @@ class ArtistIndex extends React.Component {
 
   componentDidMount() {
     if (this.props.searchQuery != undefined) {
-      this.props.requestSearchedArtists(this.props.searchQuery)
+      this.props.requestSearchedArtists(this.props.searchQuery);
     } else {
       this.props.requestAllArtists();
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.searchQuery != newProps.searchQuery) {
-      this.props.requestSearchedArtists(newProps.searchQuery);
+  componentDidUpdate(prevProps) {
+    if (this.props.searchQuery != prevProps.searchQuery) {
+      this.props.requestSearchedArtists(this.props.searchQuery);
     }
   }
 
@@ -43,7 +42,7 @@ class ArtistIndex extends React.Component {
         <div className="scoot">
           <ul className="albums">{allArtists}</ul>
         </div>
-      )
+      );
     }
 
     return (
