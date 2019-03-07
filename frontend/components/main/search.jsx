@@ -13,57 +13,50 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: ''
+            query: '',
+            render: false
         }
+        this.timeout = 0;
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
     }
 
-    handleChange() {
-        return (e) => {
-            this.setState({ query: e.target.value })
-        };
+    handleChange(e) {
+        this.setState({ render: false })
+
+        if (this.timeout) clearTimeout(this.timeout);
+
+        this.timeout = setTimeout(() => {
+            this.setState({ render: true });
+        }, 300);
+
+        this.setState({ query: e.target.value })
     }
 
     render() {
-        // debugger
+        let { query, render } = this.state;
+        let default_page = false;
         let renderContent = (
             <div id="begin">
                 <h2>Search Clone-ify</h2>
                 <h4>Find your favorite songs, artists, albums, podcasts and playlists.</h4>
             </div>
         )
-        if (this.state.query.length > 0) {
+        if (query.length > 0) {
+            default_page = true;
             renderContent = (<div>
                 <div className="search-page">
                     <h2>Albums</h2>
                     <AlbumsIndex
-                        searchQuery={this.state.query} />
+                        searchQuery={query} />
                     <h2>Artists</h2>
                     <ArtistsIndex
-                        searchQuery={this.state.query} />
+                        searchQuery={query} />
                     <h2>Playlists</h2>
                     <PlaylistsIndex
-                        searchQuery={this.state.query} />
-                    {/* <Switch>
-                        <Route path="/search/albums" render={() =>
-                            <AlbumsIndex
-                                searchQuery={this.state.query} />} />
-
-                        <Route path="/search/artists" render={() =>
-                            <ArtistsIndex
-                                searchQuery={this.state.query} />} />
-
-                        <Route path="/search/playlists" render={() =>
-                            <PlaylistsIndex
-                                searchQuery={this.state.query} />} />
-
-                        <Route path="/search/songs" render={() =>
-                            <SongsIndex
-                                searchQuery={this.state.query} />} />
-                        <Redirect to="/search/albums" />
-                    </Switch> */}
+                        searchQuery={query} />
                 </div>
             </div>);
         } 
@@ -78,10 +71,10 @@ class Search extends React.Component {
                             type="text"
                             value={this.state.query}
                             placeholder="Start typing..."
-                            onChange={this.handleChange()}
+                            onChange={this.handleChange}
                         ></input>
                     </form>
-                    {renderContent}
+                    {render ? renderContent : null}
                 </div>
             </>
         )

@@ -9,5 +9,4 @@ class Playlist < ApplicationRecord
   has_many :albums, through: :songs, source: :album
   has_one_attached :photo
 
-
 end
