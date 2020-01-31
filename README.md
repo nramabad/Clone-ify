@@ -14,9 +14,10 @@ Check out the [Live Demo!](https://clone-ify.herokuapp.com/#/login)
 * Redux -  allows for dynamic updating of page properties
 * JBuilder - serves up data from the Ruby backend to Javascript frontend
 * Ruby on Rails - backend architecture for model and controller
-* Heroku / PostgreSQL - database that stores application data 
+* PostgreSQL - database that stores application data 
 * Rails ActiveStorage - enables image and music files uploads from cloud server
 * Amazon S3 - cloud server for media content storage
+* Heroku - Platform-as-a-Service Provider
 
 
 ## Features
